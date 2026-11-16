@@ -1,0 +1,2028 @@
+<!DOCTYPE html>
+<!-- saved from url=(0076)https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01 -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=EUC-KR">
+
+
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<link rel="canonical" href="https://edulife.sungkyul.ac.kr/">
+<meta name="description" content="검증된 교수진과 커리큘럼으로 사회복지사 1급 합격을 완성해보세요.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="사회복지사 1급! 완벽 대비 인강 | 성결대학교">
+<meta property="og:description" content="검증된 교수진과 커리큘럼으로 사회복지사 1급 합격을 완성해보세요.">
+<meta property="og:image" content="https://edulife.sungkyul.ac.kr/img/new_page/images/thumb_main.jpg">
+<meta property="og:url" content="https://edulife.sungkyul.ac.kr">
+<meta property="og:site_name" content="성결대학교원격평생교육원">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="사회복지사 1급! 완벽 대비 인강 | 성결대학교">
+<meta name="twitter:description" content="검증된 교수진과 커리큘럼으로 사회복지사 1급 합격을 완성해보세요.">
+<meta name="twitter:image" content="https://edulife.sungkyul.ac.kr/img/new_page/images/thumb_main.jpg">
+
+
+<title>성결대학교원격평생교육원 사회복지사2급 소개</title>
+
+<script src="./index_files/jquery-1.10.2.min.js.다운로드"></script>
+<!-- script type="text/javascript" src="/js/jquery.min.js"></script>   새로넣음 검토필요 버젼업 ver3.1.1 -->
+<link href="./index_files/new_comm.css" rel="stylesheet" type="text/css">
+<link href="./index_files/new_main.css" rel="stylesheet" type="text/css">
+<link rel="stylesheet" href="./index_files/new_main2.css">
+<link rel="icon" href="https://edulife.sungkyul.ac.kr/img/favicon.ico" type="image/x-icon">
+<script>
+//홈페이지 리뉴얼하면서 getLoginNeed2 새로만듦: 로그인 경로가 틀림:2018-09-11201809
+
+
+var mouseX,mouseY,mouseID;
+function getMemberLayer(id,e)
+{	
+	var x = (e.pageX) ? e.pageX : document.body.scrollLeft+event.clientX;
+	var y = (e.pageY) ? e.pageY : document.body.scrollTop+event.clientY;
+	var layer = document.getElementById('_member_layer_');
+	if (location.href.indexOf('/home/') != -1||location.href.indexOf('/_system/') != -1)frames._action_frame_.location.href = "mypage.php?a=mbr_layer&id=" + id;
+	else frames._action_frame_.location.href = "./_check.php?checkfile=mbrlayer&id=" + id;
+	layer.style.display = 'block';
+	layer.style.top = y-10+"px";
+	layer.style.left = x+20+"px";
+
+	mouseX = x;
+	mouseY = y;
+	mouseID= id;
+}
+function getMemberLayer_privacy(id,e, stat)
+{	
+	if(stat == 1) {
+		var x = (e.pageX) ? e.pageX : document.body.scrollLeft+event.clientX;
+		var y = (e.pageY) ? e.pageY : document.body.scrollTop+event.clientY;
+		var layer = document.getElementById('_member_layer_');
+		if (location.href.indexOf('/home/') != -1||location.href.indexOf('/_system/') != -1)frames._action_frame_.location.href = "mypage.php?a=mbr_layer&id=" + id;
+		else frames._action_frame_.location.href = "./_check.php?checkfile=mbrlayer&id=" + id;
+		layer.style.display = 'block';
+		layer.style.top = y-10+"px";
+		layer.style.left = x+20+"px";
+
+		mouseX = x;
+		mouseY = y;
+		mouseID= id;
+	} else {
+		alert("메뉴 접근권한이 없습니다. 관리자에게 문의해주시기 바랍니다.");
+	}
+}
+function MemberLayerHide(e)
+{
+	var x = (e.pageX) ? e.pageX : document.body.scrollLeft+event.clientX;
+	var y = (e.pageY) ? e.pageY : document.body.scrollTop+event.clientY;
+
+	if (x != mouseX || y != mouseY)
+	{
+		var layer = document.getElementById('_member_layer_');
+		if(layer){
+		layer.style.display = 'none';
+		}
+	}
+}
+function getMemberWin(que)
+{
+	window.open('../../_system/module/member/member.php?xsite=cyberlec&id=' + que,'','left=0,top=0,width=800,height=630,status=yes,scrollbars=yes');
+}
+function getEmailWin(domain,id)
+{
+	location.href = "mailto:" + id + "@" + domain;
+}
+function OpenZipcode(pwd,z1,z2,ad,ad1) 
+{
+	var gpwd = (pwd) ? pwd : '.';
+	var url = gpwd+'/zipsearch/zipcode.php?zip1='+z1+'&zip2='+z2+'&address='+ad+'&address1='+ad1;
+	window.open(url,'zip_win','width=460,height=550,statusbar=no,scrollbars=yes,toolbar=no');
+}
+function smOver(obj)
+{
+	obj.style.background='#FE8820';
+	obj.style.color='white';
+}
+function smOut(obj)
+{
+	obj.style.background='#EFECE0';
+	obj.style.color='black';
+}
+function goUrl(url,opt)
+{
+	if (opt == "")
+	location.href = url;
+	else
+	window.open(url , '' , opt);
+}
+function reqChat(myid,userid)
+{
+	if (myid == '')
+	{
+		alert('로그인해 주세요.      ');
+	}
+	else {
+		window.open('../../_system/module/chat/chat.php?xsite=cyberlec&a=mkroom&que=mantoman/main&callid='+userid,'','left=0,top=0,width=500,height=480,scrollbars=no,status=yes');
+	}
+}
+function SendSms(name,num,path)
+{
+	if (num == "")
+	{
+		alert("휴대폰 번호가 지정되지 않았습니다.        ");
+	}
+	else
+	{
+		var n = num.split('-');
+		url = path+"module.php?module=sms&q=phone&mobile_1="+n[0]+"&mobile_2="+n[1]+""+n[2]+"&toname="+name;
+		getPopUpFlag(window.open(url , '' , 'left=0,top=0,width=170,height=390,scrollbars=no,status=yes,resizable=no'));
+	}
+}
+function UploadView(id,uid,ok,que)
+{
+	if (ok == '1')
+	{
+		getPopUpFlag(window.open("../../_system/module/upload/view.php?xsite=cyberlec&id="+id+"&uid=" + uid + "&view=" + que , 'uploadviewwin', 'left=0,top=0,width=440,height=100,scrollbars=yes,status=yes'));
+	}
+	else {
+		alert('다운로드 권한이 없습니다.             ');
+	}
+}
+function BbsArticleWin(url,w,h)
+{
+	getPopUpFlag(window.open(url , 'articlewin' , 'left=0,top=0,width='+w+',height='+h+',scrollbars=yes,status=yes'));
+}
+
+function showInvWin(url)
+{
+	getPopUpFlag(window.open(url , 'articlewin' , 'left=0,top=0,width=800,height=600,scrollbars=yes,status=yes'));
+}
+function zoom(uid)
+{
+	window.open('../../_system/module/shop/zoom.php?uid=' + uid,'','left=0,top=0,width=480,height=555,scrollbars=no,status=yes');
+}
+function getTpriceLoyaltyJs(tprice,val)
+{
+	var tmpval = val ? val : 1; 
+	return parseInt(Math.floor(parseInt(tprice)/tmpval ) * tmpval);
+} 
+function getLoginNeed()
+{
+	if(confirm('로그인이 필요합니다.        \n\n지금 로그인하시겠습니까?'))
+	{
+		//location.href = "./login.php?referer=" + escape(location.href);
+		location.href = "./login.php";
+	}
+}
+
+//홈페이지 리뉴얼하면서 새로만듦: 로그인 경로가 틀림:2018-09-11
+function getLoginNeed2()
+{
+	if(confirm('로그인이 필요합니다.        \n\n지금 로그인하시겠습니까?'))
+	{
+		//location.href = "./login.php?referer=" + escape(location.href);
+		location.href = "/lec/home/cyberlec/membership.php?q=content12";
+	}
+}
+
+//20201027 신규콘텐츠 로그인 url
+function getLoginNeed3()
+{
+	if(confirm('로그인이 필요합니다.        \n\n지금 로그인하시겠습니까?'))
+	{
+		location.href = "./new_member.php?q=content01&referer=%2Flec%2Fhome%2Fcyberlec%2Fnew_welfare.php%3Fq%3Dcontent01";
+	}
+}
+
+function getDownInfo(uid)
+{
+	window.open('../../_system/module/upload/info.php?uid=' + uid,'','left=0,top=0,width=480,height=555,scrollbars=yes,status=yes');
+}
+function getMessenger(id)
+{
+	window.open('../../_system/module/messenger/index.php?id=' + id,'','left=0,top=0,width=550,height=650,scrollbars=no,status=yes,resizable=yes');
+}
+
+//webz
+function imgOrignWin(url)
+{
+	getPopUpFlag(window.open('./img.view.php?img=' + url,'','width=10px,height=10px,status=yes,resizable=yes,scrollbars=yes'));
+}
+function sendprint(uid)
+{
+	getPopUpFlag(window.open('../../_system/module/print/print.htm?uid=' + uid , 'printwin' , 'top=0,left=0,width=650,height=600,scrollbars=yes,status=yes'));
+}
+function statview(id)
+{
+	getPopUpFlag(window.open('bbs_opr.php?q=stat&newwin=Y&id='+id , 'bbsstatwin' , 'top=0,left=0,width=650,height=600,scrollbars=no,status=yes'));
+}
+function singo(table,uid,userid,mbid)
+{
+	if (mbid == "")
+	{
+		alert('회원으로 로그인해 주세요.            ');
+		return;
+	}
+	getPopUpFlag(window.open("bbs_opr.php?q=singo&xsite=cyberlec&newwin=Y&id=opr_notice&tbl=" + table + "&suid=" + uid + "&userid="+userid, "singowin" , "left=0,top=0,width=550,height=330,scrollbars=no,status=yes"));
+}
+function getDivWidth(width,div)
+{
+	var maxsize = parseInt(width);
+    var content = document.getElementById(div); 
+    var img = content.getElementsByTagName("img"); 
+    for(i=0; i<img.length; i++) 
+    { 
+
+        if ( eval('img[' + i + '].width > maxsize') ) 
+        { 
+            var heightSize = ( eval('img[' + i + '].height')*maxsize )/eval('img[' + i + '].width') ; 
+            eval('img[' + i + '].width = maxsize') ; 
+            eval('img[' + i + '].height = heightSize') ; 
+        } 
+    }
+	content.innerHTML = content.innerHTML.replace(/<img /ig,"<img onclick='imgOrignWin(this);' ");
+}
+function onlyNumber2(){
+     if((event.keyCode<48)||(event.keyCode>57)){
+       event.returnValue=false;
+       }
+ }
+function ReSizeIframe() {}//페이징처리
+function getPageLink(lnum,p,tpage,imgpath)
+{
+	var g_p1 = "<img src='"+imgpath+"/prev1.gif' alt='이전버튼'> <span style='color:#666666;'>이전</span>";
+	var g_p2 = "<img src='"+imgpath+"/prev2.gif' alt='이전버튼'> <span style='color:#666666;'>이전</span>";
+	var g_n1 = "<span style='color:#666666;'>다음</span> <img src='"+imgpath+"/next1.gif' alt='다음버튼'>";
+	var g_n2 = "<span style='color:#666666;'>다음</span> <img src='"+imgpath+"/next2.gif' alt='다음버튼'>";
+	var g_cn = "&nbsp;&nbsp;<img src='"+imgpath+"/cutln.gif' hspace='8' alt='구분선'>&nbsp;&nbsp;";
+	var g_q  = "<a href='javascript:getPageGo(1);'><img src='"+imgpath+"/btn_firstp.gif' alt='맨앞버튼'> 맨앞</a> ";
+
+	if(p < lnum+1) {
+		g_q += g_p1;
+	}else{
+		var pp = parseInt((p-1)/lnum)*lnum; g_q += "<a href='javascript:getPageGo("+pp+");' style='color:#666666;'>"+g_p2+"</a>";
+	}
+	
+	g_q += g_cn;
+
+	var st1 = parseInt((p-1)/lnum)*lnum + 1;
+	var st2 = st1 + lnum;
+
+	for(var jn = st1; jn < st2; jn++)
+	if ( jn <= tpage)
+	(jn == p)? g_q += "<b style='font-size:11px;color:#FF4040;border:#dfdfdf solid 1px;padding:4px 6px 1px 6px;height:10px;background:#efefef;'>"+jn+"</b>"+g_cn : g_q += "<a href='javascript:getPageGo("+jn+");' style='color:#666666;'>"+jn+"</a>"+g_cn;
+
+	if(tpage < lnum || tpage < jn) {
+		g_q += g_n1;
+	}else{
+		var np = jn; g_q += "<a href='javascript:getPageGo("+np+");'>"+g_n2+"</a>";
+	}
+	g_q  += " <a href='javascript:getPageGo("+tpage+");' style='color:#666666;'>맨끝 <img src='"+imgpath+"/btn_lastp.gif' alt='맨끝버튼'></a>";
+	document.write(g_q);
+}
+	
+// 한페이지에 보여줄 행, 현재페이지, 총페이지수, URL
+function get_paging(write_pages, cur_page, total_page, url, add)
+{    
+	var first = "<img src='/lec/_system/image/page/default/btn_firstp.gif' alt='맨앞버튼'>";
+	var prev = "<img src='/lec/_system/image/page/default/prev2.gif' alt='이전버튼'>";
+	var next = "<img src='/lec/_system/image/page/default/next2.gif' alt='다음버튼'>";
+	var last = "<img src='/lec/_system/image/page/default/btn_lastp.gif' alt='맨끝버튼'>";	
+	var vline = "&nbsp;&nbsp;<img src='/lec/_system/image/page/default/cutln.gif' hspace='8' alt='구분선'>&nbsp;&nbsp;";
+	
+    var str = '';
+    if (cur_page > 1) {
+        str += '<a href="'+url+'1'+add+'" class="pg_page pg_start">'+first+'</a>';
+    }
+
+    start_page = ( ( (parseInt)( (cur_page - 1 ) / write_pages ) ) * write_pages ) + 1;
+    end_page = start_page + write_pages - 1;
+
+    if (end_page >= total_page) end_page = total_page;
+
+    if (start_page > 1) str += '<a href="'+url+(start_page-1)+add+'" class="pg_page pg_prev">'+prev+'</a>';
+
+    if (total_page > 1) {
+        for (var k = start_page; k <= end_page; k++) {
+			
+			//console.log('61 k=',k,' cur_page=',cur_page,' start_page=',start_page, ' end_page=',end_page);
+			
+            if (cur_page != k)
+				if(k == start_page) str += '<a href="'+url+k+add+'" class="pg_page">'+k+'</a>';
+                else str += vline+'<a href="'+url+k+add+'" class="pg_page">'+k+'</a>';
+            else{
+				if(k == start_page) str += '<strong class="pg_current">'+k+'</strong>';
+                else str += vline+'<strong class="pg_current">'+k+'</strong>';
+			}
+        }
+    }
+
+    if (total_page > end_page) str += '<a href="'+url+(end_page+1)+add+'" class="pg_page pg_next">'+next+'</a>';
+
+    if (cur_page < total_page) {
+        str += '<a href="'+url+total_page+add+'" class="pg_page pg_end">'+last+'</a>';
+    }
+	
+    if (str)
+        document.write("<nav class='pg_wrap'><strong class='pg'>"+str+"</strong></nav>");
+    else
+        document.write("");
+}
+
+//20200929 한페이지에 보여줄 행, 현재페이지, 총페이지수, URL - default_my_new 용
+function get_paging2(write_pages, cur_page, total_page, url, add)
+{    
+	var first = "처음";
+	var prev = "이전";
+	var next = "다음";
+	var last = "끝";	
+	var vline = " "; // 구분선
+	
+    var str = '';
+    if (cur_page > 1) {
+        str += '<a href="'+url+'1'+add+'" class="page_prev">'+first+'</a>';
+    }
+
+    start_page = ( ( (parseInt)( (cur_page - 1 ) / write_pages ) ) * write_pages ) + 1;
+    end_page = start_page + write_pages - 1;
+
+    if (end_page >= total_page) end_page = total_page;
+
+    if (start_page > 1) str += vline+'<a href="'+url+(start_page-1)+add+'" class="page_prev">'+prev+'</a>';
+
+    if (total_page > 1) {
+        for (var k = start_page; k <= end_page; k++) {
+			
+            if (cur_page != k)
+				if(k == start_page) str += vline+'<a href="'+url+k+add+'" >'+k+'</a>';
+                else str += vline+'<a href="'+url+k+add+'" >'+k+'</a>';
+            else{
+				if(k == start_page) str += vline+'<a href="#" class="on_page" title="선택됨">'+k+'</a>';
+                else str += vline+'<a href="#" class="on_page" title="선택됨">'+k+'</a>';
+			}
+        }
+    }
+
+    if (total_page > end_page) str += vline+'<a href="'+url+(end_page+1)+add+'" class="page_next">'+next+'</a>';
+
+    if (cur_page < total_page) {
+        str += vline+'<a href="'+url+total_page+add+'" class="page_next">'+last+'</a>';
+    }
+	
+    if (str)
+        document.write("<div class='board_page'>"+str+"</div>");
+    else
+        document.write("");
+}
+
+//2021.01. 랜딩페이지 이벤트용
+function get_paging3(write_pages, cur_page, total_page, url, add)
+{    
+	var first = "<<";
+	var prev = "<";
+	var next = ">";
+	var last = ">>";	
+	var vline = " "; // 구분선
+	
+    var str = '';
+    if (cur_page > 1) {
+        str += '<li><a href="'+url+'1'+add+'" class="page">'+first+'</a></li>';
+    }
+
+    start_page = ( ( (parseInt)( (cur_page - 1 ) / write_pages ) ) * write_pages ) + 1;
+    end_page = start_page + write_pages - 1;
+
+    if (end_page >= total_page) end_page = total_page;
+
+    if (start_page > 1) str += vline+'<li><a href="'+url+(start_page-1)+add+'" class="page">'+prev+'</a></li>';
+
+    if (total_page > 1) {
+        for (var k = start_page; k <= end_page; k++) {
+			
+            if (cur_page != k)
+				if(k == start_page) str += vline+'<li><a href="'+url+k+add+'" >'+k+'</a></li>';
+                else str += vline+'<li><a href="'+url+k+add+'" >'+k+'</a></li>';
+            else{
+				if(k == start_page) str += vline+'<li><a href="#" class="now">'+k+'</a></li>';
+                else str += vline+'<li><a href="#" class="now">'+k+'</a></li>';
+			}
+        }
+    }
+
+    if (total_page > end_page) str += vline+'<li><a href="'+url+(end_page+1)+add+'" class="page">'+next+'</a></li>';
+
+    if (cur_page < total_page) {
+        str += vline+'<li><a href="'+url+total_page+add+'" class="page">'+last+'</a></li>';
+    }
+	
+    if (str)
+        document.write("<ul>"+str+"</ul>");
+    else
+        document.write("");
+}
+
+
+//페이지클릭
+function getPageGo(n)
+{ 
+	var p   = getUriString('p');
+	var que = location.href.replace('&p='+p,'');
+		 que = que.indexOf('?') != -1 ? que : que + '?';
+		 que = que.replace('&q=view&uid=' + getUriString('uid') , '');
+	var xurl = que.split('#');
+	location.href= xurl[0] + '&p=' + n; 
+}
+
+//파라미터값
+function getUriString(param)
+{
+	var QuerySplit = location.href.split('?');
+	var ResultQuer = QuerySplit[1] ? QuerySplit[1].split('&') : '';
+
+	for (var i = 0; i < ResultQuer.length; i++)
+	{
+		var keyval = ResultQuer[i].split('=');
+		if (param == keyval[0]) return keyval[1];
+	}
+	return "";
+}
+
+
+function getPageLink_new(lnum,p,tpage,imgpath)
+{
+
+	
+
+	var g_p1 = "<span >&lt;</span>";
+	var g_p2 = "<span>&lt;</span>";
+	var g_n1 = "<span>&gt;</span>";
+	var g_n2 = "<span>&gt;</span>";
+	var g_cn = " ";
+	var g_q  = "<a href='javascript:getPageGo(1);' class='page_prev'> &lt;&lt;</a> ";
+
+	if(p < lnum+1) {
+		g_q += "<a class='page_prev'>"+g_p1+"</a>";
+	}else{
+		var pp = parseInt((p-1)/lnum)*lnum; g_q += "<a href='javascript:getPageGo("+pp+");' class='page_prev'>"+g_p2+"</a>";
+	}
+	
+	g_q += g_cn;
+
+	var st1 = parseInt((p-1)/lnum)*lnum + 1;
+	var st2 = st1 + lnum;
+
+	for(var jn = st1; jn < st2; jn++)
+	if ( jn <= tpage)
+	(jn == p)? g_q += "<a class='on_page'>"+jn+"</a>"+g_cn : g_q += "<a href='javascript:getPageGo("+jn+");' style='color:#666666;'>"+jn+"</a>"+g_cn;
+
+	if(tpage < lnum || tpage < jn) {
+		g_q += "<a class='page_next'>"+g_n1+"</a>";
+	}else{
+		var np = jn; g_q += "<a href='javascript:getPageGo("+np+");' class='page_next'>"+g_n2+"</a>";
+	}
+	g_q  += " <a href='javascript:getPageGo("+tpage+");' class='page_next'>&gt;&gt;</a>";
+	document.write(g_q);
+}
+
+function getPageLink_new2(write_pages, cur_page, total_page, url, add)
+{
+
+
+	var first = "처음페이지";
+	var prev = "이전페이지";
+	var next = "다음페이지";
+	var last = "마지막페이지";	
+	var vline = ""; // 구분선
+	
+    var str = '';
+    if (cur_page > 1) {
+        str += '<a href="'+url+'1'+add+'" class="jkbtn_arr">'+first+'</a>';
+    }
+
+    start_page = ( ( (parseInt)( (cur_page - 1 ) / write_pages ) ) * write_pages ) + 1;
+    end_page = start_page + write_pages - 1;
+
+    if (end_page >= total_page) end_page = total_page;
+
+    if (start_page > 1) str += vline+'<a href="'+url+(start_page-1)+add+'" class="jkbtn_arr">'+prev+'</a>';
+
+    if (total_page > 1) {
+        for (var k = start_page; k <= end_page; k++) {
+			
+            if (cur_page != k)
+				if(k == start_page) str += vline+'<a href="'+url+k+add+'" >'+k+'</a>';
+                else str += vline+'<a href="'+url+k+add+'" >'+k+'</a>';
+            else{
+				if(k == start_page) str += vline+'<a href="#" class="on" title="선택됨">'+k+'</a>';
+                else str += vline+'<a href="#" class="on" title="선택됨">'+k+'</a>';
+			}
+        }
+    }
+
+    if (total_page > end_page) str += vline+'<a href="'+url+(end_page+1)+add+'" class="jkbtn_arr">'+next+'</a>';
+
+    if (cur_page < total_page) {
+        str += vline+'<a href="'+url+total_page+add+'" class="jkbtn_arr">'+last+'</a>';
+    }
+	
+    if (str)
+        document.write("<div class='board_page'>"+str+"</div>");
+    else
+        document.write("");
+}
+
+function getDateFormat(date , type)
+{
+	var ck;
+	var rtstr = "";
+	var j = 0;
+	for(var i = 0; i < type.length; i++) 
+	{
+		if(type.substring(i,i+1) == 'x')
+		{
+			rtstr += date.substring(j,j+1);
+		}
+		else {
+			j--;
+			rtstr += type.substring(i,i+1);
+		}
+		j++;
+	}
+	document.write(rtstr);	
+}
+function getJosa(str, tail) 
+{ 
+    strTemp = str.substr(str.length - 1); 
+    return ((strTemp.charCodeAt(0) - 16) % 28 != 0) ? str + tail.substr(0, 1) : str + tail.substr(1, 1); 
+}
+//타입비교 (비교문자 , 비교형식 ; ex: getTypeCheck(string , "1234567890") ) 
+function getTypeCheck (s, spc)
+{
+	var i;
+
+	for(i=0; i< s.length; i++) 
+	{
+		if (spc.indexOf(s.substring(i, i+1)) < 0) 
+		{
+			return false;
+		}
+	}        
+	return true;
+}
+
+//콤마삽입 (number_format)
+function commaSplit(srcNumber) 
+{ 
+	var txtNumber = '' + srcNumber; 
+
+	var rxSplit = new RegExp('([0-9])([0-9][0-9][0-9][,.])'); 
+	var arrNumber = txtNumber.split('.'); 
+	arrNumber[0] += '.'; 
+	do { 
+		arrNumber[0] = arrNumber[0].replace(rxSplit, '$1,$2'); 
+	} 
+	while (rxSplit.test(arrNumber[0])); 
+	if (arrNumber.length > 1) { 
+		return arrNumber.join(''); 
+	} 
+	else { 
+		return arrNumber[0].split('.')[0]; 
+	} 
+}
+
+//콤마제거
+function filterNum(str) 
+{ 
+	return str.replace(/^\$|,/g, ""); 
+}
+//숫자체크
+function commaInsert(field)
+{
+	if (!getTypeCheck(field.value , "0123456789,"))
+	{
+		alert('숫자만 입력해 주세요.       ');
+		field.value = '';
+		field.focus();
+		return false;
+	}
+	field.value = commaSplit(filterNum(field.value));
+}
+</script>
+
+<script>
+function bookmarksite(url,title) {
+
+   if(window.chrome){
+      alert("Ctrl+D키를 누르시면 즐겨찾기에 추가하실 수 있습니다.");
+   }
+   // Firefox
+   else if (window.sidebar) // firefox
+   {
+       window.sidebar.addPanel(title, url);
+   }
+   // Opera
+   else if(window.opera && window.print)
+   { // opera
+      var elem = document.createElement('a');
+      elem.setAttribute('href',url);
+      elem.setAttribute('title',title);
+      elem.setAttribute('rel','sidebar');
+      elem.click();
+   }
+   else if (window.external && ('AddFavorite' in window.external)) {
+            // IE Favorite
+       window.external.AddFavorite(url, title);
+   }else {
+	alert('죄송합니다. 현재 브라우저는 북마크 등록이 지원되지 않습니다. 직접 등록해주세요.');
+	return false;
+}
+}
+$(document).ready(function(){
+
+	var currentHost = window.location.hostname; // 현재 도메인 (예: admin.example.com)
+	var targetHost = "edulife.sungkyul.ac.kr"; // 유지할 메인 도메인
+	var allowedSubdomains = ["admin", "helper", "tutor"]; // 리다이렉트할 서브도메인 리스트, devel 추가 후 실서버 적용
+
+	var parts = currentHost.split(".");
+	if (parts.length > 2) {
+	var subdomain = parts[0]; // 첫 번째 부분이 서브도메인 (예: admin)
+
+	if (allowedSubdomains.includes(subdomain)) {
+		// www.으로 변경 후 동일한 URL 유지
+		var newUrl = window.location.protocol + "//" + targetHost + window.location.pathname + window.location.search + window.location.hash;
+		window.location.href = newUrl;
+		}
+	}
+    
+    $('.btn_layer_support').on('click', function(){
+        var op = $(this);
+        var lp = $("#" + $(this).attr("aria-controls"));
+        accessibilityFocus(op,lp);
+	});
+	
+	var popup_login = getCookie('popup_login');
+    if (popup_login =="done") {
+        $(".login_pop").hide();
+    } else {
+		$(".login_pop").show();
+	}
+    
+    $('.login_pop_close').click(function () {
+        $(this).parent().hide();
+        setCookie00('popup_login', "done", 1);
+    });
+	
+	$("body").find("iframe").each(function(index, item){
+		if($(item).attr("title") == undefined) {
+			$(item).attr("title", "스크랩처리");
+		}		
+	});	
+	
+	$(".allmenu > div > ul").each(function(index) {
+	  var targetWidth = $(".main_menu > li").eq(index).width();
+	  if(index == 0) {
+		  $(this).css({"width": targetWidth + 70, "margin-left": "100px"});
+	  } else {
+		  $(this).css("width", targetWidth + 70);
+	  }
+	});
+	
+	 var $allMenu = $(".allmenu"); 
+     var $menuBtn = $('.btn_allmenu');
+	
+	
+	 $('nav').on('mouseenter', function() {
+//        $menuBtn.addClass('open');
+        $allMenu.addClass('open');
+//        $allMenu.stop(true,true).slideDown(400);
+//		 if (!$allMenu.is(':animated')) {
+//			$allMenu.slideDown(400);
+//		 }
+	 }).on('mouseleave', function() {
+		$menuBtn.removeClass('open');
+		$allMenu.removeClass('open');
+//		if (!$allMenu.is(':animated')) {
+//			$allMenu.slideUp(400);
+//		}
+//		$allMenu.stop(true,true).slideUp(400);
+	 });
+
+	$('.btn_allmenu').click(function(){
+		$(this).toggleClass('open');
+		$allMenu.toggleClass('open');
+//    	$allMenu.stop(true, true).slideToggle(400);
+	});
+	
+});
+function accessibilityFocus(op, lp) {
+    var lpObj = lp.children(".lpop_cont");
+    var lpObjClose = lp.find(".lpop_close");
+    var lpObjTabbable = lpObj.find("button, input:not([type='hidden']), select, iframe, textarea, [href], [tabindex]:not([tabindex='-1'])");
+    var lpObjTabbableFirst = lpObjTabbable && lpObjTabbable.first();
+    var lpObjTabbableLast = lpObjTabbable && lpObjTabbable.last();
+    var lpOuterObjHidden = $(".skip-links, .masthead, .initial-content, .search-content, .page__footer"); 
+    var all = $(".masthead, .page__footer").add(lp);
+    var tabDisable;
+
+
+    lpOuterObjHidden.attr("aria-hidden", "true"); 
+    lpObjTabbable.length ? lpObjTabbableFirst.focus().on("keydown", function(event) { 
+        if (event.shiftKey && (event.keyCode || event.which) === 9) {
+            event.preventDefault();
+            lpObjTabbableLast.focus();
+        }
+    }) : lpObj.attr("tabindex", "0").focus().on("keydown", function(event){
+        tabDisable = true;
+        if ((event.keyCode || event.which) === 9) event.preventDefault();
+    });
+
+    lpObjTabbableLast.on("keydown", function(event) {
+        if (!event.shiftKey && (event.keyCode || event.which) === 9) {
+            event.preventDefault();
+            lpObjTabbableFirst.focus();
+        }
+    });
+
+//    lp.attr("tabindex", 0).show().focus();
+	lp.show().focus();
+	lp.find('.lpop_close').attr("tabindex", 0).focus();
+    lpObjClose.on('click', function(){
+        lp.hide();
+        lpOuterObjHidden.removeAttr("aria-hidden");
+        op.attr("tabindex", 0).focus();
+    });
+}
+function getCookie(name) {
+    var nameOfCookie = name + "=";
+    var x = 0;
+    while (x <= document.cookie.length) {
+        var y = (x + nameOfCookie.length);
+        if (document.cookie.substring(x, y) == nameOfCookie) {
+            if ((endOfCookie = document.cookie.indexOf(";", y)) == -1)
+                endOfCookie = document.cookie.length;
+            return unescape(document.cookie.substring(y, endOfCookie));
+        }
+        x = document.cookie.indexOf(" ", x) + 1;
+        if (x == 0) break;
+    }
+    return "";
+}
+function setCookie24(name, value, expiredays) {
+    var todayDate = new Date();
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+}
+
+function setCookie00(name, value, expiredays) {
+    var todayDate = new Date(); todayDate = new Date(parseInt(todayDate.getTime() / 86400000) * 86400000 + 54000000);
+    if (todayDate > new Date()) {
+        expiredays = expiredays - 1;
+    }
+    todayDate.setDate(todayDate.getDate() + expiredays);
+    document.cookie = name + "=" + escape(value) + "; path=/; expires=" + todayDate.toGMTString() + ";";
+}
+	
+</script>
+    
+
+
+
+<script>
+var logexp = location.href.split('/');
+var favoriteurl= 'https://' + logexp[2]; //홈페이지주소
+var favoritetitle= '성결대학교원격평생교육원'; //홈페이지타이틀
+
+function HelpControll(){
+        window.open('https://helpu.kr/nesnet/','helpcontroll','toolbar=no,location=no,directories=no,status=no,menubar=no,scrollbars=yes,top=50,left=50,width=840,height=550');
+}
+</script>
+<script>
+if(navigator.userAgent.match(/Android|Mobile|iP(hone|od|ad)|BlackBerry|IEMobile|Kindle|NetFront|Silk-Accelerated|(hpw|web)OS|Fennec|Minimo|Opera M(obi|ini)|Blazer|Dolfin|Dolphin|Skyfire|Zune/)){
+
+ location.href = "https://medulife.sungkyul.ac.kr/";  //모바일용 인덱스파일을 띄어라
+
+}
+
+</script>
+
+
+
+<style>
+a:focus-visible {outline: 2px solid #ff0000; outline-offset: 1px;}
+.snb a:focus-visible {outline: 2px solid #ff0000; outline-offset: -2px;}
+.btn_logins a:focus-visible {outline: 2px solid #000; outline-offset: 2px;}
+#skip a:focus-visible {outline: 2px solid #ff0000; outline-offset: -2px;}
+.header_wrap_top a:focus-visible, .header_wrap_menu a:focus-visible {outline: 2px solid #ff0000; outline-offset: 1px;}
+.header_wrap_top p.htop_img {width: auto; margin: 10px 15px 0 0;}
+.header_wrap_menu .f_left + .f_left {margin-left: 30px;}
+	
+.time_atec * {font-family: NotoSansKR;}
+.time_atec {height:60px; background:#222; color:#fff; text-align:center; font-size:32px; padding:0; margin:0;  position:relative; min-width:1000px; display:block  }
+.time_atec span{padding:0; margin:0;  height:60px;  display:inline-block}
+.time_atec em{font-size:18px; letter-spacing:0; font-style:normal; color: #aaa;}
+.time_atec h3{padding:0; margin: 5px 20px 0 0; font-size:16px; display:inline-block; line-height: 1.3; letter-spacing: 0; font-weight:normal;}
+.time_atec h3 strong{display: block; font-size: inherit; font-weight: 600; color:#fff; padding:0; margin:0; }
+.time_atec #clock strong{background:url("./index_files/time_bak.png") no-repeat  0px 5px; background-size: contain; padding-left:5px; line-height:60px; box-sizing:border-box; display:inline-block; width:66px; font-size: 32px; letter-spacing: 16px;}
+.time_atec .re_btnclass { position:absolute; left:50%; margin-left:300px; top:10px; width:120px;height:30px; text-align:center;  line-height:0}
+.time_atec .re_btnclass a{ text-decoration:none; color:#fff; font-size:14px; width:100%; font-size: 14px; line-height:26px; padding:4px; width:110px;height:38px; display:block; border-radius:18px; letter-spacing:0px; font-weight:bold; border: 1px solid #fff; border-radius: 4px; box-sizing: border-box;}
+.icon-emo-sunglasses{display: inline-block; z-index:100000;background: url("index_files/ic_menu.png") no-repeat  center; position:absolute; top:10px; RIGHT:10px; color:#fff; width:40px; height:40px; text-align:center; font-size:24px; font-weight:bold; border-radius:20px; cursor: pointer; opacity: 0.8;}
+.icon-emo-sunglasses:hover {opacity: 1;}
+.icon-emo-grin{z-index:100000;background:url("./index_files/time_close.png") no-repeat 5px 5px;; position:absolute; top:10px;RIGHT:10px; color:#fff; width:40px; height:40px; text-align:center; font-size:24px; font-weight:bold; border-radius:20px; cursor: pointer;}
+	
+#moo_container{display:none}
+#n_container{display:block; background: transparent;}
+	
+body {background: #fff;}
+#n_container.n_container_new {display:block; margin: 50px auto; padding: 0; background: #fff; border-radius: 10px;}
+.n_container_new .new_contentbox {float: left; width: calc(100% - 10px); margin: 10px 0; background: #f5f6fb; border-radius: 10px;}
+.n_container_new .tbl_paylist td {background: #fff;}
+.n_container_new .snb {overflow: visible;}
+.n_container_new .snb h1 {background: none; color: #333;}
+.n_container_new .menu_v li.active {border: none;}
+.n_container_new .menu_v li a {padding: 10px 0px 10px 10px; border: none;}
+.n_container_new .menu_v li a:hover {background: none;}
+.n_container_new .menu_v li a .i {background: none;}
+.n_container_new .menu_v li:hover:after {content: ''; position: absolute; bottom: 5px; left: 10px; display: inline-block; width: calc(100% - 20px); height: 1px; background: #3b59c5;}
+.n_container_new .menu_v li.active a, .n_container_new .menu_v li a:hover {color: #3b59c5;}
+.n_container_new .menu_v li.active .i {border-radius: 100%; width: 24px; height: 24px; margin: 0; left: calc(100% - 10px); top: calc(50% - 12px); transform: rotate(180deg); background: #f5f6fb url(/img/n_img/ico_sub.gif) no-repeat 8px 8px;}
+.n_container_new .banner_new1 {width: calc(100% - 20px); margin: 40px 10px 10px 10px; border: none; background: #f5f6fb; border-radius: 10px;}
+.n_container_new .banner_new1 > p {padding-left: 10px;}
+.n_container_new .banner_new1 > p:first-child {padding-left: 0; font-size: 22px; text-align: center; color: #D50000;}
+.n_container_new .banner_new1 > p:first-child:before {content: ''; display: inline-block; width: 32px; height: 32px; background: url('/img/new_page/images/ic_banner.png')}
+.n_container_new .banner_new1 > span {padding: 10px 0 0 10px;}
+.n_container_new .banner_new1 span {color: #333;}
+.n_container_new .banner_new1 > p.frm_title {padding: 10px;}
+.n_container_new .banner_new1 > p.frm_title:before {left: 10px; width: calc(100% - 20px);}
+.n_container_new .info_regbox {padding: 0 10px;}
+.n_container_new .banner_new1.banner_new_fixed, .n_container_new .banner_new1.banner_new_bot {width: 170px;}
+.n_container_new .info_regbox .infor_ok {background: #b0b0b0; color: #fff;}
+.n_container_new .info_regbox .btn_ok {border-color: #3c42a0; background: #4951be;}
+.n_container_new .info_regbox .nwitems .nwi_texts, .n_container_new .info_regbox .nwitems select {border-color: #E3E4E8;}
+	
+#skip{position:relative;z-index:9999}
+#skip a{position:absolute;top:-40px;left:0;width:100%;padding:5px 0;background-color:#033478;font-size:14px;line-height:30px;color:#FFF;text-align:center;transition:all 0.4s}
+#skip a:hover,#skip a:focus,#skip a:active{top:0;text-decoration:none}
+.hide2{overflow:hidden;position:absolute;left:-1px;top:-1px;width:0;height:0;font-size:0;line-height:0}/* 접근성으로 인한 display:none 작성 금지 */
+	
+
+.header_logo h1 {position: absolute;top: 45px;left: calc(50% - 160px); font-size: 0; line-height: 0;}
+#layer_support {display: none;}
+#layer_support .bg_form {opacity: 0.4;}
+.layer_cont {position:fixed; top:50px; left:50%; display:block; width:700px; margin-left:-350px; padding: 0; border:1px solid #888; background: #fff; box-sizing:border-box; overflow:hidden; z-index:9999; border-radius: 10px;}
+.layer_cont h3{font-size:23px; font-weight:bold; padding-left: 20px; position:relative; margin:0; line-height:60px; border-bottom:1px solid #bcbcbc; background:#eee; color:#222;}
+.layer_cont h3 span{ font-size:17px; font-weight:400; color:#888; display:block}
+.layer_cont h3 > a {position:absolute; top: 10px; right: 10px}
+.layer_cont > div {padding: 40px 0; text-align: center;}
+.layer_cont > div .layer_cont_btn {margin-top: 20px;}
+.layer_cont .btn_support {display: inline-block; margin-left: 18px;}
+.layer_cont .btn_support:first-child {margin-left: 0;}
+	
+	
+.header_wrap .login_pop {position: absolute; top: 145px; right: calc(50% - 685px); width: 260px; height: 100px; text-align: center; border: 1px solid #f0f0f0; background: #fff; border-radius: 5px; box-shadow: 0px 2px 2px 2px rgba(0,0,0,0.2); z-index: 10;}
+.header_wrap .login_pop > a {position: absolute; top: 5px; right: 2px; line-height: 1; filter: invert(1); z-index: 11;}
+.header_wrap .login_pop_cont {position: relative; }
+.header_wrap .login_pop_cont:before {content: ''; position: absolute; top: -25px; left: calc(50% - 9px); width: 18px; height: 9px; background: url('/img/new_page/main_new2/ic_msg_arrow.png') no-repeat;}
+.header_wrap .login_pop_cont > p {margin-top: 16px; font-size: 13px; color: #757575;}
+.header_wrap .login_pop_cont > p > span {font: inherit; font-weight: 600; color: inherit;}
+.header_wrap .login_pop_cont > a {display: inline-block; min-width: 58px; margin-top: 6px; padding: 5px 8px; font-size: 13px; line-height: 1; background: #333; color: #fff; border-radius: 2px;}
+.header_wrap .login_pop_cont > a + a {margin-left: 4px; background: #18a4ea;}
+
+
+.header_wrap {position: relative; height: 100px;}
+.header_wrap, .footer_wrap, #n_wrap, .time_atec, #n_container {min-width: 1252px;}
+.header_wrap .section_cont, .footer_wrap .section_cont {width: 1252px;}
+/*.header_wrap .section_cont, .footer_wrap .section_cont {width: 1200px;}*/
+.header_wrap .header_top .section_cont > div, .header_wrap .header_main .section_cont > div {display: inline-block; width: 100%;}
+.header_wrap .header_top {height: 70px; background: #fff}
+.header_wrap .header_top h1 {float: left; margin: 10px 0 0 0; padding: 0; line-height: 1;}
+.header_wrap .header_top ol.top_menu {float: right; margin-top: 20px;}
+.header_wrap .header_top ol.top_menu > li {float: left; font-size: 16px; line-height: 28px;}
+.header_wrap .header_top ol.top_menu > li:first-child {margin-left: 0;}
+.header_wrap .header_top ol.top_menu > li:before {content: ''; display: inline-block; width: 1px; height: 12px; vertical-align: middle; background: #ddd;}
+.header_wrap .header_top ol.top_menu > li:first-child:before {display: none;}
+.header_wrap .header_top ol.top_menu > li > a, .header_wrap .header_top ol.top_menu > li > a > span {font: inherit;}
+.header_wrap .header_top ol.top_menu > li > a {display: inline-block; padding: 0 12px; font: inherit;}
+.header_wrap .header_top:after {content: ""; display: block; clear: both;}
+
+
+.header_wrap .header_main * {line-height: 1;}
+.header_wrap .header_main {height: 80px; padding-top: 10px; border-top: 1px solid #ddd; border-bottom: 1px solid #ddd;}
+.header_wrap .header_main nav {float: right; display: inline-block; height: 70px; padding-top: 10px;}
+.header_wrap .header_main ul.main_menu {float: right; padding-right: 40px;}
+.header_wrap .header_main ul.main_menu > li {float: left; position: relative; margin-left: 80px; font-size: 20px; line-height: 32px; font-weight: 600;}
+.header_wrap .header_main ul.main_menu > li > a {position: relative; display: inline-block; width: 100%; height: 100%; font-size: inherit; line-height: 2; color: #222;}
+.header_wrap .header_main ul.main_menu > li > a:before {content: ''; position: absolute; top: -8px; left: calc(50% - 4px); display: inline-block; width: 8px; height: 8px; background: #2a5ca5; border-radius: 100%; transform: scale(0); transition: transform 250ms ease;}
+.header_wrap .header_main ul.main_menu > li > a:hover:before {transform: scale(1);}
+.header_wrap .header_main ul.main_menu > li > a:after {content: ''; position: absolute; bottom: -4px; left: 0; display: inline-block; width: 100%; height: 3px; background: #2a5ca5; transform: scaleX(0); transition: transform 250ms ease;}
+.header_wrap .header_main ul.main_menu > li > a:hover:after {transform: scaleX(1);}
+/*
+.header_wrap .header_main ul.main_menu > li:last-child:before {content: ''; position: absolute; top: 10px; left: -35px; display: inline-block; width: 1px; height: 14px; background: #999;}
+.header_wrap .header_main ul.main_menu > li:last-child > a > span {display: inline-block; margin: 12px 4px 0 0; vertical-align: top; filter: invert(1);}
+*/
+.header_wrap .btn_allmenu {float: left; display: inline-block; margin: 18px 10px 10px 10px;}
+.header_wrap .btn_allmenu > span {display: block; width: 26px; height: 3px; margin-top: 5px; background: #333; transition: all 0.3s;}
+.header_wrap .btn_allmenu > span:nth-child(1) {margin-top: 0;}
+.header_wrap .btn_allmenu > span:nth-child(2) {width: 22px;}
+.header_wrap .btn_allmenu > span:nth-child(3) {width: 18px;}
+.header_wrap .btn_allmenu.open > span:nth-child(1) {width: 23.5px; margin-top: 5px; transform: rotate(-45deg) translateY(5.5px);}
+.header_wrap .btn_allmenu.open > span:nth-child(2) {display: none;}
+.header_wrap .btn_allmenu.open > span:nth-child(3) {width: 24px; transform: rotate(45deg) translateY(-5.5px);}	
+	
+.header_wrap .allmenu {position: absolute; top: 150px; left: 0; width: 100%; height: 0; padding: 0; background: #fff; overflow: hidden; transform-origin: top; transition: height 0.4s ease; z-index: 101;}
+.header_wrap .allmenu .section_cont {padding: 10px 0;}
+.header_wrap .allmenu.open {height: 315px; border-bottom: 1px solid #c7c8c9; transform-origin: top; transition: height 0.4s ease;}
+.header_wrap .allmenu.open .section_cont {position: absolute; top: 0; left: calc(50% - 626px);}
+.header_wrap .allmenu ul {float: left; min-height: 290px; margin-left: 10px; padding-left: 10px; text-align: left; border-left: 1px solid #c1c8d1}
+.header_wrap .allmenu ul:first-child {margin-left: 0;}
+.header_wrap .allmenu ul > li {position: relative; margin-top: 10px; font-size: 18px; line-height: 1.5; text-align: center; letter-spacing: -0.5px; color: #444;}
+.header_wrap .allmenu ul > li:first-child {margin-top: 5px;}
+.header_wrap .allmenu ul > li > a {position: relative; display: inline-block; font: inherit;}
+.header_wrap .allmenu ul > li:hover > a {color: #2a5ca5;}
+/*.header_wrap .allmenu ul > li:hover > a:before {content: ''; position: absolute; top: calc(50% - 1px); left: -2px; display: inline-block; width: 3px; height: 3px; background: #2a5ca5; border-radius: 100%;}*/
+.header_wrap .allmenu ul > li:hover > a:after {content: ''; position: absolute; bottom: -2px; left: 0; display: inline-block; width: calc(100% - 5px); height: 1px; margin-left: 5px; background: #2a5ca5;}
+
+
+
+.footer_wrap {position: relative; margin-bottom: -16px; font-size: 14px; line-height: 1; border-top: 1px solid #d7d7dc; background: #f3f3f7; color: #333;}
+.footer_wrap .footer_menu {display: inline-block; width: 100%; padding: 12px 0;}
+.footer_wrap .footer_menu ul > li {position: relative; float: left; margin-left: 40px; line-height: 28px;}
+.footer_wrap .footer_menu ul > li:before {content: ':'; position: absolute; top: 0; left: -21px; color: rgba(68, 68, 68, 0.3);}
+.footer_wrap .footer_menu ul > li > a {display: inline-block; width: 100%; height: 100%; font-size: 15px;}
+.footer_wrap .footer_menu ul > li:first-child {margin-left: 0;}
+.footer_wrap .footer_menu ul > li:first-child:before {display: none;}
+.footer_wrap .footer_info {display: inline-block; width: 100%; padding: 40px 0; border-top: 1px solid rgba(208, 208, 213, 0.8);}
+.footer_wrap .footer_info > p, .footer_info > div {float: left;}
+.footer_wrap .footer_info > p:after {content: ''; display: inline-block; width: 1px; height: 45px; margin: 20px 20px 0 20px; vertical-align: top; background: rgba(208, 208, 213, 0.8);;}
+.footer_wrap .footer_info > div {padding-top: 18px;}
+.footer_wrap .footer_info > div > p {display: inline-block; margin-right: 10px;}
+.footer_wrap .footer_info > div > p > span {margin-right: 5px;}
+.footer_wrap .footer_info > div > p > span:after {content: ':';}
+.footer_wrap .footer_info > div > p:last-child {display: block; margin-top: 5px; font-size: 12px; color: #a0a0a0; letter-spacing: 0;}
+</style>
+
+</head>
+<body style="">
+
+<!-- 팝업 -->
+<!-- 팝업 E -->
+
+
+
+<!-- 팝업 -->
+<!-- 팝업 E -->
+
+
+
+<link href="./index_files/swiper_4.5.1.css" rel="stylesheet" type="text/css">
+<script src="./index_files/swiper_4.5.1.js.다운로드"></script>
+
+<script>
+$(function() {
+	//20210503 웹접근성 - 상단 펼침메뉴 관련
+	$("#n_top_menu button, #n_top_menu a").focus(function() {
+		$("#n_bottom_menu").css({"display":""});
+	});
+	$("button, a, input").not("#n_top_menu button, #n_top_menu a, #n_top_menu input").focus(function() {
+		$("#n_bottom_menu").css({"display":"none"});
+	});
+	
+	var date_txt = '2026-10-13';
+	var date_arr = date_txt.split('-');
+	var date_dday = date_arr[1] + '월 ' +date_arr[2] + '일 ';
+	$('.time_atec > h3 > strong').html(date_dday + '개강반');
+
+	if (h_getCookie("tb_close")=="Y") {
+ 		$("#spreadBtn").toggleClass(" icon-emo-sunglasses icon-emo-grin");
+ 		$("#hiddenList").css({"display":"none"});
+ 	} else {
+	 	$("#hiddenList").slideDown();       
+	}
+	
+    $('#spreadBtn').click(function(){
+        if($("#hiddenList").is(":visible")){
+            $("#spreadBtn").toggleClass("icon-emo-grin icon-emo-sunglasses");
+            $("#hiddenList").slideUp();
+
+			h_setCookie("tb_close","Y",1);
+        }else{
+            $("#spreadBtn").toggleClass("icon-emo-sunglasses icon-emo-grin");
+			$("#hiddenList").slideDown();
+
+			h_setCookie("tb_close","",-1);
+        }
+
+    });
+	
+	var result_dday =  date_arr[0] + '/' + date_arr[1] + '/' + String(Number(date_arr[2]) - 1).padStart(2, '0') + ' 23:59:59';
+
+	$('#clock').countdown(result_dday, function(event) {
+		if(event.type == 'finish') {
+			$("#spreadBtn").toggleClass(" icon-emo-sunglasses icon-emo-grin");
+ 			$("#hiddenList").css({"display":"none"});
+		}
+		$(this).html(event.strftime('<strong>%D</strong><em>day</em> <strong>%H</strong> : <strong>%M</strong> : <strong>%S</strong>'));
+	});
+	
+});
+	function h_getCookie(cname) {
+		var name = cname + "=";
+		var ca = document.cookie.split(';');
+		for(var i=0; i<ca.length; i++) {
+			var c = ca[i];
+			while (c.charAt(0)==' ') c = c.substring(1);
+			if (c.indexOf(name) != -1) return c.substring(name.length,c.length);
+		}
+		return "";
+	} 
+
+	function h_setCookie(cname, cvalue, exdays) {
+		var d = new Date();
+		d.setTime(d.getTime() + (exdays*24*60*60*1000));
+		var expires = "expires="+d.toUTCString();
+		document.cookie = cname + "=" + cvalue + "; path=/; " + expires;
+	}
+</script>
+
+
+
+<script>
+$(document).ready(function(){
+
+	$('.btn_sitemap').click(function() {
+		$(this).attr("aria-expanded", true);
+		$('header').toggleClass('active');
+	});
+
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = $('header').outerHeight();
+
+	$(window).scroll(function(event){
+	    didScroll = true;
+	});
+	setInterval(function(){
+	    if(didScroll){
+	        hasScrolled();
+	        didScroll = false;
+	    }
+	}, 250);
+	function hasScrolled(){
+	    var st = $(this).scrollTop();
+
+	    if(Math.abs(lastScrollTop - st) <= delta)
+	    return;
+	    if(st > lastScrollTop && st > navbarHeight){
+	        $('header').removeClass('header_down').addClass('header_up');
+	    }else{
+	        if(st + $(window).height() < $(document).height()){
+	            $('header').removeClass('header_up').addClass('header_down');
+	        }
+	    }
+	    lastScrollTop = st;
+	}
+});
+
+</script>
+	
+	<script>
+window.addEventListener('DOMContentLoaded', function() {
+    var menu = document.getElementById('menu_v');
+    if (!menu) return;
+
+    // 메뉴의 원래 상단 위치(절대 좌표) 구하기
+    var menuRect = menu.getBoundingClientRect();
+    var menuOffsetTop = window.pageYOffset + menuRect.top;
+
+    // 빈 공간을 채워줄 placeholder(유령 상자) 동적 생성
+    var placeholder = document.createElement('div');
+    placeholder.className = 'menu-placeholder';
+    placeholder.style.height = menu.offsetHeight + 'px';
+    menu.parentNode.insertBefore(placeholder, menu);
+
+    window.addEventListener('scroll', function() {
+        var scrollY = window.pageYOffset;
+
+        // 스크롤 위치가 메뉴의 원래 위치보다 내려갔을 때
+        if (scrollY >= menuOffsetTop) {
+            menu.classList.add('is-fixed');
+            placeholder.classList.add('active');
+        } else {
+            menu.classList.remove('is-fixed');
+            placeholder.classList.remove('active');
+        }
+    });
+});
+</script>
+
+  <!------------------상단배너 열고 닫기 버튼  --------------->
+
+<script src="./index_files/jquery.countdown.js.다운로드"></script>
+
+<!-- skip menu 시작 -->
+<div id="skip">
+    <strong class="hide2">반복영역 건너뛰기</strong>
+    <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01#conts_pagviews" tabindex="0" title="본문바로가기">본문 바로가기</a>
+</div>
+<!-- skip menu 끝//-->
+
+<div class="icon-emo-sunglasses" id="spreadBtn"></div>
+<div id="hiddenList" style="">
+    <div class="time_atec">
+        <h3><strong>10월 13일 개강반</strong>선착순 모집중</h3> <span id="clock"><strong>05</strong><em>day</em> <strong>14</strong> : <strong>36</strong> : <strong>37</strong></span>
+        <div class="re_btnclass"><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/degree.php?q=content01">수강신청하기</a></div>
+    </div>
+</div>
+
+<!--- 시간 타이머 --->
+
+<!-- UI Object -->
+<div id="n_wrap">
+<!-- header -->
+<div id="n_header">
+<div class="header_wrap"> 
+<!--
+		<div class="login_pop">
+		<a href="javascript:;" class="login_pop_close"><img src="/img/new_page/main_new2/ic_close.png" alt=""></a>
+		<div class="login_pop_cont">
+			<p>나의강의실은<br><span>회원 로그인 후 이용가능합니다.</span></p>
+			<a href="/lec/home/cyberlec/new_member.php?q=content01">로그인</a>
+			<a href="/lec/home/cyberlec/new_member.php?q=content09">공동(범용)인증서 로그인</a>
+		</div>
+	</div>
+	-->
+  
+  
+  	<div class="header_top is-fixed">
+		<div class="section_cont">
+			<div>
+				<h1>
+					<a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_index.php"><img src="./index_files/logo_sku02.png" alt="성결대학교"></a>
+				</h1>
+				<ol class="top_menu">
+				 	<!--				<li><a href="/lec/home/cyberlec/new_member.php?q=content09"><span>범용공동인증서 로그인</span></a></li>-->
+				 									<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_member.php?q=content01&amp;referer=%2Flec%2Fhome%2Fcyberlec%2Fnew_welfare.php%3Fq%3Dcontent01"><span>로그인</span></a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_member.php?q=content04_3"><span>무료회원가입</span></a></li>
+
+									<li><a href="javascript:;" onclick="bookmarksite();"><span>즐겨찾기</span></a></li>
+																								</ol>
+			</div>
+		</div>
+	</div>
+  
+  
+   <div class="header_main">
+		<div class="section_cont">
+			<div>
+			<a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01#" class="btn_allmenu" title="전체메뉴"><span></span><span></span><span></span></a>
+			<nav>
+				<ul class="main_menu">
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01">과정안내</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_credit.php?q=content01">학점은행제</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=notice">학습지원</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">수강신청</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content01">실습지원센터</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_membership.php?q=content08">회원서비스</a></li>
+					<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content01">나의강의실</a></li>
+				</ul>
+				<div class="allmenu">
+					<div class="section_cont">
+						<ul style="width: 142px; margin-left: 100px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01">사회복지사 소개</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content02">자격안내 및 이수과목</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content03">자격증교부절차</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content04">사회복지학사(전문학사)</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content05">최종학력별 이용안내</a></li>
+						</ul>
+						<ul style="width: 160px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_credit.php?q=content01">학점은행제란?</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_credit.php?q=content02">학점인정 절차</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_credit.php?q=content03">학위수여</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_credit.php?q=content04">학점인정 주의사항</a></li>
+						</ul>
+						<ul style="width: 142px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=notice">공지사항</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=reviews">수강후기</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=sandong">이벤트</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=faq">자주묻는질문</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/bbs.php?id=qna">학습상담</a></li>
+						</ul>
+						<ul style="width: 142px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">수강신청</a></li>
+<!--							<li><a href="/lec/home/cyberlec/new_degree.php?q=content02">패키지신청</a></li>-->
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content03">장바구니</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content09">수강신청내역</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content05_2">무료학습설계</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content04">학사일정</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content06">개강일정안내</a></li>
+						</ul>
+						<ul style="width: 177px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content01">서류작성전 필수사항</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content02_3">현장실습진행절차안내</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content02_1">현장실습서류안내 및 작성</a></li>	
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content02_2">현장실습기관안내</a></li>
+						</ul>
+						<ul style="width: 160px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_membership.php?q=content08">회원서비스</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_membership.php?q=content09">수강PC관리</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_membership.php?q=content03">학적부입력</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_support.php?q=content02_1">현장실습관리</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_member.php?q=re_pw2">비밀번호변경</a></li>						
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_membership.php?q=content05">회원탈퇴요청</a></li>
+						</ul>
+						<ul style="width: 160px;">
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content01">강의실입장</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content02">수강이력</a></li>
+<!--							<li><a href="/lec/home/cyberlec/new_myclassroom.php?q=content03">수강신청내역</a></li>-->
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content04">성적확인</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content05">증명서발급</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content06">다운로드센터</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content07">오리엔테이션</a></li>
+							<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_myclassroom.php?q=content12">증빙서류</a></li>
+						</ul>
+					</div>
+				</div>
+			</nav>
+			</div>
+
+		</div>
+	</div>
+
+</div>
+
+<div id="layer_support">
+    <div class="mw_qu_form">
+        <div class="bg_form"><!-- Don't put here any content --></div>
+    </div>
+    <div class="layer_cont lpop_cont">
+       <h3><a href="javascript:;" class="lpop_close" onclick="document.getElementById('layer_support').style.display='none'" title="원격지원 안내 닫기"><img src="./index_files/ic_pop_close.png" alt="닫기"></a></h3>
+        <div>
+            <img src="./index_files/img_support2.jpg" alt="원격지원안내, 원격 기술지원 이용 순서, 문제점 확인: 원격지원 받으실 PC 문제점을 메모해주세요, 원격지원 상담 전화: 먼저 전화주세요. 전화 상담 중에만 원격지원이 가능합니다, 원격서비스 시작: 상담원의 안내에 따라 서비스 접속 후 원격제어로 문제를 진단받고 해결합니다., 학습설계 및 수강과정 문의는 각 담당자에게 유선 상담 후 원격지원, 출석 및 시험 등 학사관련 문의는 02-835-1903 유선 상담 후 원격지원">
+            <div class="layer_cont_btn">
+                <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/newlanding/guide/gosischool-0-9510-9511.exe" class="btn_support"><img src="./index_files/btn_support01.jpg" alt="입학상담 원격서비스 신청하기"></a>
+                <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/newlanding/guide/newm-0.exe" class="btn_support"><img src="./index_files/btn_support02.jpg" alt="학사운영 원격지원 바로가기"></a>
+                <a href="https://helpu.kr/nesnet/" target="_blank" class="btn_support" title="새창열림"><img src="./index_files/btn_support03.jpg" alt="원격지원 바로가기"></a>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- //header -->
+
+
+</div>
+<div id="n_container">
+<!-- 디바이스 로그인  -->
+<table style="width:100%; padding:0; margin:0" onclick="MemberLayerHide(event)">
+
+<tbody><tr>
+		<td style="vertical-align:top"><script>
+$(function() { 
+	var uri = $(location).attr('search'); 
+	var no = '';
+
+	if(uri.indexOf("content01") != -1) no = 1;
+	if(uri.indexOf("content02") != -1) no = 2;
+	if(uri.indexOf("content03") != -1) no = 3;
+	if(uri.indexOf("content04") != -1) no = 4;
+	if(uri.indexOf("content05") != -1) no = 5;
+	if(uri.indexOf("content07") != -1) no = 6;	
+//	if(uri.indexOf("content07") != -1) no = 7;	
+
+	
+	for(var i = 1; i <= 6; i ++) {
+//		console.log('7  i=',i, ' no =',no);
+		if(i == no) $('.menu_ul > li:nth-child('+no+')').addClass('active');		
+		else	$('.menu_ul > li:nth-child('+i+')').removeClass('active');
+	}
+});
+</script>		
+<!-- snb -->
+<div class="snb snb_left">
+		<!-- 왼쪽 퀵메뉴 -->
+			<!-- 메뉴 Object -->
+			<h1>과정안내</h1>
+			<div class="menu_v fixed_menu" id="menu_v">
+				<ul class="menu_ul is-fixed">
+				<li class="active active_menu"><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content01"><span>사회복지사 소개</span><span class="i"></span></a></li>
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content02"><span>자격안내 및 이수과목</span><span class="i"></span></a></li>
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content03"><span>자격증교부절차</span><span class="i"></span></a></li>
+                <li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content04"><span>사회복지학사(전문학사)</span><span class="i"></span></a></li>
+                <li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_welfare.php?q=content05"><span>최종학력별이용안내</span><span class="i"></span></a></li>
+<!--                <li><a href="/lec/home/cyberlec/new_welfare.php?q=content07"><span>건강가정사 소개</span><span class="i"></span></a></li>-->
+                <!--li><a href="/lec/home/cyberlec/new_welfare.php?q=content06"><span>상담신청</span><span class="i"></span></a></li-->
+<!--  				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01"><span>수강신청</span><span class="i"></span></a></li>-->
+				</ul>
+			</div>
+			<!-- //메뉴 Object -->
+			<!-- 배너 -->
+			<style>
+#mw_tempform_agree {display: none;}
+.mw_qu_form {position:fixed;;top:0;left:0;width:100%;height:100%; z-index:999; }  
+.bg_form {position:absolute;top:0;left:0;width:100%;height:100%;background:#000;opacity:.8;filter:alpha(opacity=80); z-index:100}
+.fg_form_agree {position:fixed; top:150px; left:50%; display:block; float:right; border:1px solid #222; text-align:left; padding: 0; height:400px;width:460px; margin-left:-230px; background:#fff; overflow:hidden; z-index:9999;}
+.fg_form_agree h3 {font-size:28px; font-weight:800; padding:0 0 0 30px; position:relative; margin:0; line-height:60px; background:#114de3; color: #fff}
+.fg_form_agree a.ic_close {position: absolute; top: 5px;right: 0;}
+.div_agree {margin: 20px 30px; padding: 0 5px; height: 240px; border: 1px solid #ccc; overflow-y: scroll;} 
+.div_agree > p {margin: 10px 0 5px 0; padding: 5px; font-weight: 500; background: #f0f0f0;}
+.div_agree > span {display: inline-block; padding-left: 18px;}
+.div_agree > span > strong {display: inline-block; margin: 10px 0 5px 0; font-weight: 500;}
+.div_agree + p {line-height: 1.3; text-align: center;}
+.div_agree + p > input[type="radio"] {margin: 15px 5px 0 10px; cursor: pointer;}
+.div_agree + p > label {cursor: pointer;}
+.div_btn {margin-top: 15px;}
+.btn_agree_cancel {display: inline-block; width: 40%; height: 38px; line-height: 38px; text-align: center; background: #114de3; color: #fff; border-radius: 2px; background: #777;}
+.btn_ok:focus {outline-offset: 1px;}
+.info_regbox .nwitems select {padding-left: 0;}
+.info_regbox .nwitems input {padding-left: 3px;}
+.info_regbox .nwitems02 {display: inline-block;width: 100%;}
+.info_regbox .nwitems02 select, .info_regbox .nwitems02 input, .info_regbox .nwitems02 span {float: left;/* display: inline-block; *//* vertical-align: top; */}
+.info_regbox .nwitems02 select {width: 48px; margin-top: 0;}
+.info_regbox .nwitems02 input {width: 44px;}
+.info_regbox .nwitems02 span {width: 6px; font-size: 11px; line-height: 30px; text-align: center;}
+.info_regbox .nwitems + a.infor_ok {margin: 5px 0 10px 0;}
+.info_regbox .nwitems02 select, .info_regbox .nwitems02 input, .info_regbox .nwitems02 span {float: left; display: inline-block;}
+.info_regbox .btn_ok {margin-bottom: 15px; cursor: pointer;}
+.btn_ok:hover, .infor_ok:hover {text-decoration: underline;}
+.banner_new1.banner_new_fixed {position: fixed; top: 0; left: calc(50% - 627px); display: inline-block; width: 190px;}
+.banner_new1.banner_new_bot {position: absolute; top: calc(100% - 592px); left: calc(50% - 627px); display: inline-block; width: 190px;}
+.banner_new1 {padding-top: 20px; font-family: 'NotoSansKR', 'NanumGothic';}
+.banner_new1 > p {margin: 0; padding-left: 20px; font: 900 24px/26px "NotoSansKR"; color: #2361AA; letter-spacing: -1px; white-space: nowrap;}
+.banner_new1 > p > span, .banner_new1 > span {display: block; font: 600 13px/18px "NotoSansKR"; color: #777; letter-spacing: 0px;}
+.banner_new1 > span {padding: 20px 0 0 20px; font-weight: normal;}
+.banner_new1 > p.frm_title {position: relative; margin-top: 20px; padding: 20px 20px 10px 20px; font: 800 18px/20px "NotoSansKR"; color: #303030; letter-spacing: 0px;}
+.banner_new1 > p.frm_title:before {content: ''; position: absolute; top: 0; left: 20px; width: calc(100% - 40px); height: 1px; background: #ddd;}
+.div_agree:focus {outline: 2px solid #ff0000;}
+</style>
+<script>
+function banner_chkForm() {
+	f = document.banner_frm;
+	if(f.USERNAME.value == "") {
+		alert("이름은 필수 입력입니다.");
+		f.USERNAME.focus();
+		return false;
+	}
+
+	if(f.phone1.value == "" || f.phone2.value == "" || f.phone3.value == "") {
+		alert("연락처를 입력해주세요.");
+		f.phone1.focus();
+		return false;
+	}
+
+	if(f.gubun.value == "") {
+		alert("관심과정을 선택해주세요.");
+		f.gubun.focus();
+		return false;
+	}
+	
+
+	if($("input[name=banner_agree]:checked").val() != '1') {
+		alert('개인정보 제공에 동의해주세요');
+		f.banner_agree.focus();
+		return false;
+	}
+	
+	return true;
+
+}
+
+</script>
+ <!-- 우측 하단 전화 아이콘 버튼 -->
+<button type="button" class="counsel_toggle_btn" id="counselToggleBtn" aria-label="상담신청 열기">
+  <!-- 전화 이모지 / 아이콘 -->
+  <span class="icon"><img src="index_files/chat.png"></span>
+</button>
+
+<!-- 플로팅 빠른 상담신청 박스 (기본적으로 hide 클래스로 숨김) -->
+<div class="banner_new1 floating_counsel_box hide" id="floatingCounselBox">
+  
+  <!-- 닫기(X) 버튼 -->
+  <button type="button" class="btn_close_widget" id="counselCloseBtn" aria-label="닫기">&times;</button>
+
+  <!-- 상단 전화상담 헤더 영역 -->
+  <div class="counsel_header">
+    <p class="sub_title">학습상담 / 학습설계</p>
+    <a href="tel:031-467-7800" class="phone_num">031-467-7800</a>
+    <span class="time_info">평일 09:00 ~ 17:00<br>(점심시간 12:00 ~ 13:00)</span>
+  </div>
+
+  <!-- 상담 신청 폼 -->
+  <form name="banner_frm" method="post" action="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_banner_ssl_act.php" onsubmit="return banner_chkForm()" target="_action_frame_">
+    <input type="hidden" name="helper_id" value="parkkun74">
+    <input type="hidden" name="banner_ref" value="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_index.php">
+    <input type="hidden" name="banner_agent_key" value="Safari">
+    <input type="hidden" name="banner_agent_type" value="PC">
+    <input type="hidden" name="kuid" value="346">
+    <input type="hidden" name="code" value="93434253">
+
+    <div class="info_regbox">
+      <p class="frm_title">빠른 상담신청</p>
+
+      <!-- 이름 입력 -->
+      <div class="nwitems">
+        <input class="nwi_texts" id="USERNAME" name="USERNAME" type="text" maxlength="20" placeholder=" 이름" title="이름을 입력하세요" autocomplete="off" oninput="this.value = this.value.replace(/\s/g, '').replace(/[^a-zA-Zㄱ-ㅎㅏ-ㅣ가-힣]/g, '');">
+      </div>
+
+      <!-- 연락처 입력 -->
+      <div class="nwitems nwitems02">
+        <select name="phone1" id="phone1" title="휴대폰번호 앞자리를 선택하세요">
+          <option value="010">010</option>
+          <option value="011">011</option>
+          <option value="016">016</option>
+          <option value="017">017</option>
+          <option value="018">018</option>
+          <option value="019">019</option>
+          <option value="070">070</option>
+          <option value="0505">0505</option>
+        </select>
+        <span class="dash">-</span>
+        <input class="nwi_texts" type="text" name="phone2" id="phone2" maxlength="4" placeholder="0000" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="휴대폰번호 가운데 3자리 또는 4자리 입력하세요">
+        <span class="dash">-</span>
+        <input class="nwi_texts" type="text" name="phone3" id="phone3" maxlength="4" placeholder="0000" oninput="this.value = this.value.replace(/[^0-9]/g, '');" title="휴대폰번호 끝 4자리를 입력하세요">
+      </div>
+
+      <!-- 관심과정 선택 -->
+      <div class="nwitems">
+        <select name="gubun" id="all_gubun" title=" 과정선택을 선택하세요">
+          <option value="">관심과정선택</option>
+          <option value="2">사회복지사</option>
+          <option value="3">기타</option>
+        </select>
+      </div>
+
+      <!-- 개인정보 수집 동의 및 방침 보기 -->
+      <div class="nwitems agree_item">
+        <label for="banner_agree">
+          <input class="nwi_check" id="banner_agree" type="checkbox" name="banner_agree" value="1">
+          개인정보수집 및 활용동의
+        </label>
+        <a href="javascript:;" aria-controls="mw_tempform_agree" class="infor_ok">개인정보처리방침 보기</a>
+      </div>
+
+      <!-- 신청하기 버튼 -->
+      <input type="submit" value="상담신청하기" class="btn_ok" title="상담신청하기">
+    </div>
+  </form>
+</div>
+
+<!-- 개인정보 수집 및 이용동의 팝업 레이어 -->
+<div id="mw_tempform_agree">
+  <div class="mw_qu_form">
+    <div class="bg_form"><!-- 동의 팝업 배경 --></div>
+  </div>
+
+  <div class="fg_form_agree lpop_cont">
+    <h3>개인정보 수집 및 이용동의</h3>
+    <a href="javascript:;" class="lpop_close ic_close" title="개인정보 수집 및 이용동의 닫기">
+      <img src="./index_files/pop_close_wh.png" alt="닫기">
+    </a>
+    <div class="div_agree" tabindex="0">
+      <p>1. 수집하는 개인정보 항목</p>
+      <span>이름, 연락처, 문의과정</span><br>
+      <p>2. 개인정보의 수집 및 이용 목적</p>
+      <span>교육원은 온라인을 통해 수집된 개인 정보를 다음의 목적을 위해 활용합니다.</span><br>
+      <span>
+        <strong>가. 본인확인</strong><br>
+        신규입학 상담 및 학습설계 신청 진행을 위한 본인 식별 및 부정 이용방지 등을 위하여 사용됩니다.<br>
+        <strong>나. 마케팅 및 광고에 활용</strong><br>
+        신규입학상담, 학습설계의 안내, 새로운 정보의 업데이트, 이벤트 소식, 경품당첨자 선정, 온라인서비스안내와 같은 정보를 문자, 이메일, 전화 드리는 방법으로 제공 및 통계학적 분석을 위해 사용합니다.
+      </span>
+      <p>3. 개인정보의 보유 및 이용기간</p>
+      <span>이용목적이 달성된 경우에는 해당 정보를 지체 없이 파기합니다.<br>※ 보존기간 : 신규입학상담 및 학습설계 신청 후 1년</span><br>
+      <p>4. 수집/이용에 동의하지 않으시는 경우에는 상담을 받으실 수 없습니다.</p>
+    </div>
+    <div class="div_btn">
+      <a href="javascript:;" class="lpop_close btn_agree_cancel">닫기</a>
+    </div>
+  </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var toggleBtn = document.getElementById('counselToggleBtn');
+  var counselBox = document.getElementById('floatingCounselBox');
+  var closeBtn = document.getElementById('counselCloseBtn');
+
+  // 아이콘 버튼 클릭 시 팝업 열기 & 버튼 숨기기
+  toggleBtn.addEventListener('click', function() {
+    counselBox.classList.remove('hide');
+    toggleBtn.style.display = 'none';
+  });
+
+  // 닫기(X) 버튼 클릭 시 팝업 닫기 & 버튼 다시 보이기
+  closeBtn.addEventListener('click', function() {
+    counselBox.classList.add('hide');
+    toggleBtn.style.display = 'flex';
+  });
+});
+</script>
+
+<!-- 인풋박스 라벨작업을 위한 스크립트 -->
+<script>
+jQuery(function(){
+	
+	$('.infor_ok').click(function(){
+		var op = $(this);
+        var lp = $("#" + $(this).attr("aria-controls"));
+		accessibilityFocus(op,lp);
+	});
+	// Help Toggle
+	$('.nwitems>.nwi_help').click(function(){
+		$(this).parent('.nwitems').find('.i_dsc').toggleClass('hide');
+	});
+	// Input Clear
+	var nwi_texts = $('.nwitems>.nwi_labels').next('.nwi_texts');
+	$('.nwitems>.nwi_labels').css('position','absolute');
+	nwi_texts
+		.focus(function(){
+			$(this).prev('.nwi_labels').css('visibility','hidden');
+		})
+		.blur(function(){
+			if($(this).val() == ''){
+				$(this).prev('.nwi_labels').css('visibility','visible');
+			} else {
+				$(this).prev('.nwi_labels').css('visibility','hidden');
+			}
+		})
+		.change(function(){
+			if($(this).val() == ''){
+				$(this).prev('.nwi_labels').css('visibility','visible');
+			} else {
+				$(this).prev('.nwi_labels').css('visibility','hidden');
+			}
+		})
+		.blur();
+});
+</script>
+<!-- 인풋박스 라벨작업을 위한 스크립트 -->
+<script>
+jQuery(function(){
+
+    $('.infor_ok').click(function(){
+        var op = $(this);
+        var lp = $("#" + $(this).attr("aria-controls"));
+        accessibilityFocus(op,lp);
+    });
+    // Help Toggle
+    $('.nwitems>.nwi_help').click(function(){
+        $(this).parent('.nwitems').find('.i_dsc').toggleClass('hide');
+    });
+    // Input Clear
+    var nwi_texts = $('.nwitems>.nwi_labels').next('.nwi_texts');
+    $('.nwitems>.nwi_labels').css('position','absolute');
+    nwi_texts
+        .focus(function(){
+            $(this).prev('.nwi_labels').css('visibility','hidden');
+        })
+        .blur(function(){
+            if($(this).val() == ''){
+                $(this).prev('.nwi_labels').css('visibility','visible');
+            } else {
+                $(this).prev('.nwi_labels').css('visibility','hidden');
+            }
+        })
+        .change(function(){
+            if($(this).val() == ''){
+                $(this).prev('.nwi_labels').css('visibility','visible');
+            } else {
+                $(this).prev('.nwi_labels').css('visibility','hidden');
+            }
+        })
+        .blur();
+});
+</script>
+<!--
+<div style="margin-top:15px">
+    <img src="/img/n_img/banner_info.gif"  />
+</div>
+<div style="margin-top:10px">
+    <img src="/img/n_img/banner_info2.gif"  />
+</div>
+-->		<!-- //왼쪽 퀵메뉴 -->
+</div>
+<!-- //snb -->
+
+			<script>
+window.addEventListener('DOMContentLoaded', function() {
+    const textElement = document.getElementById('typingText');
+    const content = "사회복지사란?"; // 출력할 텍스트
+    let index = 0;
+    let isStarted = false; // 중복 실행 방지용 플래그
+
+    function typing() {
+        if (index < content.length) {
+            textElement.textContent += content.charAt(index);
+            index++;
+            setTimeout(typing, 150); // 타이핑 속도
+        }
+    }
+
+    // 비디오를 감싸는 영역(.con_title 또는 .background-video)을 관찰 대상으로 지정
+    const targetElement = document.querySelector('.con_title');
+    if (!targetElement) return;
+
+    // 브라우저 화면에 해당 영역이 들어왔는지 감지하는 Observer 생성
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            // 화면에 요소가 나타났고, 아직 타이핑이 시작되지 않았을 때
+            if (entry.isIntersecting && !isStarted) {
+                isStarted = true; // 중복 실행 방지
+                setTimeout(typing, 300); // 화면에 들어온 후 0.3초 뒤 타이핑 시작
+                observer.unobserve(entry.target); // 한 번 실행 후 관찰 종료
+            }
+        });
+    }, {
+        threshold: 0.3 // 요소가 화면에 30% 정도 보이기 시작할 때 작동
+    });
+
+    // 관찰 시작
+    observer.observe(targetElement);
+});
+</script>
+	
+	<!-- 본문 바로가기 및 콘텐츠 시작 -->
+<div id="conts_pagviews"></div>
+<link href="./index_files/new_content.css" rel="stylesheet" type="text/css">
+<!--	<div class="con_title">
+ 	<h2>사회복지사 소개</h2>
+        <div class="deeps">홈 <span>&nbsp;&gt;&nbsp;</span> 사회복지사 <span>&nbsp;&gt;&nbsp;</span> <strong>사회복지사 소개</strong></div>
+    </div>
+-->    
+			
+			<div class="cont_quick" style="">
+        	<h3>온라인강의와 실습만으로<br>'사회복지사 자격증 취득'</h3>
+            <p>사회복지학 과목 이수 후<br>국가평생교육진흥원 학점은행 센터에 학점인정 신청</p>
+            <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">사회복지학 수강신청</a>
+				
+	<div class="con_title">
+		<div class="background-video">
+			<div class="blank"></div>
+		<video width="1090" height="600" autoplay loop muted preload>
+		<source src="index_files/skuah_mov.mp4" type="video/mp4">
+		</video>
+			
+		<h1 id="typingText" class="typing-effect"></h1>
+			
+		</div>
+		
+		
+		<div class="deeps">홈 <span>&nbsp;&gt;&nbsp;</span> 사회복지사 <span>&nbsp;&gt;&nbsp;</span> <strong>사회복지사 소개</strong></div>
+	</div>
+
+    <div class="cont_header">
+ <!--   	<div class="cont_quick" style="background: url('./index_files/new_welfare.png') no-repeat left center;">
+        	<h3>온라인강의와 실습만으로<br>'사회복지사 자격증 취득'</h3>
+            <p>사회복지학 과목 이수 후<br>국가평생교육진흥원 학점은행 센터에 학점인정 신청</p>
+            <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">사회복지학 수강신청</a>
+        </div> -->
+        
+    	<h3>더 나은 일상을 만드는 통로, 희망을 연계하는 사회복지사</h3>
+       <p>사회복지사는 경제적, 심리적, 주변환경에서의 문제를 가지고 있거나 문제가 있을 것으로 예상되는 대상자들에게 접근하여 대상자들이 겪고 있는 문제들을 파악하고 이에 대한 문제 해결방안 및 문제해결을 위한<br> 여러 가지 방법들을 대상자들에게 알려주어 직접 문제에서 벗어나도록 도움을 제공하는 일들을 하는 전문적인 직업이다. </p>
+        <p>또한 대상자들의 문제해결을 위해 주변의 여러 자원들을 활용하여 문제해결을 접근 해결해 줄 뿐만 아니라 대상자들을 도와줄 지역 또는 주변의 도움을 줄 수 있는 후원자, 자원봉사자들을 연계하여 지원을 하는 일들을 하는 사람들을 말한다.</p>
+<!-- 		<p>다양한 생활 속 문제로 어려움을 겪는 이들에게 다가가 실질적인 해결 방법을 안내하며,<br> 지역사회의 다양한 자원과 후원 네트워크를 연결해 스스로 문제를 극복할 수 있도록 지원합니다.</p>-->
+        <div style="width:100%; display:block; height:18px"></div>
+        
+        <h4>사회복지사의 업무</h4>
+<div class="text_align"> 
+	<div class="roll1 roll-img">
+		<img src="index_files/roll1.png">
+		<p> <span style="font-size: 19px; font-weight: 500; color: #004ea2;">아동, 장애인, 노인 생활시설에서</span><br> 거동이 불편하거나 중증 장애인들을 대상으로<br>케어 및 상담 </p>
+	</div>	
+	
+	<div class="roll2 roll-img">
+		<img src="index_files/roll2.png">
+		<p>지역 내 저소득 계층의 심리적, 경제적인 문제 해결을 위해 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">지역사회복지관을 중심으로</span> 활동</p>
+	</div>	
+	
+	<div class="roll3 roll-img">
+		<img src="index_files/roll3.png">
+		<p><span style="font-size: 19px; font-weight: 500; color: #004ea2;">학교에서 학교사회사업가</span>로서 문제학생들을 위한 전문적인 상담을 통해 문제해결 및 예방</p>
+	</div>
+	
+	<div class="roll4 roll-img">
+		<img src="index_files/roll4.png">
+		<p><span style="font-size: 19px; font-weight: 500; color: #004ea2;">병원에서 의료사회복지사로 참여</span>하여<br> 병원내 환자들과 가족들의 심리적ㆍ경제적 문제 해결을 위해 노력</p>
+	</div>
+        
+    <div class="roll5 roll-img">
+		<img src="index_files/roll5.png">
+		<p>국가의 공적부조를 담당하기 위해 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">사회복지전담공무원</span>들이 활동</p>
+	</div>
+	
+    <div class="roll6 roll-img">
+		<img src="index_files/roll6.png">
+		<p>기업에서의 사회공헌 활동 및 자원봉사 활동에서의 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">코디네이터 역할</span> </p>
+	</div>
+	
+        
+</div>
+       
+       
+        <h4>활동분야</h4>
+        <table class="tbl_paylist tbl_paylist02" title="활동분야">
+        <caption>사회복지사 활동분야</caption>
+        <colgroup>
+        <col style="width: 15%;"><col style="width: 30%;"><col style="width: 55%;">
+        </colgroup>
+        <thead>
+        <tr>
+        <th scope="col">분야</th>
+        <th scope="col">세부기관</th>
+        <th scope="col">주요활동</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+        <th rowspan="9" scope="rowgroup">이용시설</th>
+        <td>지역사회복지관</td>
+        <td rowspan="9">- 분야별 이용자들에 대한 상담, 경제적지원, 자원봉사모집 활동, 분야별 <br>대상자들을 위한 프로그램 기획 운영, 심리ㆍ정서적 지원 등<br><br>
+        - 자원봉사 모집 관리, 대상자 연결 등</td>
+        </tr>
+        <tr>
+        <td>노인종합사회복지관</td>
+        </tr>
+        <tr>
+        <td>장애인종합복지관</td>
+        </tr>
+        <tr>
+        <td>공부방/방과후교실</td>
+        </tr>
+        <tr>
+        <td>여성회관(부녀복지관)</td>
+        </tr>
+        <tr>
+        <td>청소년수련관</td>
+        </tr>
+        <tr>
+        <td>주간보호센터</td>
+        </tr>
+        <tr>
+        <td>재가복지분야</td>
+        </tr>
+        <tr>
+        <td>자원봉사센터</td>
+        </tr>
+        <tr>
+        <th rowspan="6" scope="rowgroup">생활시설</th>
+        <td>노인복지시설</td>
+        <td rowspan="6">- 각 분야별 대상자 입소 생활 및 관련 행정업무<br><br>- 대상자 상담 및 정서적 지원 <br><br>- 후원자 개발 및 연결, 자원봉사 관리 등 </td>
+        </tr>
+        <tr>
+        <td>장애인복지시설</td>
+        </tr>
+        <tr>
+        <td>부랑인복지시설</td>
+        </tr>
+        <tr>
+        <td>아동복지시설</td>
+        </tr>
+        <tr>
+        <td>정신요양시설</td>
+        </tr>
+        <tr>
+        <td>모자복지시설</td>
+        </tr>
+        <tr>
+        <th rowspan="3" scope="rowgroup">의료분야</th>
+        <td>정신보건센터</td>
+        <td rowspan="3">- 정신장애인의 재활치료 및 정신장애인 상담을 통한 사회복귀 지원<br><br>- 병원입원환자들 관리 및 병원비 지원, 후원자 연결 등  </td>
+        </tr>
+        <tr>
+        <td>의료사회복지사</td>
+        </tr>
+        <tr>
+        <td>정신장애그룹홈(센터)</td>
+        </tr>
+        <tr>
+        <th>관공서</th>
+        <td>사회복지전담공무원</td>
+        <td>- 국가의 복지 업무 담당 및 수급권자 관리 등 </td>
+        </tr>
+        <tr>
+        <th rowspan="2" scope="rowgroup">모금분야</th>
+        <td>모금단체<br>(한국복지재단, 월드비전, 대한사회복지회 등)</td>
+        <td rowspan="2">- 후원자 개발 및 모금활동<br><br>- 사회복지 기관에 후원금 배분 및 지원 </td>
+        </tr>
+        <tr>
+        <td>모금지원단체<br>(공동모금회, 아름다운재단 등)</td>
+        </tr>
+        <tr>
+        <th rowspan="3" scope="rowgroup">신규분야</th>
+        <td>기타관련단체</td>
+        <td rowspan="3">- 학생들을 위한 문제학생 상담 지도<br><br>- 교정시설내 재소자들 상담 및 지원을 통한 재범 방지</td>
+        </tr>
+        <tr>
+        <td>학교사회사업</td>
+        </tr>
+        <tr>
+        <td>교정사회사업</td>
+        </tr>
+        <tr>
+        <th rowspan="3" scope="rowgroup">기타분야</th>
+        <td>교정사회사업</td>
+        <td rowspan="3">- 기업의 사회복지 사업 지원 및 프로그램 발굴<br><br>- 각 사회복지 정책 입안 지원 및 행정사무등 지원   </td>
+        </tr>
+        <tr>
+        <td>기업사회공헌</td>
+        </tr>
+        <tr>
+        <td>기관, 협회 등</td>
+        </tr>
+        </tbody>
+        </table>	
+        <p><span>(출처 : 한국사회복지사 협회)</span></p>  
+    </div>
+</div>
+								
+		</td>
+		</tr>
+		</tbody></table>
+
+	</td>
+	</tr>
+</tbody></table>
+
+<div style="clear:both"></div>
+</div>
+
+<div class="footer_wrap">
+    <div class="section_cont">
+		<div class="footer_menu">
+			<ul>
+<!--				<li><a href="/lec/home/cyberlec/new_company.php?q=content02">교육원소개</a></li>-->
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_use.php?q=content01">이용약관</a></li>
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_use.php?q=content02" style="color: #0036FF;">개인정보처리방침</a></li>
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_use.php?q=content04">환불기준</a></li>
+				<li><a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_use.php?q=content06">사이트맵</a></li>
+			</ul>
+		</div>
+		<div class="footer_info">
+			<p><img src="./index_files/logo_sku03.png" alt=""></p>
+			<div>
+				<p><span>주소</span>[14097] 경기도 안양시 만안구 성결대학로 53</p><p><span>전화</span>(031) 467 - 7800</p><p><span>팩스</span>(031) 467 - 8478</p>
+				<p>COPYRIGHTⓒ SUNGKYUL UNIVERSITY. All RIGHTS RESERVED. CONTACT TO WEBMASTER (esku@sungkyul.ac.kr)</p>
+			</div>
+		</div>
+	</div>
+</div>
+<script>
+
+jQuery(function(){
+//$(".btn_newmsite").click(function () {
+//	if($(".url_newmsite").attr("value")!="") {			
+//		$(this).attr("href", $(".url_newmsite").attr("value"));
+//		$(this).attr("target", "_blank");
+//	} else {
+//		alert("이동할 사이트를 선택해주세요.");
+//		$('.select_newmsite').focus();
+//	}
+//});
+//
+//$('.select_newmsite').on('change', function() {
+//	$(".url_newmsite").attr("value", $(this).val());
+//});	
+	
+// Help Toggle
+$('.item>.i_help').click(function(){
+    $(this).parent('.item').find('.i_dsc').toggleClass('hide');
+});
+// Input Clear
+var text = $('.item>.label').next('.text');
+$('.item>.label').css('position','absolute');
+text
+    .focus(function(){
+        $(this).prev('.label').css('visibility','hidden');
+    })
+    .blur(function(){
+        if($(this).val() == ''){
+            $(this).prev('.label').css('visibility','visible');
+        } else {
+            $(this).prev('.label').css('visibility','hidden');
+        }
+    })
+    .change(function(){
+        if($(this).val() == ''){
+            $(this).prev('.label').css('visibility','visible');
+        } else {
+            $(this).prev('.label').css('visibility','hidden');
+        }
+    })
+    .blur();
+});
+</script>
+
+<iframe name="_action_frame_" style="width:0; height:0; border:none" title="스크랩처리" src="./index_files/saved_resource.html"></iframe>
+<iframe name="check_frame_" style="width:0; height:0; border:none" title="브라우저체크" src="./index_files/saved_resource(1).html"></iframe>
+
+
+
+<div id="_member_layer_" style="display:none;position:absolute;">
+<ul style="border:#c0c0c0 solid 1px;width:108px; background:#EFECE0">
+<li style="cursor:pointer;padding-left:3pt;padding-right:2pt;" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID);MemberLayerHide(event);">
+<img src="./index_files/l_01.gif" alt="회원정보"> 회원 정보
+</li>
+<li style="cursor:pointer;padding-left:3pt;padding-right:2pt;" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;q=mail');MemberLayerHide(event);">
+<img src="./index_files/l_02.gif" alt="메일보내기"> 메일 보내기
+</li>
+<li style="cursor:pointer;padding-left:3pt;padding-right:2pt;" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;q=paper');MemberLayerHide(event);">
+<img src="./index_files/l_03.gif" alt="쪽지보내기">쪽지 보내기
+</li>
+<li id="mbr_layer_sms" style="display:none; cursor:pointer;padding-left:3pt;padding-right:2pt;width:110px" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;q=sms');MemberLayerHide(event);">
+<img src="./index_files/l_04.gif" alt="문자보내기">문자 보내기
+</li>
+<li id="mbr_layer_chat" style="display:none; cursor:pointer;padding-left:3pt;padding-right:2pt;width:110px" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="reqChat('',mouseID);MemberLayerHide(event);">
+<img src="./index_files/l_07.gif" alt="일대일대화요청">1:1 대화요청
+</li>
+<li style="cursor:pointer;padding-left:3pt;padding-right:2pt;" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;q=write');MemberLayerHide(event);">
+<img src="./index_files/l_08.gif" alt="등록게시물">등록 게시물
+</li>
+<li style="cursor:pointer;padding-left:3pt;padding-right:2pt;" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;q=comment');MemberLayerHide(event);">
+<img src="./index_files/l_09.gif" alt="등록코멘트">등록 코멘트
+</li>
+<li id="mbr_layer_friend1" style="display:none; width:100%; cursor:pointer;padding-left:3pt;padding-right:2pt;width:110px" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;a=friend&amp;action=regis');MemberLayerHide(event);">
+<img src="./index_files/l_05.gif" alt="관심회원등록">관심회원등록
+</li>
+<li id="mbr_layer_friend2" style="display:none; width:100%; cursor:pointer;padding-left:3pt;padding-right:2pt; width:110px" onmouseover="smOver(this)" onmouseout="smOut(this)" onclick="getMemberWin(mouseID+'&amp;a=friend&amp;action=out');MemberLayerHide(event);">
+<img src="./index_files/l_06.gif" alt="관심회원제외">관심회원제외
+</li>
+</ul></div>
+
+<script>
+
+function getHttprequest(URL) 
+{ 
+	var xmlhttp = null; 
+	var responseText;
+	if(window.XMLHttpRequest) 
+	{ 
+		xmlhttp = new XMLHttpRequest(); 
+	} else 
+	{ 
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+	} 
+	xmlhttp.open('GET', URL , false); 
+	xmlhttp.onreadystatechange = function() 
+	{ 
+		if(xmlhttp.readyState==4 && xmlhttp.status == 200 && xmlhttp.statusText=='OK') 
+		{ 
+			responseText = xmlhttp.responseText; 
+		}
+	} 
+	xmlhttp.send(); 
+	xmlhttp = "";
+	return responseText.replace(/\n/g , '<br>');
+} 
+
+var myagent = navigator.appName.indexOf('Explorer') != -1 ? 'ie' : 'ns';
+function getMyCheck()
+{
+	var i;
+	if(myagent == 'ie')
+	{
+		var checkvalue = getHttprequest("./mypage.php?a=mycheck");
+	}
+	else {
+		var checkvalue = frames.check_frame_.document.body.innerHTML;
+	}
+	checkvalue = checkvalue.replace(/<BR\/>/g,'<br>');
+	var checkarray = checkvalue.split('<br>');
+	var checksize = checkarray.length;
+	var arr;
+
+	for (i = 0; i < checksize; i++)
+	{
+		if (checkarray[i] != "")
+		{
+			arr = checkarray[i].split('|');
+			//대화요청
+			if (arr[0] == 'chat')
+			{
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv1' , 'storyQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			//쪽지수신
+			if (arr[0] == 'paper')
+			{
+				getMemberWin(arr[1]+'&a=rcv_paper');
+			}
+			//초대
+			if (arr[0] == 'visit')
+			{
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv3' , 'visitQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			//관심회원접속
+			if (arr[0] == 'friend')
+			{
+				getMemberWin(arr[1]+'&q=r_friend');
+			}
+		}
+	}
+	if(myagent == 'ie')
+	{
+		setTimeout("getMyCheck()",6000000);//
+	}
+}
+
+
+</script>
+
+
+
+
+</body></html>
