@@ -1,30 +1,30 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-<meta charset="EUC-KR">
+<meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>¼º°á´ëÇÐ±³ ¿ø°ÝÆò»ý±³À°¿ø - °úÁ¤¼³¹®</title>
+<title>ì„±ê²°ëŒ€í•™êµ ì›ê²©í‰ìƒêµìœ¡ì› - ê³¼ì •ì„¤ë¬¸</title>
 
 <link rel="icon" href="https://edulife.sungkyul.ac.kr/img/favicon.ico" type="image/x-icon">
 <link rel="stylesheet" type="text/css" href="./example-evaluation_files/helloFormChk.css">
-<script type="text/javascript" src="./example-evaluation_files/jquery-1.3.2.min.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/helloFormChk.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/jquery.simplemodal-1.2.3.min.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/jquery-ui-1.7.1.custom.min.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/jquery.dimensions.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/jquery.tooltip.min.js.´Ù¿î·Îµå"></script>
-<script type="text/javascript" src="./example-evaluation_files/Common.js.´Ù¿î·Îµå"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery-1.3.2.min.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/helloFormChk.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.simplemodal-1.2.3.min.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery-ui-1.7.1.custom.min.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.dimensions.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.tooltip.min.js.ë‹¤ìš´ë¡œë“œ"></script>
+<script type="text/javascript" src="./example-evaluation_files/Common.js.ë‹¤ìš´ë¡œë“œ"></script>
 
 <style>
-  /* ±âº» ÃÊ±âÈ­ ¹× ÆùÆ® ¼³Á¤ */
+  /* ê¸°ë³¸ ì´ˆê¸°í™” ë° í°íŠ¸ ì„¤ì • */
   * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
   }
   body {
-    font-family: 'Pretendard', 'Malgun Gothic', '¸¼Àº °íµñ', sans-serif;
+    font-family: 'Pretendard', 'Malgun Gothic', 'ë§‘ì€ ê³ ë”•', sans-serif;
     background-color: #F4F6F9;
     color: #1E293B;
     line-height: 1.5;
@@ -35,13 +35,13 @@
     color: inherit;
   }
 
-  /* ÀüÃ¼ ÄÁÅ×ÀÌ³Ê */
+  /* ì „ì²´ ì»¨í…Œì´ë„ˆ */
   .lms-wrapper {
     max-width: 1280px;
     margin: 0 auto;
   }
 
-  /* »ó´Ü Çì´õ ¿µ¿ª */
+  /* ìƒë‹¨ í—¤ë” ì˜ì—­ */
   .lms-header {
     background-color: #FFFFFF;
     border-radius: 16px;
@@ -80,7 +80,7 @@
     color: #1E293B;
   }
 
-  /* »ó´Ü ÅÇ ³×ºñ°ÔÀÌ¼Ç */
+  /* ìƒë‹¨ íƒ­ ë„¤ë¹„ê²Œì´ì…˜ */
   .lms-nav {
     display: flex;
     background-color: #F1F5F9;
@@ -106,7 +106,7 @@
     box-shadow: 0 2px 6px rgba(29, 99, 220, 0.25);
   }
 
-  /* ¸ÞÀÎ ÄÜÅÙÃ÷ Ä«µå */
+  /* ë©”ì¸ ì½˜í…ì¸  ì¹´ë“œ */
   .lms-card {
     background-color: #FFFFFF;
     border-radius: 16px;
@@ -141,7 +141,7 @@
     border-radius: 2px;
   }
 
-  /* ¼³¹® ¹®Ç× Ä«µå ½ºÅ¸ÀÏ */
+  /* ì„¤ë¬¸ ë¬¸í•­ ì¹´ë“œ ìŠ¤íƒ€ì¼ */
   .survey-item-card {
     background-color: #F8FAFC;
     border: 1px solid #E2E8F0;
@@ -203,7 +203,7 @@
     height: 16px;
   }
 
-  /* ¼­¼úÇü ´äº¯ textarea ½ºÅ¸ÀÏ */
+  /* ì„œìˆ í˜• ë‹µë³€ textarea ìŠ¤íƒ€ì¼ */
   .survey-textarea-wrap {
     padding-left: 40px;
   }
@@ -227,7 +227,7 @@
     box-shadow: 0 0 0 3px rgba(29, 99, 220, 0.1);
   }
 
-  /* Á¦Ãâ ¹öÆ° ½ºÅ¸ÀÏ */
+  /* ì œì¶œ ë²„íŠ¼ ìŠ¤íƒ€ì¼ */
   .survey-submit-wrap {
     margin-top: 32px;
     text-align: center;
@@ -249,7 +249,7 @@
     box-shadow: 0 6px 16px rgba(29, 99, 220, 0.35);
   }
 
-  /* ·Îµù ¹× ¸ð´Þ ¹Ú½º */
+  /* ë¡œë”© ë° ëª¨ë‹¬ ë°•ìŠ¤ */
   #progressBox {
     border: solid 1px #CBD5E1;
     padding: 16px;
@@ -274,7 +274,7 @@ SURVEYAJ.customerFormChk = function(){
 	var complete = formChk('request_formz1');
 
 	if(complete == true) {
-		var yesORno = confirm('ÀÔ·ÂÇÏ½Ã°Ú½À´Ï±î?');
+		var yesORno = confirm('ìž…ë ¥í•˜ì‹œê² ìŠµë‹ˆê¹Œ?');
 		if(yesORno === true) {
 			return true;
 		}else{
@@ -291,26 +291,26 @@ SURVEYAJ.customerFormChk = function(){
 <body>
 
 <div class="lms-wrapper">
-  <!-- »ó´Ü °­ÀÇ½Ç Çì´õ -->
+  <!-- ìƒë‹¨ ê°•ì˜ì‹¤ í—¤ë” -->
   <header class="lms-header">
     <div class="subject-info">
-      <span class="badge-term">Áö¿ª»çÈ¸º¹Áö·Ð</span>
-      <h1>Áö¿ª»çÈ¸º¹Áö·Ð</h1>
-      <p class="user-greeting"><strong>°ü¸®ÀÚ</strong> ´Ô, ¾È³çÇÏ¼¼¿ä. ÇÐ½À ÇöÈ²À» È®ÀÎÇØ ÁÖ¼¼¿ä.</p>
+      <span class="badge-term">ì§€ì—­ì‚¬íšŒë³µì§€ë¡ </span>
+      <h1>ì§€ì—­ì‚¬íšŒë³µì§€ë¡ </h1>
+      <p class="user-greeting"><strong>ê´€ë¦¬ìž</strong> ë‹˜, ì•ˆë…•í•˜ì„¸ìš”. í•™ìŠµ í˜„í™©ì„ í™•ì¸í•´ ì£¼ì„¸ìš”.</p>
     </div>
 
-    <!-- ÅÇ ¸Þ´º -->
+    <!-- íƒ­ ë©”ë‰´ -->
     <nav class="lms-nav">
-      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecreport.php?uid=95">°úÁ¦</a>
-      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95">Åä·Ð¹æ</a>
-      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey.php?uid=95" class="active">°­ÀÇÆò°¡</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecreport.php?uid=95">ê³¼ì œ</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95">í† ë¡ ë°©</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey.php?uid=95" class="active">ê°•ì˜í‰ê°€</a>
     </nav>
   </header>
 
-  <!-- ¸ÞÀÎ °úÁ¤¼³¹® Ä«µå -->
+  <!-- ë©”ì¸ ê³¼ì •ì„¤ë¬¸ ì¹´ë“œ -->
   <main class="lms-card">
     <div class="section-header">
-      <h2 class="section-title">°úÁ¤¼³¹®</h2>
+      <h2 class="section-title">ê³¼ì •ì„¤ë¬¸</h2>
     </div>
 
     <div id="survey_div">
@@ -319,260 +319,260 @@ SURVEYAJ.customerFormChk = function(){
         <input type="hidden" name="uid" value="95">
         <input type="hidden" name="setsurvey_uid" value="1">
 
-        <!-- 1¹ø ¹®Ç× -->
+        <!-- 1ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">1</div>
-            <div class="survey-question-text">±³°­»ç´Â °­ÀÇ°èÈ¹¼­¿¡ µû¶ó ¼ö¾÷À» Ãæ½ÇÈ÷ ÁøÇàÇÏ¿´½À´Ï±î?</div>
+            <div class="survey-question-text">êµê°•ì‚¬ëŠ” ê°•ì˜ê³„íšì„œì— ë”°ë¼ ìˆ˜ì—…ì„ ì¶©ì‹¤ížˆ ì§„í–‰í•˜ì˜€ìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[1]" value="A">
             <input type="hidden" name="surveygubun[1]" value="f">
-            <label><input type="radio" name="surveyvote[1]" value="5" checked chk="" alt="1¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[1]" value="4" chk="" alt="1¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[1]" value="3" chk="" alt="1¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[1]" value="2" chk="" alt="1¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[1]" value="1" chk="" alt="1¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[1]" value="5" checked chk="" alt="1ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[1]" value="4" chk="" alt="1ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[1]" value="3" chk="" alt="1ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[1]" value="2" chk="" alt="1ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[1]" value="1" chk="" alt="1ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 2¹ø ¹®Ç× -->
+        <!-- 2ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">2</div>
-            <div class="survey-question-text">±³°­»ç´Â ¼ö¾÷³»¿ëÀ» Àß ÀÌÇØÇÒ ¼ö ÀÖµµ·Ï ÀûÀýÇÑ ¼ö¾÷ÀÚ·á¿Í ¹æ¹ýÀ» È°¿ëÇÏ¿´½À´Ï±î?</div>
+            <div class="survey-question-text">êµê°•ì‚¬ëŠ” ìˆ˜ì—…ë‚´ìš©ì„ ìž˜ ì´í•´í•  ìˆ˜ ìžˆë„ë¡ ì ì ˆí•œ ìˆ˜ì—…ìžë£Œì™€ ë°©ë²•ì„ í™œìš©í•˜ì˜€ìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[2]" value="A">
             <input type="hidden" name="surveygubun[2]" value="f">
-            <label><input type="radio" name="surveyvote[2]" value="5" checked chk="" alt="2¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[2]" value="4" chk="" alt="2¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[2]" value="3" chk="" alt="2¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[2]" value="2" chk="" alt="2¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[2]" value="1" chk="" alt="2¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[2]" value="5" checked chk="" alt="2ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[2]" value="4" chk="" alt="2ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[2]" value="3" chk="" alt="2ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[2]" value="2" chk="" alt="2ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[2]" value="1" chk="" alt="2ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 3¹ø ¹®Ç× -->
+        <!-- 3ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">3</div>
-            <div class="survey-question-text">±³°­»ç´Â ¼ö¾÷¿¡¼­ Á¦ÃâÇÑ °úÁ¦ µî¿¡ ´ëÇØ ÀûÀýÇÑ ÇÇµå¹éÀ» Á¦°øÇÏ¿´½À´Ï±î?</div>
+            <div class="survey-question-text">êµê°•ì‚¬ëŠ” ìˆ˜ì—…ì—ì„œ ì œì¶œí•œ ê³¼ì œ ë“±ì— ëŒ€í•´ ì ì ˆí•œ í”¼ë“œë°±ì„ ì œê³µí•˜ì˜€ìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[3]" value="A">
             <input type="hidden" name="surveygubun[3]" value="f">
-            <label><input type="radio" name="surveyvote[3]" value="5" checked chk="" alt="3¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[3]" value="4" chk="" alt="3¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[3]" value="3" chk="" alt="3¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[3]" value="2" chk="" alt="3¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[3]" value="1" chk="" alt="3¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[3]" value="5" checked chk="" alt="3ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[3]" value="4" chk="" alt="3ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[3]" value="3" chk="" alt="3ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[3]" value="2" chk="" alt="3ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[3]" value="1" chk="" alt="3ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 4¹ø ¹®Ç× -->
+        <!-- 4ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">4</div>
-            <div class="survey-question-text">°­»ç´Â ÇÐ½ÀÀÚÀÇ Áú¹® ¹× »ó´ã¿¡ ´ëÇØ ½Å¼ÓÇÏ°í ¼º½ÇÇÏ°Ô ÀÀ´äÇÏ¿´½À´Ï±î?</div>
+            <div class="survey-question-text">ê°•ì‚¬ëŠ” í•™ìŠµìžì˜ ì§ˆë¬¸ ë° ìƒë‹´ì— ëŒ€í•´ ì‹ ì†í•˜ê³  ì„±ì‹¤í•˜ê²Œ ì‘ë‹µí•˜ì˜€ìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[4]" value="A">
             <input type="hidden" name="surveygubun[4]" value="f">
-            <label><input type="radio" name="surveyvote[4]" value="5" checked chk="" alt="4¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[4]" value="4" chk="" alt="4¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[4]" value="3" chk="" alt="4¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[4]" value="2" chk="" alt="4¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[4]" value="1" chk="" alt="4¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[4]" value="5" checked chk="" alt="4ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[4]" value="4" chk="" alt="4ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[4]" value="3" chk="" alt="4ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[4]" value="2" chk="" alt="4ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[4]" value="1" chk="" alt="4ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 5¹ø ¹®Ç× -->
+        <!-- 5ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">5</div>
-            <div class="survey-question-text">¼ö¾÷ÀÇ ÄÜÅÙÃ÷´Â ÀÌÇØÇÏ±â ½±°í Ã¼°èÀûÀ¸·Î ±¸¼ºµÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">ìˆ˜ì—…ì˜ ì½˜í…ì¸ ëŠ” ì´í•´í•˜ê¸° ì‰½ê³  ì²´ê³„ì ìœ¼ë¡œ êµ¬ì„±ë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[5]" value="B">
             <input type="hidden" name="surveygubun[5]" value="f">
-            <label><input type="radio" name="surveyvote[5]" value="5" checked chk="" alt="5¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[5]" value="4" chk="" alt="5¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[5]" value="3" chk="" alt="5¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[5]" value="2" chk="" alt="5¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[5]" value="1" chk="" alt="5¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[5]" value="5" checked chk="" alt="5ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[5]" value="4" chk="" alt="5ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[5]" value="3" chk="" alt="5ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[5]" value="2" chk="" alt="5ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[5]" value="1" chk="" alt="5ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 6¹ø ¹®Ç× -->
+        <!-- 6ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">6</div>
-            <div class="survey-question-text">¼ö¾÷¿¡¼­ Á¦°øµÈ ±³ÇÐ½ÀÀÚ·á ¹× Âü°íÀÚ·á´Â ÇÐ½À¿¡ µµ¿òÀÌ µÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">ìˆ˜ì—…ì—ì„œ ì œê³µëœ êµí•™ìŠµìžë£Œ ë° ì°¸ê³ ìžë£ŒëŠ” í•™ìŠµì— ë„ì›€ì´ ë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[6]" value="B">
             <input type="hidden" name="surveygubun[6]" value="f">
-            <label><input type="radio" name="surveyvote[6]" value="5" checked chk="" alt="6¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[6]" value="4" chk="" alt="6¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[6]" value="3" chk="" alt="6¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[6]" value="2" chk="" alt="6¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[6]" value="1" chk="" alt="6¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[6]" value="5" checked chk="" alt="6ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[6]" value="4" chk="" alt="6ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[6]" value="3" chk="" alt="6ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[6]" value="2" chk="" alt="6ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[6]" value="1" chk="" alt="6ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 7¹ø ¹®Ç× -->
+        <!-- 7ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">7</div>
-            <div class="survey-question-text">¼ö¾÷¿¡¼­ ÃâÁ¦µÈ ½ÃÇè ¹× °úÁ¦´Â ¼ö¾÷³»¿ë°úÀÇ ¿¬°ü¼º ¹× ³­ÀÌµµ°¡ ÀûÀýÇÏ¿´½À´Ï±î?</div>
+            <div class="survey-question-text">ìˆ˜ì—…ì—ì„œ ì¶œì œëœ ì‹œí—˜ ë° ê³¼ì œëŠ” ìˆ˜ì—…ë‚´ìš©ê³¼ì˜ ì—°ê´€ì„± ë° ë‚œì´ë„ê°€ ì ì ˆí•˜ì˜€ìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[7]" value="B">
             <input type="hidden" name="surveygubun[7]" value="f">
-            <label><input type="radio" name="surveyvote[7]" value="5" checked chk="" alt="7¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[7]" value="4" chk="" alt="7¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[7]" value="3" chk="" alt="7¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[7]" value="2" chk="" alt="7¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[7]" value="1" chk="" alt="7¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[7]" value="5" checked chk="" alt="7ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[7]" value="4" chk="" alt="7ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[7]" value="3" chk="" alt="7ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[7]" value="2" chk="" alt="7ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[7]" value="1" chk="" alt="7ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 8¹ø ¹®Ç× -->
+        <!-- 8ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">8</div>
-            <div class="survey-question-text">¼ºÀûÆò°¡ ±âÁØ°ú ¹æ¹ýÀº ¸íÈ®ÇÏ°Ô Á¦½ÃµÇ°í °øÁ¤ÇÏ°Ô ¿î¿µµÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">ì„±ì í‰ê°€ ê¸°ì¤€ê³¼ ë°©ë²•ì€ ëª…í™•í•˜ê²Œ ì œì‹œë˜ê³  ê³µì •í•˜ê²Œ ìš´ì˜ë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[8]" value="B">
             <input type="hidden" name="surveygubun[8]" value="f">
-            <label><input type="radio" name="surveyvote[8]" value="5" checked chk="" alt="8¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[8]" value="4" chk="" alt="8¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[8]" value="3" chk="" alt="8¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[8]" value="2" chk="" alt="8¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[8]" value="1" chk="" alt="8¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[8]" value="5" checked chk="" alt="8ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[8]" value="4" chk="" alt="8ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[8]" value="3" chk="" alt="8ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[8]" value="2" chk="" alt="8ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[8]" value="1" chk="" alt="8ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 9¹ø ¹®Ç× -->
+        <!-- 9ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">9</div>
-            <div class="survey-question-text">¼ö¾÷ÀÇ ³»¿ë°ú ºÐ·®Àº ÇÐ½ÀÇÏ±â¿¡ ÀûÀýÇÏ°Ô ±¸¼ºµÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">ìˆ˜ì—…ì˜ ë‚´ìš©ê³¼ ë¶„ëŸ‰ì€ í•™ìŠµí•˜ê¸°ì— ì ì ˆí•˜ê²Œ êµ¬ì„±ë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[9]" value="B">
             <input type="hidden" name="surveygubun[9]" value="f">
-            <label><input type="radio" name="surveyvote[9]" value="5" checked chk="" alt="9¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[9]" value="4" chk="" alt="9¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[9]" value="3" chk="" alt="9¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[9]" value="2" chk="" alt="9¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[9]" value="1" chk="" alt="9¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[9]" value="5" checked chk="" alt="9ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[9]" value="4" chk="" alt="9ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[9]" value="3" chk="" alt="9ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[9]" value="2" chk="" alt="9ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[9]" value="1" chk="" alt="9ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 10¹ø ¹®Ç× -->
+        <!-- 10ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">10</div>
-            <div class="survey-question-text">¼ö¾÷À» ÅëÇØ ÇØ´ç ºÐ¾ßÀÇ ÀÌÇØ¿Í Áö½ÄÀÌ Çâ»óµÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">ìˆ˜ì—…ì„ í†µí•´ í•´ë‹¹ ë¶„ì•¼ì˜ ì´í•´ì™€ ì§€ì‹ì´ í–¥ìƒë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[10]" value="B">
             <input type="hidden" name="surveygubun[10]" value="f">
-            <label><input type="radio" name="surveyvote[10]" value="5" checked chk="" alt="10¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[10]" value="4" chk="" alt="10¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[10]" value="3" chk="" alt="10¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[10]" value="2" chk="" alt="10¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[10]" value="1" chk="" alt="10¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[10]" value="5" checked chk="" alt="10ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[10]" value="4" chk="" alt="10ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[10]" value="3" chk="" alt="10ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[10]" value="2" chk="" alt="10ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[10]" value="1" chk="" alt="10ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 11¹ø ¹®Ç× -->
+        <!-- 11ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">11</div>
-            <div class="survey-question-text">ÇÐ½ÀÈ°µ¿À» ¼öÇàÇÏ±â¿¡ Æí¸®ÇÏ°Ô ±¸¼ºµÇ¾î ÀÖ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">í•™ìŠµí™œë™ì„ ìˆ˜í–‰í•˜ê¸°ì— íŽ¸ë¦¬í•˜ê²Œ êµ¬ì„±ë˜ì–´ ìžˆì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[11]" value="C">
             <input type="hidden" name="surveygubun[11]" value="f">
-            <label><input type="radio" name="surveyvote[11]" value="5" checked chk="" alt="11¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[11]" value="4" chk="" alt="11¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[11]" value="3" chk="" alt="11¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[11]" value="2" chk="" alt="11¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[11]" value="1" chk="" alt="11¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[11]" value="5" checked chk="" alt="11ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[11]" value="4" chk="" alt="11ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[11]" value="3" chk="" alt="11ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[11]" value="2" chk="" alt="11ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[11]" value="1" chk="" alt="11ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 12¹ø ¹®Ç× -->
+        <!-- 12ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">12</div>
-            <div class="survey-question-text">ÇÐ½À Áß ½Ã½ºÅÛ ¿À·ù³ª Á¢¼Ó Àå¾Ö ¾øÀÌ ¾ÈÁ¤ÀûÀ¸·Î ÀÌ¿ëÇÒ ¼ö ÀÖ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">í•™ìŠµ ì¤‘ ì‹œìŠ¤í…œ ì˜¤ë¥˜ë‚˜ ì ‘ì† ìž¥ì•  ì—†ì´ ì•ˆì •ì ìœ¼ë¡œ ì´ìš©í•  ìˆ˜ ìžˆì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[12]" value="C">
             <input type="hidden" name="surveygubun[12]" value="f">
-            <label><input type="radio" name="surveyvote[12]" value="5" checked chk="" alt="12¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[12]" value="4" chk="" alt="12¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[12]" value="3" chk="" alt="12¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[12]" value="2" chk="" alt="12¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[12]" value="1" chk="" alt="12¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[12]" value="5" checked chk="" alt="12ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[12]" value="4" chk="" alt="12ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[12]" value="3" chk="" alt="12ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[12]" value="2" chk="" alt="12ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[12]" value="1" chk="" alt="12ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 13¹ø ¹®Ç× -->
+        <!-- 13ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">13</div>
-            <div class="survey-question-text">ÇÐ»ç¾È³» ¹× ÇÐ½ÀÁö¿ø ¼­ºñ½º´Â ÀûÀýÇÏ°Ô Á¦°øµÇ¾ú½À´Ï±î?</div>
+            <div class="survey-question-text">í•™ì‚¬ì•ˆë‚´ ë° í•™ìŠµì§€ì› ì„œë¹„ìŠ¤ëŠ” ì ì ˆí•˜ê²Œ ì œê³µë˜ì—ˆìŠµë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[13]" value="C">
             <input type="hidden" name="surveygubun[13]" value="f">
-            <label><input type="radio" name="surveyvote[13]" value="5" checked chk="" alt="13¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[13]" value="4" chk="" alt="13¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[13]" value="3" chk="" alt="13¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[13]" value="2" chk="" alt="13¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[13]" value="1" chk="" alt="13¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[13]" value="5" checked chk="" alt="13ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[13]" value="4" chk="" alt="13ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[13]" value="3" chk="" alt="13ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[13]" value="2" chk="" alt="13ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[13]" value="1" chk="" alt="13ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 14¹ø ¹®Ç× -->
+        <!-- 14ë²ˆ ë¬¸í•­ -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">14</div>
-            <div class="survey-question-text">ÇÐ½À»ó´ã ¹× ÇàÁ¤Áö¿ø ¼­ºñ½º¿¡ ¸¸Á·ÇÏ½Ê´Ï±î?</div>
+            <div class="survey-question-text">í•™ìŠµìƒë‹´ ë° í–‰ì •ì§€ì› ì„œë¹„ìŠ¤ì— ë§Œì¡±í•˜ì‹­ë‹ˆê¹Œ?</div>
           </div>
           <div class="survey-options">
             <input type="hidden" name="surveykind[14]" value="C">
             <input type="hidden" name="surveygubun[14]" value="f">
-            <label><input type="radio" name="surveyvote[14]" value="5" checked chk="" alt="14¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ¸¸Á·"> ¸Å¿ì ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[14]" value="4" chk="" alt="14¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸¸Á·"> ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[14]" value="3" chk="" alt="14¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="º¸Åë"> º¸Åë</label>
-            <label><input type="radio" name="surveyvote[14]" value="2" chk="" alt="14¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="ºÒ¸¸Á·"> ºÒ¸¸Á·</label>
-            <label><input type="radio" name="surveyvote[14]" value="1" chk="" alt="14¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="¸Å¿ì ºÒ¸¸Á·"> ¸Å¿ì ºÒ¸¸Á·</label>
+            <label><input type="radio" name="surveyvote[14]" value="5" checked chk="" alt="14ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë§Œì¡±"> ë§¤ìš° ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[14]" value="4" chk="" alt="14ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§Œì¡±"> ë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[14]" value="3" chk="" alt="14ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë³´í†µ"> ë³´í†µ</label>
+            <label><input type="radio" name="surveyvote[14]" value="2" chk="" alt="14ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë¶ˆë§Œì¡±"> ë¶ˆë§Œì¡±</label>
+            <label><input type="radio" name="surveyvote[14]" value="1" chk="" alt="14ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë§¤ìš° ë¶ˆë§Œì¡±"> ë§¤ìš° ë¶ˆë§Œì¡±</label>
           </div>
         </div>
 
-        <!-- 15¹ø ¹®Ç× (¼­¼úÇü) -->
+        <!-- 15ë²ˆ ë¬¸í•­ (ì„œìˆ í˜•) -->
         <div class="survey-item-card">
           <div class="survey-question-header">
             <div class="survey-number">15</div>
-            <div class="survey-question-text">º» ÇÐ½À°úÁ¤ÀÇ °³¼±»çÇ× ¶Ç´Â °ÇÀÇ»çÇ×À» ÀÚÀ¯·Ó°Ô ÀÛ¼ºÇÏ¿© ÁÖ½Ã±â ¹Ù¶ø´Ï´Ù.</div>
+            <div class="survey-question-text">ë³¸ í•™ìŠµê³¼ì •ì˜ ê°œì„ ì‚¬í•­ ë˜ëŠ” ê±´ì˜ì‚¬í•­ì„ ìžìœ ë¡­ê²Œ ìž‘ì„±í•˜ì—¬ ì£¼ì‹œê¸° ë°”ëžë‹ˆë‹¤.</div>
           </div>
           <div class="survey-textarea-wrap">
             <input type="hidden" name="surveykind[21]" value="C">
             <input type="hidden" name="surveygubun[21]" value="j">
-            <textarea class="survey-textarea" name="surveyvote[21]" chk="" alt="15¹ø ¼³¹®¿¡ Âü¿©ÇÏ¿© ÁÖ¼¼¿ä." title="³»¿ëÀÔ·Â" placeholder="³»¿ëÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä."></textarea>
+            <textarea class="survey-textarea" name="surveyvote[21]" chk="" alt="15ë²ˆ ì„¤ë¬¸ì— ì°¸ì—¬í•˜ì—¬ ì£¼ì„¸ìš”." title="ë‚´ìš©ìž…ë ¥" placeholder="ë‚´ìš©ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”."></textarea>
           </div>
         </div>
 
-        <!-- Á¦Ãâ ¹öÆ° -->
+        <!-- ì œì¶œ ë²„íŠ¼ -->
         <div class="survey-submit-wrap">
-          <button type="submit" class="btn-submit-survey">¼³¹® Á¦ÃâÇÏ±â</button>
+          <button type="submit" class="btn-submit-survey">ì„¤ë¬¸ ì œì¶œí•˜ê¸°</button>
         </div>
 
       </form>
@@ -580,18 +580,18 @@ SURVEYAJ.customerFormChk = function(){
   </main>
 </div>
 
-<!-- ±âÁ¸ ½Ã½ºÅÛ ¹é±×¶ó¿îµå ÇÁ·¹ÀÓ ¹× ½ºÅ©¸³Æ® À¯Áö -->
+<!-- ê¸°ì¡´ ì‹œìŠ¤í…œ ë°±ê·¸ë¼ìš´ë“œ í”„ë ˆìž„ ë° ìŠ¤í¬ë¦½íŠ¸ ìœ ì§€ -->
 <div id="progressBox" style="display:none;position:absolute;left:-170px;top:-100px;width:400px;">
   <a href="#" id="close" style="float:right; color:#64748B; padding-right:3px;">x</a>
   <p style="text-align:center;width:100%">
-    <img src="./example-evaluation_files/ajax-loader2.gif" alt="·ÎµùÁß ÀÌ¹ÌÁö">
+    <img src="./example-evaluation_files/ajax-loader2.gif" alt="ë¡œë”©ì¤‘ ì´ë¯¸ì§€">
   </p>
   <p style="text-align:center;width:100%;" id="message"></p>
 </div>
 
 <iframe name="_action_" style="border:0px;width:0px;height:0px;" title="action" src="./example-evaluation_files/saved_resource.html"></iframe>
-<iframe name="_action_frame_" style="width:0; height:0; border:none" title="½ºÅ©·¦Ã³¸®" src="./example-evaluation_files/saved_resource(1).html"></iframe>
-<iframe name="check_frame_" style="width:0; height:0; border:none" title="ºê¶ó¿ìÀúÃ¼Å©" src="./example-evaluation_files/saved_resource(2).html"></iframe>
+<iframe name="_action_frame_" style="width:0; height:0; border:none" title="ìŠ¤í¬ëž©ì²˜ë¦¬" src="./example-evaluation_files/saved_resource(1).html"></iframe>
+<iframe name="check_frame_" style="width:0; height:0; border:none" title="ë¸Œë¼ìš°ì €ì²´í¬" src="./example-evaluation_files/saved_resource(2).html"></iframe>
 
 <div style="display:none;">
   <img id="ps_id_checktime" src="./example-evaluation_files/member_chktime.php" style="width:1px;height:1px;" alt="">
