@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="EUC-KR">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성결대학교 원격평생교육원 - 과정설문</title>
+
+<link rel="icon" href="https://edulife.sungkyul.ac.kr/img/favicon.ico" type="image/x-icon">
+<link rel="stylesheet" type="text/css" href="./example-evaluation_files/helloFormChk.css">
+<script type="text/javascript" src="./example-evaluation_files/jquery-1.3.2.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/helloFormChk.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.simplemodal-1.2.3.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery-ui-1.7.1.custom.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.dimensions.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/jquery.tooltip.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-evaluation_files/Common.js.다운로드"></script>
+
+<style>
+  /* 기본 초기화 및 폰트 설정 */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #F4F6F9;
+    color: #1E293B;
+    line-height: 1.5;
+    padding: 30px 15px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* 전체 컨테이너 */
+  .lms-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* 상단 헤더 영역 */
+  .lms-header {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #E2E8F0;
+  }
+  .subject-info .badge-term {
+    display: inline-block;
+    background-color: #EFF6FF;
+    color: #1D63DC;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .subject-info h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.5px;
+  }
+  .user-greeting {
+    font-size: 16px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+  .user-greeting strong {
+    color: #1E293B;
+  }
+
+  /* 상단 탭 네비게이션 */
+  .lms-nav {
+    display: flex;
+    background-color: #F1F5F9;
+    border-radius: 10px;
+    gap: 4px;
+  }
+  .lms-nav a {
+    padding: 13px 23px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+  }
+  .lms-nav a:hover {
+    color: #1D63DC;
+    background-color: #EFF6FF;
+	  font-weight: 800;
+  }
+  .lms-nav a.active {
+    background-color: #1D63DC;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(29, 99, 220, 0.25);
+  }
+
+  /* 메인 콘텐츠 카드 */
+  .lms-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background-color: #1D63DC;
+    border-radius: 2px;
+  }
+
+  /* 설문 문항 카드 스타일 */
+  .survey-item-card {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: border-color 0.2s;
+  }
+  .survey-item-card:hover {
+    border-color: #1D63DC;
+  }
+  .survey-question-header {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    margin-bottom: 14px;
+  }
+  .survey-number {
+    background-color: #EFF6FF;
+    color: #1D63DC;
+    font-size: 16px;
+    font-weight: 700;
+    width: 28px;
+    height: 28px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    flex-shrink: 0;
+  }
+  .survey-question-text {
+    font-size: 18px;
+    font-weight: 600;
+    color: #0F172A;
+    line-height: 1.5;
+    padding-top: 3px;
+  }
+  .survey-options {
+    padding-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    font-size: 16px;
+    color: #334155;
+  }
+  .survey-options label {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+  }
+	.survey-options label:hover{
+		font-weight: 600;
+		color: #1D63DC;
+	}
+  .survey-options input[type="radio"] {
+    accent-color: #1D63DC;
+    width: 16px;
+    height: 16px;
+  }
+
+  /* 서술형 답변 textarea 스타일 */
+  .survey-textarea-wrap {
+    padding-left: 40px;
+  }
+  .survey-textarea {
+    width: 100%;
+    max-width: 100%;
+    height: 100px;
+    padding: 12px;
+    border: 1px solid #CBD5E1;
+    border-radius: 8px;
+    font-family: inherit;
+    font-size: 16px;
+    color: #1E293B;
+    background-color: #FFFFFF;
+    resize: vertical;
+    transition: all 0.2s;
+  }
+  .survey-textarea:focus {
+    border-color: #1D63DC;
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(29, 99, 220, 0.1);
+  }
+
+  /* 제출 버튼 스타일 */
+  .survey-submit-wrap {
+    margin-top: 32px;
+    text-align: center;
+  }
+  .btn-submit-survey {
+    background-color: #1D63DC;
+    color: #FFFFFF;
+    border: none;
+    padding: 14px 40px;
+    font-size: 17px;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 12px rgba(29, 99, 220, 0.25);
+  }
+  .btn-submit-survey:hover {
+    background-color: #154BB0;
+    box-shadow: 0 6px 16px rgba(29, 99, 220, 0.35);
+  }
+
+  /* 로딩 및 모달 박스 */
+  #progressBox {
+    border: solid 1px #CBD5E1;
+    padding: 16px;
+    background-color: #FFFFFF;
+    border-radius: 12px;
+    box-shadow: 0 10px 15px -3px rgba(0,0,0,0.1);
+  }
+  #modalContainer {
+    font-size: 14px;
+    color: #0F172A;
+    height: auto;
+    width: auto;
+    text-align: left;
+  }
+</style>
+
+<script language="JavaScript">
+<!--
+var SURVEYAJ = function() {};
+
+SURVEYAJ.customerFormChk = function(){
+	var complete = formChk('request_formz1');
+
+	if(complete == true) {
+		var yesORno = confirm('입력하시겠습니까?');
+		if(yesORno === true) {
+			return true;
+		}else{
+			return false;
+		}
+	} else {
+		return false;
+	}
+};
+//-->
+</script>
+</head>
+
+<body>
+
+<div class="lms-wrapper">
+  <!-- 상단 강의실 헤더 -->
+  <header class="lms-header">
+    <div class="subject-info">
+      <span class="badge-term">지역사회복지론</span>
+      <h1>지역사회복지론</h1>
+      <p class="user-greeting"><strong>관리자</strong> 님, 안녕하세요. 학습 현황을 확인해 주세요.</p>
+    </div>
+
+    <!-- 탭 메뉴 -->
+    <nav class="lms-nav">
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecreport.php?uid=95">과제</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95">토론방</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey.php?uid=95" class="active">강의평가</a>
+    </nav>
+  </header>
+
+  <!-- 메인 과정설문 카드 -->
+  <main class="lms-card">
+    <div class="section-header">
+      <h2 class="section-title">과정설문</h2>
+    </div>
+
+    <div id="survey_div">
+      <form method="post" name="request_formz1" id="request_formz1" action="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey_aj.php" target="_action_" onsubmit="return SURVEYAJ.customerFormChk('request_formz1');">
+        
+        <input type="hidden" name="uid" value="95">
+        <input type="hidden" name="setsurvey_uid" value="1">
+
+        <!-- 1번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">1</div>
+            <div class="survey-question-text">교강사는 강의계획서에 따라 수업을 충실히 진행하였습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[1]" value="A">
+            <input type="hidden" name="surveygubun[1]" value="f">
+            <label><input type="radio" name="surveyvote[1]" value="5" checked chk="" alt="1번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[1]" value="4" chk="" alt="1번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[1]" value="3" chk="" alt="1번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[1]" value="2" chk="" alt="1번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[1]" value="1" chk="" alt="1번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 2번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">2</div>
+            <div class="survey-question-text">교강사는 수업내용을 잘 이해할 수 있도록 적절한 수업자료와 방법을 활용하였습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[2]" value="A">
+            <input type="hidden" name="surveygubun[2]" value="f">
+            <label><input type="radio" name="surveyvote[2]" value="5" checked chk="" alt="2번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[2]" value="4" chk="" alt="2번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[2]" value="3" chk="" alt="2번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[2]" value="2" chk="" alt="2번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[2]" value="1" chk="" alt="2번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 3번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">3</div>
+            <div class="survey-question-text">교강사는 수업에서 제출한 과제 등에 대해 적절한 피드백을 제공하였습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[3]" value="A">
+            <input type="hidden" name="surveygubun[3]" value="f">
+            <label><input type="radio" name="surveyvote[3]" value="5" checked chk="" alt="3번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[3]" value="4" chk="" alt="3번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[3]" value="3" chk="" alt="3번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[3]" value="2" chk="" alt="3번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[3]" value="1" chk="" alt="3번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 4번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">4</div>
+            <div class="survey-question-text">강사는 학습자의 질문 및 상담에 대해 신속하고 성실하게 응답하였습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[4]" value="A">
+            <input type="hidden" name="surveygubun[4]" value="f">
+            <label><input type="radio" name="surveyvote[4]" value="5" checked chk="" alt="4번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[4]" value="4" chk="" alt="4번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[4]" value="3" chk="" alt="4번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[4]" value="2" chk="" alt="4번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[4]" value="1" chk="" alt="4번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 5번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">5</div>
+            <div class="survey-question-text">수업의 콘텐츠는 이해하기 쉽고 체계적으로 구성되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[5]" value="B">
+            <input type="hidden" name="surveygubun[5]" value="f">
+            <label><input type="radio" name="surveyvote[5]" value="5" checked chk="" alt="5번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[5]" value="4" chk="" alt="5번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[5]" value="3" chk="" alt="5번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[5]" value="2" chk="" alt="5번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[5]" value="1" chk="" alt="5번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 6번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">6</div>
+            <div class="survey-question-text">수업에서 제공된 교학습자료 및 참고자료는 학습에 도움이 되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[6]" value="B">
+            <input type="hidden" name="surveygubun[6]" value="f">
+            <label><input type="radio" name="surveyvote[6]" value="5" checked chk="" alt="6번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[6]" value="4" chk="" alt="6번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[6]" value="3" chk="" alt="6번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[6]" value="2" chk="" alt="6번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[6]" value="1" chk="" alt="6번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 7번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">7</div>
+            <div class="survey-question-text">수업에서 출제된 시험 및 과제는 수업내용과의 연관성 및 난이도가 적절하였습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[7]" value="B">
+            <input type="hidden" name="surveygubun[7]" value="f">
+            <label><input type="radio" name="surveyvote[7]" value="5" checked chk="" alt="7번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[7]" value="4" chk="" alt="7번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[7]" value="3" chk="" alt="7번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[7]" value="2" chk="" alt="7번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[7]" value="1" chk="" alt="7번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 8번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">8</div>
+            <div class="survey-question-text">성적평가 기준과 방법은 명확하게 제시되고 공정하게 운영되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[8]" value="B">
+            <input type="hidden" name="surveygubun[8]" value="f">
+            <label><input type="radio" name="surveyvote[8]" value="5" checked chk="" alt="8번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[8]" value="4" chk="" alt="8번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[8]" value="3" chk="" alt="8번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[8]" value="2" chk="" alt="8번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[8]" value="1" chk="" alt="8번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 9번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">9</div>
+            <div class="survey-question-text">수업의 내용과 분량은 학습하기에 적절하게 구성되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[9]" value="B">
+            <input type="hidden" name="surveygubun[9]" value="f">
+            <label><input type="radio" name="surveyvote[9]" value="5" checked chk="" alt="9번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[9]" value="4" chk="" alt="9번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[9]" value="3" chk="" alt="9번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[9]" value="2" chk="" alt="9번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[9]" value="1" chk="" alt="9번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 10번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">10</div>
+            <div class="survey-question-text">수업을 통해 해당 분야의 이해와 지식이 향상되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[10]" value="B">
+            <input type="hidden" name="surveygubun[10]" value="f">
+            <label><input type="radio" name="surveyvote[10]" value="5" checked chk="" alt="10번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[10]" value="4" chk="" alt="10번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[10]" value="3" chk="" alt="10번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[10]" value="2" chk="" alt="10번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[10]" value="1" chk="" alt="10번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 11번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">11</div>
+            <div class="survey-question-text">학습활동을 수행하기에 편리하게 구성되어 있었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[11]" value="C">
+            <input type="hidden" name="surveygubun[11]" value="f">
+            <label><input type="radio" name="surveyvote[11]" value="5" checked chk="" alt="11번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[11]" value="4" chk="" alt="11번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[11]" value="3" chk="" alt="11번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[11]" value="2" chk="" alt="11번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[11]" value="1" chk="" alt="11번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 12번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">12</div>
+            <div class="survey-question-text">학습 중 시스템 오류나 접속 장애 없이 안정적으로 이용할 수 있었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[12]" value="C">
+            <input type="hidden" name="surveygubun[12]" value="f">
+            <label><input type="radio" name="surveyvote[12]" value="5" checked chk="" alt="12번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[12]" value="4" chk="" alt="12번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[12]" value="3" chk="" alt="12번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[12]" value="2" chk="" alt="12번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[12]" value="1" chk="" alt="12번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 13번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">13</div>
+            <div class="survey-question-text">학사안내 및 학습지원 서비스는 적절하게 제공되었습니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[13]" value="C">
+            <input type="hidden" name="surveygubun[13]" value="f">
+            <label><input type="radio" name="surveyvote[13]" value="5" checked chk="" alt="13번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[13]" value="4" chk="" alt="13번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[13]" value="3" chk="" alt="13번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[13]" value="2" chk="" alt="13번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[13]" value="1" chk="" alt="13번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 14번 문항 -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">14</div>
+            <div class="survey-question-text">학습상담 및 행정지원 서비스에 만족하십니까?</div>
+          </div>
+          <div class="survey-options">
+            <input type="hidden" name="surveykind[14]" value="C">
+            <input type="hidden" name="surveygubun[14]" value="f">
+            <label><input type="radio" name="surveyvote[14]" value="5" checked chk="" alt="14번 설문에 참여하여 주세요." title="매우 만족"> 매우 만족</label>
+            <label><input type="radio" name="surveyvote[14]" value="4" chk="" alt="14번 설문에 참여하여 주세요." title="만족"> 만족</label>
+            <label><input type="radio" name="surveyvote[14]" value="3" chk="" alt="14번 설문에 참여하여 주세요." title="보통"> 보통</label>
+            <label><input type="radio" name="surveyvote[14]" value="2" chk="" alt="14번 설문에 참여하여 주세요." title="불만족"> 불만족</label>
+            <label><input type="radio" name="surveyvote[14]" value="1" chk="" alt="14번 설문에 참여하여 주세요." title="매우 불만족"> 매우 불만족</label>
+          </div>
+        </div>
+
+        <!-- 15번 문항 (서술형) -->
+        <div class="survey-item-card">
+          <div class="survey-question-header">
+            <div class="survey-number">15</div>
+            <div class="survey-question-text">본 학습과정의 개선사항 또는 건의사항을 자유롭게 작성하여 주시기 바랍니다.</div>
+          </div>
+          <div class="survey-textarea-wrap">
+            <input type="hidden" name="surveykind[21]" value="C">
+            <input type="hidden" name="surveygubun[21]" value="j">
+            <textarea class="survey-textarea" name="surveyvote[21]" chk="" alt="15번 설문에 참여하여 주세요." title="내용입력" placeholder="내용을 입력해주세요."></textarea>
+          </div>
+        </div>
+
+        <!-- 제출 버튼 -->
+        <div class="survey-submit-wrap">
+          <button type="submit" class="btn-submit-survey">설문 제출하기</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+</div>
+
+<!-- 기존 시스템 백그라운드 프레임 및 스크립트 유지 -->
+<div id="progressBox" style="display:none;position:absolute;left:-170px;top:-100px;width:400px;">
+  <a href="#" id="close" style="float:right; color:#64748B; padding-right:3px;">x</a>
+  <p style="text-align:center;width:100%">
+    <img src="./example-evaluation_files/ajax-loader2.gif" alt="로딩중 이미지">
+  </p>
+  <p style="text-align:center;width:100%;" id="message"></p>
+</div>
+
+<iframe name="_action_" style="border:0px;width:0px;height:0px;" title="action" src="./example-evaluation_files/saved_resource.html"></iframe>
+<iframe name="_action_frame_" style="width:0; height:0; border:none" title="스크랩처리" src="./example-evaluation_files/saved_resource(1).html"></iframe>
+<iframe name="check_frame_" style="width:0; height:0; border:none" title="브라우저체크" src="./example-evaluation_files/saved_resource(2).html"></iframe>
+
+<div style="display:none;">
+  <img id="ps_id_checktime" src="./example-evaluation_files/member_chktime.php" style="width:1px;height:1px;" alt="">
+</div>
+
+<script>
+var oChkTime = document.getElementById('ps_id_checktime');
+window.setInterval(function(){
+	var oDate = new Date();
+	oChkTime.src="/lec/home/cyberlec/member_chktime.php?t="+oDate.getTime();
+},60000);
+
+function getHttprequest(URL) { 
+	var xmlhttp = null; 
+	var responseText;
+	if(window.XMLHttpRequest) { 
+		xmlhttp = new XMLHttpRequest(); 
+	} else { 
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+	} 
+	xmlhttp.open('GET', URL , false); 
+	xmlhttp.onreadystatechange = function() { 
+		if(xmlhttp.readyState==4 && xmlhttp.status == 200 && xmlhttp.statusText=='OK') { 
+			responseText = xmlhttp.responseText; 
+		}
+	} 
+	xmlhttp.send(); 
+	xmlhttp = "";
+	return responseText.replace(/\n/g , '<br>');
+} 
+
+var myagent = navigator.appName.indexOf('Explorer') != -1 ? 'ie' : 'ns';
+function getMyCheck() {
+	var i;
+	if(myagent == 'ie') {
+		var checkvalue = getHttprequest("./mypage.php?a=mycheck");
+	} else {
+		var checkvalue = frames.check_frame_.document.body.innerHTML;
+	}
+	checkvalue = checkvalue.replace(/<BR\/>/g,'<br>');
+	var checkarray = checkvalue.split('<br>');
+	var checksize = checkarray.length;
+	var arr;
+
+	for (i = 0; i < checksize; i++) {
+		if (checkarray[i] != "") {
+			arr = checkarray[i].split('|');
+			if (arr[0] == 'chat') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv1' , 'storyQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'paper') {
+				getMemberWin(arr[1]+'&a=rcv_paper');
+			}
+			if (arr[0] == 'visit') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv3' , 'visitQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'friend') {
+				getMemberWin(arr[1]+'&q=r_friend');
+			}
+		}
+	}
+	if(myagent == 'ie') {
+		setTimeout("getMyCheck()",6000000);
+	}
+}
+
+if(myagent == 'ie') {
+	getMyCheck();
+} else {
+	frames.check_frame_.location.href = "./mypage.php?a=mycheck";
+	setTimeout("getMyCheck()",6000000);
+}
+
+var nowsec = 0;
+var logoutsec = parseInt("100") * 60;
+function timecheck() {
+	nowsec++;
+	if (nowsec > logoutsec) {
+		location.href = './login.php?a=logout';
+	}
+	setTimeout("timecheck()",6000000);
+}
+timecheck();
+</script>
+
+</body>
+</html>
