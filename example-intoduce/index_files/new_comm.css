@@ -621,3 +621,17 @@ nav {
   opacity: 1;
   filter: alpha(opacity=100);
 }
+
+
+/* 1. 애니메이션 적용 대상의 초기 상태 (안 보이고 아래로 내려와 있음) */
+.animate-box {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* 2. 스크롤되어 화면에 들어왔을 때 활성화되는 상태 */
+.animate-box.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}

@@ -1636,6 +1636,32 @@ window.addEventListener('DOMContentLoaded', function() {
     observer.observe(targetElement);
 });
 </script>
+			
+			<script>
+	document.addEventListener('DOMContentLoaded', function() {
+    // 제목과 박스가 함께 묶인 컨테이너를 선택합니다
+    const targets = document.querySelectorAll('.animate-box');
+
+    const observerOptions = {
+        root: null,
+        rootMargin: '0px 0px -50px 0px',
+        threshold: 0.1
+    };
+
+    const observer = new IntersectionObserver(function(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('is-visible');
+                observer.unobserve(entry.target);
+            }
+        });
+    }, observerOptions);
+
+    targets.forEach(target => {
+        observer.observe(target);
+    });
+});
+</script>
 	
 	<!-- 본문 바로가기 및 콘텐츠 시작 -->
 <div id="conts_pagviews"></div>
@@ -1647,6 +1673,7 @@ window.addEventListener('DOMContentLoaded', function() {
 -->    
 			
 			<div class="cont_quick" style="">
+			<div class="animate-box">
         	<h3>온라인강의와 실습만으로<br>'사회복지사 자격증 취득'</h3>
             <p>사회복지학 과목 이수 후<br>국가평생교육진흥원 학점은행 센터에 학점인정 신청</p>
             <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">사회복지학 수강신청</a>
@@ -1665,6 +1692,7 @@ window.addEventListener('DOMContentLoaded', function() {
 		
 		<div class="deeps">홈 <span>&nbsp;&gt;&nbsp;</span> 사회복지사 <span>&nbsp;&gt;&nbsp;</span> <strong>사회복지사 소개</strong></div>
 	</div>
+				</div>
 
     <div class="cont_header">
  <!--   	<div class="cont_quick" style="background: url('./index_files/new_welfare.png') no-repeat left center;">
@@ -1673,48 +1701,52 @@ window.addEventListener('DOMContentLoaded', function() {
             <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/new_degree.php?q=content01">사회복지학 수강신청</a>
         </div> -->
         
+<div class="animate-box">
     	<h3>더 나은 일상을 만드는 통로, 희망을 연계하는 사회복지사</h3>
        <p>사회복지사는 경제적, 심리적, 주변환경에서의 문제를 가지고 있거나 문제가 있을 것으로 예상되는 대상자들에게 접근하여 대상자들이 겪고 있는 문제들을 파악하고 이에 대한 문제 해결방안 및 문제해결을 위한<br> 여러 가지 방법들을 대상자들에게 알려주어 직접 문제에서 벗어나도록 도움을 제공하는 일들을 하는 전문적인 직업이다. </p>
         <p>또한 대상자들의 문제해결을 위해 주변의 여러 자원들을 활용하여 문제해결을 접근 해결해 줄 뿐만 아니라 대상자들을 도와줄 지역 또는 주변의 도움을 줄 수 있는 후원자, 자원봉사자들을 연계하여 지원을 하는 일들을 하는 사람들을 말한다.</p>
 <!-- 		<p>다양한 생활 속 문제로 어려움을 겪는 이들에게 다가가 실질적인 해결 방법을 안내하며,<br> 지역사회의 다양한 자원과 후원 네트워크를 연결해 스스로 문제를 극복할 수 있도록 지원합니다.</p>-->
         <div style="width:100%; display:block; height:18px"></div>
-        
+</div>
+		
+<div class="animate-box">
         <h4>사회복지사의 업무</h4>
 <div class="text_align"> 
 	<div class="roll1 roll-img">
 		<img src="index_files/roll1.png">
-		<p> <span style="font-size: 19px; font-weight: 500; color: #004ea2;">아동, 장애인, 노인 생활시설에서</span><br> 거동이 불편하거나 중증 장애인들을 대상으로<br>케어 및 상담 </p>
+		<p> <span style="font-size: 22px; font-weight: 500; color: #004ea2;">아동, 장애인, 노인 생활시설에서</span><br> 거동이 불편하거나 중증 장애인들을 대상으로 케어 및 상담 </p>
 	</div>	
 	
 	<div class="roll2 roll-img">
 		<img src="index_files/roll2.png">
-		<p>지역 내 저소득 계층의 심리적, 경제적인 문제 해결을 위해 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">지역사회복지관을 중심으로</span> 활동</p>
+		<p>지역 내 저소득 계층의 심리적, 경제적인 문제 해결을 위해 <span style="font-size: 22px; font-weight: 500; color: #004ea2;">지역사회복지관을 중심으로</span> 활동</p>
 	</div>	
 	
 	<div class="roll3 roll-img">
 		<img src="index_files/roll3.png">
-		<p><span style="font-size: 19px; font-weight: 500; color: #004ea2;">학교에서 학교사회사업가</span>로서 문제학생들을 위한 전문적인 상담을 통해 문제해결 및 예방</p>
+		<p><span style="font-size: 22px; font-weight: 500; color: #004ea2;">학교에서 학교사회사업가</span>로서 문제학생들을 위한 전문적인 상담을 통해 문제해결 및 예방</p>
 	</div>
 	
 	<div class="roll4 roll-img">
 		<img src="index_files/roll4.png">
-		<p><span style="font-size: 19px; font-weight: 500; color: #004ea2;">병원에서 의료사회복지사로 참여</span>하여<br> 병원내 환자들과 가족들의 심리적ㆍ경제적 문제 해결을 위해 노력</p>
+		<p><span style="font-size: 22px; font-weight: 500; color: #004ea2;">병원에서 의료사회복지사로 참여</span>하여<br> 병원내 환자들과 가족들의 심리적ㆍ경제적 문제 해결을 위해 노력</p>
 	</div>
         
     <div class="roll5 roll-img">
 		<img src="index_files/roll5.png">
-		<p>국가의 공적부조를 담당하기 위해 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">사회복지전담공무원</span>들이 활동</p>
+		<p>국가의 공적부조를 담당하기 위해 <span style="font-size: 22px; font-weight: 500; color: #004ea2;">사회복지전담공무원</span>들이 활동</p>
 	</div>
 	
     <div class="roll6 roll-img">
 		<img src="index_files/roll6.png">
-		<p>기업에서의 사회공헌 활동 및 자원봉사 활동에서의 <span style="font-size: 19px; font-weight: 500; color: #004ea2;">코디네이터 역할</span> </p>
+		<p>기업에서의 사회공헌 활동 및 자원봉사 활동에서의 <span style="font-size: 22px; font-weight: 500; color: #004ea2;">코디네이터 역할</span> </p>
 	</div>
-	
+	</div>
         
 </div>
        
        
+<div class="animate-box">
         <h4>활동분야</h4>
         <table class="tbl_paylist tbl_paylist02" title="활동분야">
         <caption>사회복지사 활동분야</caption>
@@ -1830,14 +1862,12 @@ window.addEventListener('DOMContentLoaded', function() {
         <p><span>(출처 : 한국사회복지사 협회)</span></p>  
     </div>
 </div>
+			</div>
 								
 		</td>
 		</tr>
 		</tbody></table>
 
-	</td>
-	</tr>
-</tbody></table>
 
 <div style="clear:both"></div>
 </div>

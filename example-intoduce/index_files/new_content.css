@@ -170,9 +170,9 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
 .korbg_title9{background:url(/img/n_img/new_korea9.png) no-repeat left top }
 .korbg_title10{background:url(/img/n_img/new_korea10.png) no-repeat left top }
 .img_cent{width:100%; text-align:center; display:block; overflow:hidden}
-.cont_quick>p{ font-size: 1.4em; color:#333; padding-top: 0px; padding-bottom: 40px; margin:0; line-height: normal; text-align: center; font-weight: 500;}
-.cont_quick>h3{padding-top: 100px; margin:0; margin-bottom:12px; font-size: 3.5em;color:#004ea2; letter-spacing:0px; line-height: normal; font-weight:700; text-align: center;}
-.cont_quick>a{
+.cont_quick .animate-box>p{ font-size: 1.4em; color:#333; padding-top: 0px; padding-bottom: 40px; margin:0; line-height: normal; text-align: center; font-weight: 500;}
+.cont_quick .animate-box>h3{padding-top: 100px; margin:0; margin-bottom:12px; font-size: 3.5em;color:#004ea2; letter-spacing:0px; line-height: normal; font-weight:700; text-align: center;}
+.cont_quick .animate-box>a{
 	display: block;               /* inline-block 대신 block으로 변경하여 margin auto 적용 가능하게 함 */
     margin: 0 auto;               /* 가로 중앙 정렬 핵심 속성 */
     text-align: center;
@@ -188,11 +188,11 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
     line-height: 2.7em;
 	margin-bottom: 100px;
 }
-.cont_quick>a:hover{
+.cont_quick  .animate-box>a:hover{
 	background-color: #224B86;
 }
 /*.cont_quick>a:hover{border:1px solid #0056b3; background:#0056b3; color:#fff}*/
-.cont_header>h3{
+.cont_header  .animate-box>h3{
 	font-size: 3em;
 	color:#004ea2;;
 	font-weight:800;
@@ -203,12 +203,12 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
 	margin-top: 30px;
 	text-align: center;
 }
-.cont_header p{
+.cont_header .animate-box p{
 	color: #333;
 	font-size: 22px;
 	line-height: 32px;
 }
-.cont_header>h4{
+.cont_header .animate-box>h4{
 	font-size: 3em;
 	color:#004ea2;
 	font-weight:bold;
@@ -218,7 +218,7 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
 	margin-top: 150px;
 	text-align: center;
 }
-.cont_header>h4:nth-of-type(2){
+.cont_header .animate-box>h4:nth-of-type(2){
 	font-size: 3em;
 	color:#004ea2;
 	font-weight:bold;
@@ -230,7 +230,7 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
 	margin-bottom: 30px;
 }
 
-.cont_header > .text_align{
+.cont_header .animate-box .text_align{
 	width: 1258px;
 	height: auto;
 	display: flex;
@@ -251,42 +251,42 @@ body, table, tr, td, p, br, div, font, select, input, textarea {font-size: 15px;
 	width: 350px;
 }
 
-.cont_header>h5{font-size:16px; color:#333; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:0px; margin-top:30px}
-.cont_header>h4 strong{color:#ff0000}
-.cont_header>h4.yy{ color:#fff; padding:6px 18px; background:#555; border:1px solid #333; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:18px; width:100px; text-align:center}
-.cont_header em{font-style:normal; color:#ff0040}
-.cont_header p span{font-size:14px} 
-.cont_header>p{margin: 0 0 4px 0; padding: 0; font-size: 24px; line-height: 45px; color:#666; text-align: center;}
-.cont_header .pctl span{font-size:13px} 
-.cont_header>.pctl{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
-.cont_header>ul{padding:0; margin:0}
-.cont_header>ul li{list-style:none;font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
-.cont_header .btn_notice{ width:140px; font-size:12px; border:1px solid #e6e6e8;position:absolute; right:0; top:0px; text-align:center; line-height:24px; border-radius:4px; -moz-border-radius:4px; background:#F2F2F2 }
-.cont_header .btn_notice a{width:100%; line-height:24px; font-weight:normal; color:#ff0040;}
-.cont_header .btn_notice a:hover{color:#000}
+.cont_header .animate-box>h5{font-size:16px; color:#333; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:0px; margin-top:30px}
+.cont_header .animate-box>h4 strong{color:#ff0000}
+.cont_header .animate-box>h4.yy{ color:#fff; padding:6px 18px; background:#555; border:1px solid #333; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:18px; width:100px; text-align:center}
+.cont_header .animate-box em{font-style:normal; color:#ff0040}
+.cont_header .animate-box p span{font-size:14px} 
+.cont_header .animate-box>p{margin: 0 0 4px 0; padding: 0; font-size: 24px; line-height: 45px; color:#666; text-align: center;}
+.cont_header .animate-box .pctl span{font-size:13px} 
+.cont_header .animate-box>.pctl{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
+.cont_header .animate-box>ul{padding:0; margin:0}
+.cont_header .animate-box>ul li{list-style:none;font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
+.cont_header .animate-box .btn_notice{ width:140px; font-size:12px; border:1px solid #e6e6e8;position:absolute; right:0; top:0px; text-align:center; line-height:24px; border-radius:4px; -moz-border-radius:4px; background:#F2F2F2 }
+.cont_header .animate-box .btn_notice a{width:100%; line-height:24px; font-weight:normal; color:#ff0040;}
+.cont_header .animate-box .btn_notice a:hover{color:#000}
 
-.cont_header .box_ex{border:1px solid #ddd; width:100%; padding:14px; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:4px; -moz-border-radius:4px;  display:block; line-height:22px; font-size:14px}
+.cont_header .animate-box .box_ex{border:1px solid #ddd; width:100%; padding:14px; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:4px; -moz-border-radius:4px;  display:block; line-height:22px; font-size:14px}
 .cont_header .box_ex>span{color:#ff0000}
 
-.cont_header .box_view{ display:inline-block; border:1px solid #333; background:#666; color:#fff; text-align:center}
-.cont_header .box_view>a{width:100%; line-height:26px; color:#fff; font-size:12px; display:block; text-align:center; padding:2px 10px;   box-sizing:border-box; -moz-box-sizing:border-box}
-.cont_header .box_view>a:hover{color:#FF0}
-.cont_header i{ font-style:normal; color:#ff0000}
+.cont_header .animate-box .box_view{ display:inline-block; border:1px solid #333; background:#666; color:#fff; text-align:center}
+.cont_header .animate-box .box_view>a{width:100%; line-height:26px; color:#fff; font-size:12px; display:block; text-align:center; padding:2px 10px;   box-sizing:border-box; -moz-box-sizing:border-box}
+.cont_header .animate-box .box_view>a:hover{color:#FF0}
+.cont_header .animate-box i{ font-style:normal; color:#ff0000}
 
-.cont_header .tabclass>h3{padding:0; margin:0; margin-bottom:12px; font-size:18px;color:#2d2d2d; letter-spacing:-1px; position:relative}
-.cont_header .tabclass>h4{font-size:17px; color:#135bab; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:-1px; margin-top:60px}
-.cont_header .tabclass>h5{font-size:15px; color:#333; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:0px; margin-top:30px}
-.cont_header .tabclass>h4 strong{color:#ff0000}
-.cont_header .tabclass>h4.yy{ color:#fff; padding:6px 18px; background:#555; border:1px solid #333; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:18px; width:100px; text-align:center}
-.cont_header .tabclass>p{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
-.cont_header .tabclass>.pctl{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
-.cont_header .tabclass>ul{padding:0; margin:0}
+.cont_header .animate-box .tabclass>h3{padding:0; margin:0; margin-bottom:12px; font-size:18px;color:#2d2d2d; letter-spacing:-1px; position:relative}
+.cont_header .animate-box .tabclass>h4{font-size:17px; color:#135bab; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:-1px; margin-top:60px}
+.cont_header .animate-box .tabclass>h5{font-size:15px; color:#333; font-weight:bold; padding:0; margin:0; margin-bottom:14px; letter-spacing:0px; margin-top:30px}
+.cont_header .animate-box .tabclass>h4 strong{color:#ff0000}
+.cont_header .animate-box .tabclass>h4.yy{ color:#fff; padding:6px 18px; background:#555; border:1px solid #333; box-sizing:border-box; -moz-box-sizing:border-box; border-radius:18px; width:100px; text-align:center}
+.cont_header .animate-box .tabclass>p{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
+.cont_header .animate-box .tabclass>.pctl{ font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
+.cont_header .animate-box .tabclass>ul{padding:0; margin:0}
 .cont_header .tabclass>ul li{list-style:none;font-size:15px; color:#666; padding:0; margin:0; line-height:26px}
-.cont_header > .cont_header_right {float: right; margin: -28px 0 12px 0; color: #2d2d2d;}
-.cont_header > .cont_header_right:hover {color: #00C; text-decoration: underline;}
-.cont_header02 > h3 {margin-right: 200px;}
+.cont_header .animate-box > .cont_header_right {float: right; margin: -28px 0 12px 0; color: #2d2d2d;}
+.cont_header .animate-box > .cont_header_right:hover {color: #00C; text-decoration: underline;}
+.cont_header02 .animate-box > h3 {margin-right: 200px;}
 
-.cont_header .btn_go > a {display: inline-block; min-width: 140px; margin-right: 15px; padding: 0 15px; font-size: 13px; line-height: 34px; font-weight: 400; text-align: center; background: #27539e; color: #fff; border-radius: 2px;}
+.cont_header .animate-box .btn_go > a {display: inline-block; min-width: 140px; margin-right: 15px; padding: 0 15px; font-size: 13px; line-height: 34px; font-weight: 400; text-align: center; background: #27539e; color: #fff; border-radius: 2px;}
 .cont_header .btn_go > a:hover {text-decoration: underline;}
 .cont_header>p.p_dot:before {content:'\00B7'; margin-right: 5px; font-weight: bold;}
 
