@@ -1,0 +1,639 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성결대학교 원격평생교육원 - 과제제출</title>
+
+<script type="text/javascript" src="./example-test_files/jquery-1.3.2.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-test_files/Common.js.다운로드"></script>
+<link rel="icon" href="https://edulife.sungkyul.ac.kr/img/favicon.ico" type="image/x-icon">
+
+<style>
+  /* 기본 초기화 및 폰트 설정 */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #F4F6F9;
+    color: #1E293B;
+    line-height: 1.5;
+    padding: 30px 15px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* 전체 컨테이너 */
+  .lms-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* 상단 헤더 영역 */
+  .lms-header {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #E2E8F0;
+  }
+  .subject-info .badge-term {
+    display: inline-block;
+    background-color: #EFF6FF;
+    color: #1D63DC;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .subject-info h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.5px;
+  }
+  .user-greeting {
+    font-size: 16px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+  .user-greeting strong {
+    color: #1E293B;
+  }
+
+  /* 상단 탭 네비게이션 (기존 image map 대체) */
+  .lms-nav {
+    display: flex;
+    background-color: #F1F5F9;
+    border-radius: 10px;
+    gap: 4px;
+  }
+  .lms-nav a {
+    padding: 13px 23px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+  }
+  .lms-nav a:hover {
+    color: #1D63DC;
+    background-color: #EFF6FF;
+	  font-weight: 800;
+  }
+  .lms-nav a.active {
+    background-color: #1D63DC;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(29, 99, 220, 0.25);
+  }
+
+  /* 메인 콘텐츠 카드 */
+  .lms-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background-color: #1D63DC;
+    border-radius: 2px;
+  }
+  .score-badge {
+    background-color: #F8FAFC;
+    border: 1px solid #CBD5E1;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 13px;
+    color: #475569;
+  }
+  .score-badge strong {
+    color: #1D63DC;
+    font-weight: 700;
+  }
+
+  /* 모던 테이블 디자인 */
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+  }
+  .modern-table th {
+    background-color: #F8FAFC;
+    color: #475569;
+    font-weight: 700;
+    padding: 14px 12px;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #CBD5E1;
+    white-space: nowrap;
+  }
+  .modern-table td {
+    padding: 18px 6px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    vertical-align: middle;
+  }
+
+  /* 과제명 & 버튼 스타일 */
+  .report-title-cell {
+    text-align: left;
+    font-weight: 600;
+    color: #0F172A;
+  }
+  .btn-view-detail {
+    display: inline-flex;
+    align-items: center;
+    margin-left: 6px;
+    padding: 4px 8px;
+    font-size: 13px;
+    font-weight: 600;
+    color: #1D63DC;
+    background-color: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .btn-view-detail:hover {
+    background-color: #1D63DC;
+    color: #FFFFFF;
+  }
+
+  .status-badge {
+    display: inline-block;
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    background-color: #ECFDF5;
+    color: #059669;
+  }
+
+  .btn-submit-action {
+    display: inline-block;
+    padding: 7px 12px;
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 1.3;
+    color: #FFFFFF;
+    background-color: #1D63DC;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .btn-submit-action:hover {
+    background-color: #154BB0;
+  }
+
+  .score-text {
+    font-weight: 700;
+    color: #0F172A;
+  }
+
+  /* 과제 상세보기 모달 팝업 (기존 report_detail_0 개선) */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: rgba(15, 23, 42, 0.5);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+  .modal-box {
+    background-color: #FFFFFF;
+    width: 100%;
+    max-width: 1080px;
+    max-height: 80vh;
+    border-radius: 16px;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+  }
+  .modal-header {
+    padding: 18px 24px;
+    background-color: #1D63DC;
+    color: #FFFFFF;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .modal-header h3 {
+    font-size: 19px;
+    font-weight: 700;
+  }
+  .btnClose_report {
+    background: none;
+    border: none;
+    color: #FFFFFF;
+    font-size: 30px;
+    cursor: pointer;
+    line-height: 1;
+  }
+  .modal-body {
+    padding: 24px;
+    overflow-y: auto;
+    text-align: left;
+    font-size: 14px;
+  }
+  .detail-row {
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E2E8F0;
+  }
+  .detail-row:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+  .detail-label {
+    font-size: 17px;
+    font-weight: 700;
+    color: #1D63DC;
+    margin-bottom: 6px;
+    display: block;
+  }
+  .detail-content {
+	  font-size: 18px;
+    color: #1E293B;
+    line-height: 1.6;
+  }
+
+  /* 모사답안 처리규정 안내 박스 */
+  .notice-box {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 12px;
+    padding: 24px;
+  }
+  .notice-title {
+    font-size: 15px;
+    font-weight: 700;
+    color: #DC2626;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .notice-list {
+    display: grid;
+    gap: 14px;
+  }
+  .notice-item h4 {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1E293B;
+    margin-bottom: 4px;
+  }
+  .notice-item p, .notice-item ul {
+    font-size: 14px;
+    color: #475569;
+    line-height: 1.6;
+  }
+  .notice-item ul {
+    padding-left: 18px;
+  }
+</style>
+
+<script language="JavaScript">
+<!--
+// 기존 팝업 및 유틸리티 함수 유지
+function popCwin( url, name, w, h, scroll) {
+  var wl = (window.screen.width/2) - ((w/2) + 10);
+  var wt = (window.screen.height/2) - ((h/2) + 50);
+  var option = "height="+h+",width="+w+",left="+wl+",top="+wt+",screenX="+wl+",screenY="+wt+",scrollbars="+scroll + ", status=yes";
+  commonPopWin = window.open( url, name, option );
+  commonPopWin.focus();
+}
+
+function callhtml(turl,w,h){
+	if(turl.indexOf('http://') < 0 ){
+		var url = turl;
+	}else{
+		tturl = turl.replace('http://',''); 
+		var ttturl =encodeURI(tturl);
+		var url = 'http://'+ttturl;
+		var arrqry = url.split("?");
+		url= arrqry[0] + "?" + arrqry[1].replace(/\+/g,"%2B").replace(/\//g,"%2F");
+	}
+	var wl = (window.screen.width/2) - ((1000/2) + 10);
+	var wt = (window.screen.height/2) - ((590/2) + 50);
+	if(w == 0 || w == null) w = 1000;
+	if(h == 0 || h == null) h = 800;
+	var popupOptions = "left="+wl+",top="+wt+",width="+w+",height="+h+",menubar=no,toolbar=no,location=no,status=no,scrollbars=yes";
+	authwin=window.open(url,"study",popupOptions);
+	authwin.focus();
+}
+
+function getPopUpFlag(win) {
+	try{ win.focus(); return win; }
+	catch(e) {
+		alert('\n팝업(PopUp)이 차단되어 있습니다.\n\n팝업차단을 풀어주셔야 요청하신 기능을 수행할 수 있습니다.');
+	}
+}
+
+function goreportpage(n,uid,set) {
+	if(n==0 || n==1){
+		if(!confirm("리포트 제출페이지로 이동합니다.")){
+			return false;
+		}else{
+			location.href="./mylecture_lecreport.php?uid="+uid+"&set_uid="+set;
+		}
+	}
+	if(n==2){
+		if(!confirm("이미 리포트를 제출하셨습니다. 다시제출하시겠습니까?.")){
+			return false;
+		}else{
+			location.href="./mylecture_lecreport.php?uid="+uid+"&set_uid="+set;
+		}
+	}
+	if(n==3){
+		alert("이미 리포트를 제출하셨습니다. 강사 채점중입니다.");
+	}
+	if(n==4){
+		if(!confirm("답안 확인 페이지로 이동합니다.")){
+			return false;
+		}else{
+			location.href="./mylecture_lecreport.php?uid="+uid+"&set_uid="+set;
+		}
+	}
+}
+
+$(document).ready(function() {
+	viewreport_0 = (function(f) {
+		$("#report_detail_1").hide();
+		$("#report_detail_0").css("display", "flex").hide().fadeIn(200);
+	});
+	viewreport_1 = (function(f) {
+		$("#report_detail_0").hide();
+		$("#report_detail_1").css("display", "flex").hide().fadeIn(200);
+	});
+
+	$(".btnClose_report").click(function () {
+		$("#report_detail_0").fadeOut(150);
+		$("#report_detail_1").fadeOut(150);
+	});
+});
+//-->
+</script>
+</head>
+
+<body>
+
+<div class="lms-wrapper">
+  <!-- 상단 강의실 헤더 -->
+  <header class="lms-header">
+    <div class="subject-info">
+      <span class="badge-term">지역사회복지론</span>
+      <h1>지역사회복지론</h1>
+      <p class="user-greeting"><strong>관리자</strong> 님, 안녕하세요. 학습 현황을 확인해 주세요.</p>
+    </div>
+
+    <!-- 탭 메뉴 (기존 menu3.gif 이미지맵을 텍스트 버튼으로 현대화) -->
+    <nav class="lms-nav">
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecreport.php?uid=95" class="active">과제</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95">토론방</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey.php?uid=95">강의평가</a>
+    </nav>
+  </header>
+
+  <!-- 메인 과제 목록 카드 -->
+  <main class="lms-card">
+    <div class="section-header">
+      <h2 class="section-title">[평가] 과제</h2>
+      <div class="score-badge">점수반영 비율 : <strong>15%</strong></div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="modern-table">
+        <thead>
+          <tr>
+            <th style="text-align: left; padding-left: 16px;">과제명</th>
+            <th width="90">구분</th>
+            <th width="70">과제수</th>
+            <th width="160">과제제출기간</th>
+            <th width="120">제출여부</th>
+            <th width="110">제출하기</th>
+            <th width="70">점수</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="report-title-cell" style="padding-left: 16px;">
+              <span onclick="viewreport_0('report_detail_0')" style="cursor:pointer;">지역사회복지론</span>
+              <span id="report_btn_0" class="btn-view-detail" onclick="viewreport_0('report_detail_0')">과제보기</span>
+            </td>
+            <td>최종과제</td>
+            <td>1</td>
+            <td>03월 27일 ~<br>09월 30일</td>
+            <td>
+              <span class="status-badge">제출</span>
+            </td>
+            <td>
+              <span class="btn-submit-action" onclick="goreportpage(2,95,4);">채점대기 / 수정</span>
+            </td>
+            <td class="score-text">0점</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <!-- 과제 모사답안 처리규정 안내 -->
+  <section class="notice-box">
+    <div class="notice-title">⚠️ 과제 모사답안 처리규정 안내</div>
+    <div class="notice-list">
+      <div class="notice-item">
+        <h4>1. 모사답안이란?</h4>
+        <p>과제를 학습자 자신의 시각이나 관점, 자신의 언어로 작성하지 않고 동료 학습자의 과제 또는 요약본 등의 내용을 동일하게 옮겨 작성한 리포트 답안을 의미합니다.</p>
+      </div>
+      <div class="notice-item">
+        <h4>2. 모사답안의 판단 기준</h4>
+        <ul>
+          <li>동료 학습자의 리포트와 비교 시 내용뿐 아니라 내용의 순서까지 모두 동일한 경우</li>
+          <li>요약본의 내용과 비교 시 내용뿐 아니라 내용의 순서까지 동일한 경우</li>
+          <li>동료 학습자의 리포트, 요약본 등의 내용을 그대로 옮긴 후 순서 등 일부 편집한 경우</li>
+        </ul>
+      </div>
+      <div class="notice-item">
+        <h4>3. 모사답안 처리제외 기준</h4>
+        <ul>
+          <li>답안이 동일할 수밖에 없는 계산식, 수식 작성 문제 등의 경우는 모사답안 판단에서 제외</li>
+          <li>과목 특성상 용어의 정의 등 약술 답안의 경우 내용이 유사할 수밖에 없다고 판단되는 경우</li>
+        </ul>
+      </div>
+      <div class="notice-item">
+        <h4>4. 모사답안 처리규정</h4>
+        <p>과제가 모사답안으로 판명된 경우, <strong>모사답안 제출자뿐 아니라 제공자도 함께 0점 처리로 미수료 처리</strong>됩니다.</p>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- 과제 상세보기 모달 팝업 (기존 report_detail_0 유지) -->
+<div id="report_detail_0" class="modal-overlay">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3>과제 상세 안내</h3>
+      <button type="button" class="btnClose_report" title="창닫기">&times;</button>
+    </div>
+    <div class="modal-body">
+      <div class="detail-row">
+        <span class="detail-label">과제 내용</span>
+        <div class="detail-content">
+          <strong>좋은 지역사회를 만드는 것이 지역사회복지의 목적이라 할 수 있다. 이에<br>1) 본인이 살고 싶은 지역사회는 어떤 지역사회인지 자세히 쓰고,<br>2) 사회복지사의 입장에서 자신이 살고 싶은 지역사회를 만들기 위해서 할 수 있는 역할에 대해서 자세히 쓰시오.</strong>
+        </div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">첨부파일</span>
+        <div class="detail-content">첨부된 파일이 없습니다.</div>
+      </div>
+      <div class="detail-row">
+        <span class="detail-label">작성 및 제출 유의사항</span>
+        <div class="detail-content" style="font-size: 18px; color: #DC2626; line-height: 1.7;">
+          <p>• 과제는 반드시 <strong>제출 내용에 작성된 내용을 붙여넣기 하신 후 첨부 파일도 제출</strong>하시기 바랍니다.<br>[미제출 시 0점 처리 될 수 있음]</p>
+          <p>• 파일명은 되도록 짧게 하시기 바랍니다.</p>
+          <p>• 제출내용에 붙여넣기 시 텍스트만 입력되며 표, 그림, 특수기호 등은 붙여넣기가 되지 않을 수 있습니다. 채점은 첨부파일로 이루어지기 때문에 첨부파일 제출을 하시면 됩니다.</p>
+          <p>• <strong>분량은 A4용지로 최소 두 장 이상(표지 제외), 글자크기는 11포인트</strong>로 작성하세요.</p>
+          <p>• 과제는 한글(hwp)이나 MS워드(doc)로 작성하여 첨부파일로 제출하세요.<br>(보안비밀번호가 걸려있거나 확인 불가능한 형식은 0점 처리됨)</p>
+          <p>• 모사체크는 제출하기를 누르면 자동으로 체크를 해줍니다. [모사율 표시 후 제출여부 다시 물어봄]</p>
+          <p>• 모사체크 시 90% 이상인 경우에는 같은 과제 제출자 전원 최하점 처리 됩니다.</p>
+          <p>• 반드시 본인의 의견을 기입하셔야 합니다. (본인의 생각 부분이 점수반영에 상당히 큰 영향을 미칩니다)</p>
+          <p>• 과제 채점 기준표가 공지사항에 있습니다. 다운받아서 참고하시고 작성하시기 바랍니다.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 기존 시스템 백그라운드 프레임 및 스크립트 유지 -->
+<iframe name="_action_frame_" style="width:0; height:0; border:none" title="스크랩처리" src="./example-test_files/saved_resource.html"></iframe>
+<iframe name="check_frame_" style="width:0; height:0; border:none" title="브라우저체크" src="./example-test_files/saved_resource(1).html"></iframe>
+
+<div style="display:none;">
+  <img id="ps_id_checktime" src="./example-test_files/member_chktime.php" style="width:1px;height:1px;" alt="">
+</div>
+
+<script>
+var oChkTime = document.getElementById('ps_id_checktime');
+window.setInterval(function(){
+	var oDate = new Date();
+	oChkTime.src="/lec/home/cyberlec/member_chktime.php?t="+oDate.getTime();
+},60000);
+
+function getHttprequest(URL) { 
+	var xmlhttp = null; 
+	var responseText;
+	if(window.XMLHttpRequest) { 
+		xmlhttp = new XMLHttpRequest(); 
+	} else { 
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+	} 
+	xmlhttp.open('GET', URL , false); 
+	xmlhttp.onreadystatechange = function() { 
+		if(xmlhttp.readyState==4 && xmlhttp.status == 200 && xmlhttp.statusText=='OK') { 
+			responseText = xmlhttp.responseText; 
+		}
+	} 
+	xmlhttp.send(); 
+	xmlhttp = "";
+	return responseText.replace(/\n/g , '<br>');
+} 
+
+var myagent = navigator.appName.indexOf('Explorer') != -1 ? 'ie' : 'ns';
+function getMyCheck() {
+	var i;
+	if(myagent == 'ie') {
+		var checkvalue = getHttprequest("./mypage.php?a=mycheck");
+	} else {
+		var checkvalue = frames.check_frame_.document.body.innerHTML;
+	}
+	checkvalue = checkvalue.replace(/<BR\/>/g,'<br>');
+	var checkarray = checkvalue.split('<br>');
+	var checksize = checkarray.length;
+	var arr;
+
+	for (i = 0; i < checksize; i++) {
+		if (checkarray[i] != "") {
+			arr = checkarray[i].split('|');
+			if (arr[0] == 'chat') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv1' , 'storyQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'paper') {
+				getMemberWin(arr[1]+'&a=rcv_paper');
+			}
+			if (arr[0] == 'visit') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv3' , 'visitQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'friend') {
+				getMemberWin(arr[1]+'&q=r_friend');
+			}
+		}
+	}
+	if(myagent == 'ie') {
+		setTimeout("getMyCheck()",6000000);
+	}
+}
+
+if(myagent == 'ie') {
+	getMyCheck();
+} else {
+	frames.check_frame_.location.href = "./mypage.php?a=mycheck";
+	setTimeout("getMyCheck()",6000000);
+}
+
+var nowsec = 0;
+var logoutsec = parseInt("100") * 60;
+function timecheck() {
+	nowsec++;
+	if (nowsec > logoutsec) {
+		location.href = './login.php?a=logout';
+	}
+	setTimeout("timecheck()",6000000);
+}
+timecheck();
+</script>
+
+</body>
+</html>

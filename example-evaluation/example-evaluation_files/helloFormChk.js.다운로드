@@ -1,0 +1,668 @@
+	// + ¸¸µçÀÌ : ±èÇöÁø
+	// + ÃÖÃÊÀÛ¼ºÀÏ : 2009.10.19
+	// + ÃÖÁ¾¼öÁ¤ÀÏ : 2009.11.05
+
+	// £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª ¡Ú
+	// + ÇÊ¼ö Æû Ã¼Å©¿¡ ÀÌ¹ÌÁö ´Þ±â
+	function formChkImg(className, formName) {
+
+		// + °°Àº ÆäÀÌÁö¿¡¼­ formChk¸¦ ¿©·¯°³ »ç¿ëÇÒ °æ¿ì ÀÔ´Ï´Ù.
+		if(formName == undefined) {
+			var obj = $(':text,:password,:file');
+		} else {
+			var obj = $('form[name='+formName+'] :text, form[name='+formName+'] :password, form[name='+formName+'] :file');
+		}
+
+		$(obj).each(function(){
+			if($(this).attr('chk') != null){
+				$(this).addClass(className);
+			}
+		});
+	}
+
+	// £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª ¡Ú
+	// + ¿É¼Ç±â´É [ formChk [ ÆûÃ¼Å© ] ¿¬µ¿ ±â´É ]
+	function optionFormChk(option,me) {
+
+		var chkResult = true;
+
+		// + Ãß°¡ ¿É¼Ç ½ÇÇà
+		if($(option).size() > 0) {
+			$.each(option, function(n){
+
+				var optionFunctionAndAlertText = option[n].split('/');
+				var optionFunction = optionFunctionAndAlertText[0];
+				var optionAlertText = optionFunctionAndAlertText[1];
+				var regexpText = optionFunctionAndAlertText[2]; // + Á¤±ÔÇ¥Çö½Ä »ç¿ë
+
+				// + Á¤±ÔÇ¥Çö½Ä »ç¿ë¿¡ µû¸¥ ¿¹¿Ü Ã³¸®
+				if(optionFunction == 'regexp' && optionAlertText == '') {
+					optionAlertText = 'À¯È¿ÇÑ °ªÀÌ ¾Æ´Õ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.';
+				}
+
+				// + ±¸ºÐÀÚ·Î ¼³Á¤ÇØ³õÀº '/' ÀÌ ±¸¹®À» Á¤±ÔÇ¥Çö½Ä¿¡¼­ »ç¿ëÇÒ °æ¿ì Á¤±ÔÇ¥Çö½Ä ±¸¹®À¸·Î ´Ù½Ã Á¶¸³ÇÑ´Ù.
+				if(optionFunction == 'regexp') {
+					var arrayCount = optionFunctionAndAlertText.length;
+					if(arrayCount != 3) {
+						for(var i=2;i<arrayCount;i++) {
+							regexpText += '/'+optionFunctionAndAlertText[i];
+						}
+					}
+				}
+
+				// £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª ¡Ú
+				// + Á¤±Ô Ç¥Çö½Ä µî·Ï
+
+				var functionArray = new Array();
+
+				// + numeral [ ¼ýÀÚ¸¸ °¡´É ] [ 0 ~ 9 ] ÁÖÀÇ : ¶ç¾î¾²±â ºÒ°¡´É
+				// + ex) chk="numeral/°æ°í¹®±¸";
+				functionArray['numeral_defaultAlertText'] = '¼ýÀÚÇü½ÄÀ¸·Î¸¸ ÀÔ·ÂÀÌ °¡´É ÇÕ´Ï´Ù.';
+				functionArray['numeral_distinguish'] = /^[0-9]+$/;
+
+				// + email [ ÀÌ¸ÞÀÏ Çü½Ä¸¸ °¡´É ] [ test@nate.com ]
+				// + ex) chk="email/°æ°í¹®±¸";
+				functionArray['email_defaultAlertText'] = 'ÀÌ¸ÞÀÏ Çü½ÄÀ¸·Î ÀÛ¼ºÇØ ÁÖ¼¼¿ä.';
+				functionArray['email_distinguish'] = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+				// + kor [ ÇÑ±Û¸¸ °¡´É ] [ °¡³ª´Ù¶ó ... ] ÁÖÀÇ : ¤¡¤¤¤§... Çü½ÄÀ¸·Î´Â ÀÔ·Â ºÒ°¡´É , ¶ç¾î¾²±â ºÒ°¡´É
+				// + ex) chk="kor/°æ°í¹®±¸":
+				functionArray['kor_defaultAlertText'] = 'ÇÑ±Û¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.';
+				functionArray['kor_distinguish'] = /^[°¡-ÆR]+$/;
+
+				// + kors [ ÇÑ±Û¸¸ °¡´É ] [ °¡³ª´Ù¶ó ... ] ÁÖÀÇ : ¤¡¤¤¤§... Çü½ÄÀ¸·Î´Â ÀÔ·Â ºÒ°¡´É , ¶ç¾î¾²±â °¡´É
+				// + ex) chk="kor/°æ°í¹®±¸":
+				functionArray['kors_defaultAlertText'] = 'ÇÑ±Û¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.';
+				functionArray['kors_distinguish'] = /^[°¡-ÆR\s]+$/;
+	
+				// + eng [ ¿µ¹®¸¸ °¡´É ]
+				functionArray['eng_defaultAlertText'] = '´ë¼Ò¹®ÀÚ ¿µ¹®¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.';
+				functionArray['eng_distinguish'] = /^[a-zA-Z]+$/;
+
+				// + engs [ ¿µ¹®, ¶ç¾î¾²±â¸¸ °¡´É ]
+				functionArray['engs_defaultAlertText'] = '´ë¼Ò¹®ÀÚ ¿µ¹®¸¸ ÀÔ·Â °¡´ÉÇÕ´Ï´Ù.';
+				functionArray['engs_distinguish'] = /^[a-zA-Z\s]+$/;
+
+				// + phone [ ÀüÈ­¹øÈ£ ÇüÅÂ 000-0000-0000 ¸¸ ¹Þ´Â´Ù. ]
+				functionArray['phone_defaultAlertText'] = 'ÀüÈ­¹øÈ£ ÇüÅÂ·Î ÀÛ¼ºÇØ ÁÖ¼¼¿ä. ex) 000-0000-0000';
+				functionArray['phone_distinguish'] = /^[0-9]{2,3}-[0-9]{3,4}-[0-9]{4}$/;
+
+				// + domain [ µµ¸ÞÀÎ ÇüÅÂ : http:// https:// Æ÷ÇÔÇØµµ µÇ°í ¾ÈµÇµµ µÈ´Ù. ]
+				functionArray['domain_defaultAlertText'] = 'µµ¸ÞÀÎ Çü½ÄÀ¸·Î ÀÛ¼ºÇØ ÁÖ¼¼¿ä.';
+				functionArray['domain_distinguish'] = /^(((http(s?))\:\/\/)?)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+
+				// + domain1 [ µµ¸ÞÀÎ ÇüÅÂ : http:// https:// ²À Æ÷ÇÔ ]
+				functionArray['domain1_defaultAlertText'] = 'µµ¸ÞÀÎ Çü½ÄÀ¸·Î ÀÛ¼ºÇØ ÁÖ¼¼¿ä. http:// ¶Ç´Â https:// ¸¦ Æ÷ÇÔÇÑ µµ¸ÞÀÎ ÁÖ¼Ò¸¦ ÀÔ·ÂÇØ ÁÖ¼¼¿ä.';
+				functionArray['domain1_distinguish'] = /^((http(s?))\:\/\/)([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+
+				// + domain2 [ µµ¸ÞÀÎ ÇüÅÂ : http:// https:// Æ÷ÇÔÇÏ¸é ¾ÈµÊ ]
+				functionArray['domain2_defaultAlertText'] = 'µµ¸ÞÀÎ Çü½ÄÀ¸·Î ÀÛ¼ºÇØ ÁÖ¼¼¿ä. http:// ¶Ç´Â https://ÀÇ »©°í ÀÔ·ÂÇØ ÁÖ¼¼¿ä.';
+				functionArray['domain2_distinguish'] = /^[^((http(s?))\:\/\/)]([0-9a-zA-Z\-]+\.)+[a-zA-Z]{2,6}(\:[0-9]+)?(\/\S*)?$/;
+
+				// + kor_eng [ ÇÑ±Û°ú ¿µ¹®¸¸ °¡´ÉÇÔ ]
+				functionArray['kor_eng_defaultAlertText'] = 'ÇÑ±Û°ú ¿µ¹®¸¸À¸·Î ÀÛ¼ºÇÏ½Ç¼ö ÀÖ½À´Ï´Ù.';
+				functionArray['kor_eng_distinguish'] = /^[°¡-ÆRa-zA-Z]+$/;
+
+				// + numeral_eng [ ¼ýÀÚ¿Í ¾ËÆÄºª¸¸ °¡´ÉÇÔ ]
+				functionArray['numeral_eng_defaultAlertText'] = '¼ýÀÚ¿Í ¿µ¹®¸¸À¸·Î ÀÛ¼ºÇÏ½Ç¼ö ÀÖ½À´Ï´Ù.';
+				functionArray['numeral_eng_distinguish'] = /^[a-zA-Z0-9]+$/;
+
+				// + emailx [ daum.net °ú , hanmail.net Àº »ç¿ëÇÒ¼ö ¾øÀ½ ]
+				functionArray['emailx_defaultAlertText'] = 'daum.net°ú hanmail.netÀº ÀÌ¸ÞÀÏ·Î »ç¿ëÇÒ¼ö°¡ ¾ø½À´Ï´Ù. ´Ù¸¥ ÀÌ¸ÞÀÏÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.';
+				functionArray['emailx_distinguish'] = /^([\w-]+(?:\.[\w-]+)*)@((?:[\w-]+\.)*\w[\w-]{0,66})\.([a-z]{2,6}(?:\.[a-z]{2})?)$/;
+
+				// + regexp [ Á¤±ÔÇ¥Çö½ÄÀ¸·Î ÆûÃ¼Å©¸¦ »ç¿ëÇÏ½Ç¼ö ÀÖ½À´Ï´Ù. ] 
+				// + ex) chk="regexp/°æ°í¹®±¸/Á¤±ÔÇ¥Çö½Ä"
+				functionArray['regexp_defaultAlertText'] = optionAlertText;
+				functionArray['regexp_distinguish'] = new RegExp(regexpText);
+	
+				// £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª ¡Ú
+
+				// + Á¤±Ô Ç¥Çö½Ä ÆûÃ¼Å©
+				if(functionArray[optionFunction+'_distinguish'] != undefined) {
+					if(functionArray[optionFunction+'_distinguish'].test($(me).val()) === false) {
+						if(optionAlertText == undefined) {
+							alert(functionArray[optionFunction+'_defaultAlertText']);
+						} else {
+							alert(optionAlertText);
+						}
+						chkResult = false;
+						return false;
+				}
+
+				} else {
+
+					// + Á¤±Ô Ç¥Çö½Ä ¾Æ´Ñ °Íµé¿¡ ´ëÇÑ ÆûÃ¼Å©
+					switch(optionFunction) {
+
+						// + ÁÖ¹Î¹øÈ£ Ã¼Å©
+						case('ssn') :
+							var value = $(me).val();
+							value = value.replace('-', '');
+
+							var ssnCheck = 0;
+							for (var i = 0; i < 12; i++) {
+								ssnCheck += (i % 8 + 2) * value.charAt(i);
+							}
+							ssnCheck = (11 - ssnCheck % 11) % 10;
+
+							if(ssnCheck != value.charAt(12)) {
+								if(optionAlertText == undefined) {
+									alert('¿Ã¹Ù¸¥ ÁÖ¹Î¹øÈ£°¡ ¾Æ´Õ´Ï´Ù. ÁÖ¹Î¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.');
+								} else {
+									alert(optionAlertText);
+								}
+								chkResult = false;
+								return false;
+							}
+							break;
+
+						// + »ç¾÷ÀÚ µî·Ï¹øÈ£
+						case('bssn') :
+
+							var value = $(me).val();
+							value = value.replace(/-/g, '');
+
+							var sum = 0;
+							var getlist =new Array(10);
+							var chkvalue =new Array("1","3","7","1","3","7","1","3","5");
+							for(var i=0; i<10; i++) { getlist[i] = value.substring(i, i+1); }
+							for(var i=0; i<9; i++) { sum += getlist[i]*chkvalue[i]; }
+							sum = sum + parseInt((getlist[8]*5)/10);
+							sidliy = sum % 10;
+							sidchk = 0;
+							if(sidliy != 0) { sidchk = 10 - sidliy; }
+							else { sidchk = 0; }
+							if(sidchk != getlist[9]) {
+								if(optionAlertText == undefined) {
+									alert('¿Ã¹Ù¸¥ »ç¾÷ÀÚ ¹øÈ£°¡ ¾Æ´Õ´Ï´Ù. »ç¾÷ÀÚ ¹øÈ£¸¦ È®ÀÎÇØ ÁÖ¼¼¿ä.');
+								} else {
+									alert(optionAlertText);
+								}
+								chkResult = false;
+								return false;
+							}
+							break;
+
+							// + nsb [ numeral small big ÀÇ ¾àÀÚ ] [ ¼ýÀÚÀÇ °ªÀÇ ÃÖ¼Ò¿Í ÃÖ´ë¸¦ Á¤ÇÏ¿© Á¶°ÇÀ» ¼³Á¤ÇÕ´Ï´Ù. ex] option/min/max/alert ]
+							case('nsb') :
+
+								var nsbOption = option[n].split('/');
+								var min = parseInt(nsbOption[1]);
+								var max = parseInt(nsbOption[2]);
+								var optionAlertText = nsbOption[3];
+								var value = parseInt($(me).val());
+
+								if(min != 0 && max != 0) {
+									if(value < min || value > max) {
+										if(optionAlertText == undefined) {
+											alert(min+'º¸´Ù Å©°Å³ª °°°í'+max+'º¸´Ù ÀÛ°Å³ª °°Àº °ªÀÌ¾î¾ß ÇÕ´Ï´Ù.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								} else if(min == 0 && max != 0) {
+									if(value > max) {
+										if(optionAlertText == undefined) {
+											alert(max+'ÀÌ°Å³ª ÀÛÀº °ªÀÌ¾î¾ß ÇÕ´Ï´Ù.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								} else if(min != 0 && max == 0) {
+									if(value <= min) {
+										if(optionAlertText == undefined) {
+											alert(min+'º¸´Ù Å« °ªÀÌ¾î¾ß ÇÕ´Ï´Ù.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								}
+
+								break;
+
+							// + tsb [text small big ÀÇ ¾àÀÚ ] [ ¹®ÀÚ¿­ ±æÀÌ ÃÖ¼Ò¿Í ÃÖ´ë¸¦ Á¤ÇÏ¿© Á¶°ÇÀ» ¼³Á¤ÇÕ´Ï´Ù. ]
+							case('tsb') :
+
+								var nsbOption = option[n].split('/');
+								var min = nsbOption[1];
+								var max = nsbOption[2];
+								var optionAlertText = nsbOption[3];
+								var value = $(me).val();
+
+								var valueLength = value.length;
+
+								if(min != 0 && max != 0) {
+									if(valueLength < min || valueLength > max) {
+										if(optionAlertText == undefined) {
+											alert(min+'~'+max+' ÀÚ¸´¼ö·Î ÀÔ·ÂÇØÁÖ¼¼¿ä.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								} else if(min == 0 && max != 0) {
+									if(valueLength > max) {
+										if(optionAlertText == undefined) {
+											alert(max+'°Å³ª ÀÛÀº ÀÚ¸´¼ö·Î ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								} else if(min != 0 && max == 0) {
+									if(valueLength <= min) {
+										if(optionAlertText == undefined) {
+											alert(min+'°Å³ª Å« ÀÚ¸´¼ö·Î ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
+										} else {
+											alert(optionAlertText);
+										}
+										chkResult = false;
+										return false;
+									}
+								}
+								break;
+							
+							// + march [ Áö±Ý ÇöÀç °ª°ú ºñ±³ÇÏ·Á´Â Á¤º¸ÀÇ °ªÀÌ ÀÏÄ¡ÇÑÁö¸¦ ºñ±³ ÇÕ´Ï´Ù. ]
+							case('march') :
+								
+								var value = $(me).val();
+								var marchOption = option[n].split('/');
+								var marchName = marchOption[1];
+								var optionAlertText = marchOption[2];
+								var marchText = $('input[name='+marchName+']').val();
+
+								if(marchText != value) {
+									if(optionAlertText == undefined) {
+										alert('°ªÀÌ ÀÏÄ¡ÇÏÁö ¾Ê½À´Ï´Ù. ´Ù½ÃÇÑ¹ø´õ È®ÀÎÇØ ÁÖ¼¼¿ä.');
+									} else {
+										alert(optionAlertText);
+									}
+									chkResult = false;
+									return false;
+								}
+								break;
+
+							// + ¼±ÅÃµÈ ¶óµð¿À ¹öÆ°ÀÇ °ªÀÌ µé¾î¿Í¾ß ÇÕ´Ï´Ù.
+							case('thisRadio') :
+								if($(me).attr('checked') === false) {
+									if(optionAlertText == undefined) {
+										alert('¾à°üÀÇ µ¿ÀÇÇØ ÇØÁÖ¼¼¿ä.');
+									} else {
+										alert(optionAlertText);
+									}
+									chkResult = false;
+									return false;
+								}
+								break;
+
+							// + Ã¼Å©¹Ú½ºÀÇ °ªÀÌ ÇÏ³ªµµ ¾÷À¸¸é ¾ÈµÇ°í ¸î°Ô ÀÌ»óÀ¸·Î ¼±ÅÃ °¡´ÉÇÕ´Ï´Ù.
+							case('emptyCheck') :
+
+								var value = $(me).val();
+								var emptyCheckOption = option[n].split('/');
+								var completeNum = emptyCheckOption[1];
+								var chkName = emptyCheckOption[2];
+								var optionAlertText = emptyCheckOption[3];
+								var helloNum = 0;
+								
+								if($(me).attr('checked') == true) {
+									helloNum++;
+								} 
+
+								$(':checkbox').each(function() {
+									if($(this).attr(chkName) != null) {
+										if($(this).attr('checked') == true) {
+											helloNum++;		
+										}
+									}
+								});
+
+								if(helloNum < completeNum) {
+									if(optionAlertText == undefined) {
+										alert(completeNum+'°³ ÀÌ»ó ¼±ÅÃ ÇÏ¼Å¾ß ÇÕ´Ï´Ù.');
+									} else {
+										alert(optionAlertText);
+									}
+									chkResult = false;
+									return false;
+								}
+								break;
+
+							// + ¼±ÅÃµÈ ¶óµð¿À ¹öÆ°ÀÇ °ªÀÌ µé¾î¿Í¾ß ÇÕ´Ï´Ù.
+							case('same') :
+
+								var value = $(me).val();
+								var sameOption = option[n].split('/');
+								var sameText = sameOption[1];
+								var optionAlertText = sameOption[2];
+
+								if(value != sameText) {
+									if(optionAlertText == undefined) {
+										alert('¿øÇÏ´Â °ªÀÌ ¾Æ´Õ´Ï´Ù. ´Ù½Ã ÀÔ·ÂÇØ ÁÖ¼¼¿ä.');
+									} else {
+										alert(optionAlertText);
+									}
+									chkResult = false;
+									return false;
+								}
+								break;
+
+					} // + switch ³¡
+				} // + Á¤±Ô Ç¥Çö½Ä ÆûÃ¼Å© ³¡
+
+			}); // + $.each ³¡
+		} // + Ãß°¡ ¿É¼Ç ½ÇÇà ³¡
+
+		if(chkResult === true) {
+			return true;
+		} else {
+			return false;
+		}
+
+	} // + ¿É¼Ç ³¡
+
+	// £ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª£ª ¡Ú
+	// + ÆûÃ¼Å©
+	function formChk(formName) {
+
+		var returnChk = true;
+		var chkResult = true;
+		var defaultAlertText = 'ÇÊ¼ö ÀÔ·Â »çÇ× ÀÔ´Ï´Ù.';
+		
+			// + °°Àº ÆäÀÌÁö¿¡¼­ formChk¸¦ ¿©·¯°³ »ç¿ëÇÒ °æ¿ì ÀÔ´Ï´Ù.
+			if(formName == undefined) {
+				var obj = $('input, select, textarea');
+			} else {
+				var obj = $('form[name='+formName+'] input, form[name='+formName+'] select, form[name='+formName+'] textarea');
+			}
+				
+			$(obj).each(function() {
+			
+			if($(this).attr('chk') != null) {
+
+				var me = this;
+				var option = $(this).attr('chk');
+				var alt = $(this).attr('alt');
+
+				// + ¿É¼Ç¸íÀ» ³ª´«´Ù.
+				if(option != '') {
+					option = option.split(',');
+				}
+
+				// + °¢Å¸ÀÔ¿¡ µû¶ó ÇÊ¼ö °Ë»ç¸¦ ÇÑ´Ù.
+
+				switch($(this).attr('type')){
+					case 'text' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() == '') {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						chkResult = optionFormChk(option,this);
+
+						if(chkResult === false) {
+							$(this).focus();
+						}
+						
+						break;
+
+					case 'file' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() == '') {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						chkResult = optionFormChk(option,this);
+
+						if(chkResult === false) {
+							$(this).focus();
+						}
+
+						break;
+
+					case 'select-one' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).find(':selected').val() == '') {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						break;
+
+					case 'checkbox' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).attr('checked') == false) {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						chkResult = optionFormChk(option,this);
+
+						if(chkResult === false) {
+							$(this).focus();
+						}
+
+						break;
+
+					case 'radio' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						var radioName = $(this).attr('name');
+						if($(':radio[name='+radioName+']:checked').val() == undefined) {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						chkResult = optionFormChk(option,this);
+
+						if(chkResult === false) {
+							$(this).focus();
+						}
+
+						break;
+
+					case 'textarea' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+//						if($(this).val() == '') {
+						// 2019.07. ÁÖ°ü½Ä¿¡ °ø¹é¸¸ ÀÔ·ÂÇÒ °æ¿ì Ã¼Å©      
+						if($.trim($(this).val()) == '') {
+							alert($(this).attr('alt'));
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						break;
+
+					case 'password' :
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() == '') {
+							if(alt == '') {
+								alert(defaultAlertText);
+							} else {
+								alert(alt);
+							}
+							$(this).focus();
+							returnChk = false;
+							return false;
+						}
+
+						chkResult = optionFormChk(option,this);
+
+						if(chkResult === false) {
+							$(this).focus();
+						}
+
+						break;
+				
+				} // + switch ³¡
+
+			} 
+			
+			// + nochk [ ÇÊ¼ö ÀÔ·Â »çÇ×Àº ¾Æ´ÏÁö¸¸ °ªÀ» Àû¾úÀ» °æ¿ì Æû Ã¼Å©¸¦ ÇÕ´Ï´Ù. ]
+			if($(this).attr('nochk') != null) {
+
+				var me = this;
+				var option = $(this).attr('nochk');
+				var alt = $(this).attr('alt');
+
+				// + ¿É¼Ç¸íÀ» ³ª´«´Ù.
+				if(option != '') {
+					option = option.split(',');
+				}
+
+				// + °¢Å¸ÀÔ¿¡ µû¶ó ÇÊ¼ö °Ë»ç¸¦ ÇÑ´Ù.
+				switch($(this).attr('type')){
+					case 'text' :
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() != '') {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+						
+						break;
+
+					case 'file' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() != '') {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+
+						break;
+
+					case 'select-one' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).find(':selected').val() != '') {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+
+						break;
+
+					case 'checkbox' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						chkResult = optionFormChk(option,this);
+						if(chkResult === false) {
+							$(this).focus();
+						}
+
+						break;
+
+					case 'radio' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						var radioName = $(this).attr('name');
+						if($(':radio[name='+radioName+']:checked').val() != undefined) {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+
+						break;
+
+					case 'textarea' :
+
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() != '') {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+
+						break;
+
+					case 'password' :
+						if(returnChk === false || chkResult === false) { return false; }
+
+						if($(this).val() != '') {
+							chkResult = optionFormChk(option,this);
+							if(chkResult === false) {
+								$(this).focus();
+							}
+						}
+
+						break;
+				} // + switch ³¡
+			
+			}
+
+		}); // + each ³¡
+
+		if(returnChk === true && chkResult === true) {
+			return true;
+		} else {
+			return false;
+		}
+
+	} // + ÆûÃ¼Å© ³¡

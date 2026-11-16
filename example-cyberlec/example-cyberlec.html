@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>성결대학교 원격평생교육원 - 토론방</title>
+
+<script type="text/javascript" src="./example-cyberlec_files/jquery-1.3.2.min.js.다운로드"></script>
+<script type="text/javascript" src="./example-cyberlec_files/Common.js.다운로드"></script>
+<link rel="icon" href="https://edulife.sungkyul.ac.kr/img/favicon.ico" type="image/x-icon">
+
+<style>
+  /* 기본 초기화 및 폰트 설정 */
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  body {
+    font-family: 'Pretendard', 'Malgun Gothic', '맑은 고딕', sans-serif;
+    background-color: #F4F6F9;
+    color: #1E293B;
+    line-height: 1.5;
+    padding: 30px 15px;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  /* 전체 컨테이너 */
+  .lms-wrapper {
+    max-width: 1280px;
+    margin: 0 auto;
+  }
+
+  /* 상단 헤더 영역 */
+  .lms-header {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 24px 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-bottom: 24px;
+    border: 1px solid #E2E8F0;
+  }
+  .subject-info .badge-term {
+    display: inline-block;
+    background-color: #EFF6FF;
+    color: #1D63DC;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 6px;
+    margin-bottom: 6px;
+  }
+  .subject-info h1 {
+    font-size: 22px;
+    font-weight: 800;
+    color: #0F172A;
+    letter-spacing: -0.5px;
+  }
+  .user-greeting {
+    font-size: 16px;
+    color: #64748B;
+    margin-top: 4px;
+  }
+  .user-greeting strong {
+    color: #1E293B;
+  }
+
+  /* 상단 탭 네비게이션 */
+  .lms-nav {
+    display: flex;
+    background-color: #F1F5F9;
+    border-radius: 10px;
+    gap: 4px;
+  }
+  .lms-nav a {
+    padding: 13px 23px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #64748B;
+    border-radius: 7px;
+    transition: all 0.2s ease;
+  }
+  .lms-nav a:hover {
+    color: #1D63DC;
+    background-color: #EFF6FF;
+	  font-weight: 800;
+  }
+  .lms-nav a.active {
+    background-color: #1D63DC;
+    color: #FFFFFF;
+    box-shadow: 0 2px 6px rgba(29, 99, 220, 0.25);
+  }
+
+  /* 메인 콘텐츠 카드 */
+  .lms-card {
+    background-color: #FFFFFF;
+    border-radius: 16px;
+    padding: 32px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.03);
+    border: 1px solid #E2E8F0;
+    margin-bottom: 24px;
+  }
+
+  .section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #E2E8F0;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+  .section-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: #0F172A;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .section-title::before {
+    content: '';
+    display: inline-block;
+    width: 4px;
+    height: 18px;
+    background-color: #1D63DC;
+    border-radius: 2px;
+  }
+  
+  .section-meta {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-size: 14px;
+    color: #475569;
+  }
+  .section-meta strong {
+    color: #1D63DC;
+  }
+  .btn-my-opinion {
+    display: inline-block;
+    background-color: #F1F5F9;
+    color: #334155;
+    border: 1px solid #CBD5E1;
+    padding: 6px 12px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 600;
+    transition: all 0.15s;
+  }
+  .btn-my-opinion:hover {
+    background-color: #E2E8F0;
+    color: #0F172A;
+  }
+
+  /* 모던 테이블 디자인 */
+  .table-wrap {
+    overflow-x: auto;
+  }
+  .modern-table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: center;
+    font-size: 16px;
+  }
+  .modern-table th {
+    background-color: #F8FAFC;
+    color: #475569;
+    font-weight: 700;
+    padding: 14px 12px;
+    border-top: 1px solid #E2E8F0;
+    border-bottom: 1px solid #CBD5E1;
+    white-space: nowrap;
+  }
+  .modern-table td {
+    padding: 18px 6px;
+    border-bottom: 1px solid #E2E8F0;
+    color: #334155;
+    vertical-align: middle;
+  }
+  /* 토론 내용 영역 */
+  .talk-content-cell {
+    text-align: left;
+    line-height: 1.6;
+  }
+  .talk-topic {
+    font-weight: 700;
+    color: #0F172A;
+    margin-bottom: 10px;
+    font-size: 18px;
+  }
+  .talk-guide-box {
+    background-color: #F8FAFC;
+    border: 1px solid #E2E8F0;
+    border-radius: 10px;
+    padding: 14px 16px;
+    margin-top: 12px;
+  }
+  .talk-guide-title {
+    font-size: 14px;
+    font-weight: 700;
+    color: #1D63DC;
+    margin-bottom: 6px;
+  }
+  .talk-guide-list {
+    list-style: none;
+    padding-left: 0;
+  }
+  .talk-guide-list li {
+    font-size: 14px;
+    color: #475569;
+    margin-bottom: 4px;
+  }
+
+  .btn-talk-action {
+    display: inline-block;
+    padding: 10px 12px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #FFFFFF;
+    background-color: #1D63DC;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+  }
+  .btn-talk-action:hover {
+    background-color: #154BB0;
+  }
+</style>
+
+<script language="JavaScript">
+<!--
+function popCwin( url, name, w, h, scroll) {
+  var wl = (window.screen.width/2) - ((w/2) + 10);
+  var wt = (window.screen.height/2) - ((h/2) + 50);
+  var option = "height="+h+",width="+w+",left="+wl+",top="+wt+",screenX="+wl+",screenY="+wt+",scrollbars="+scroll + ", status=yes";
+  commonPopWin = window.open( url, name, option );
+  commonPopWin.focus();
+}
+
+function callhtml(turl,w,h){
+	if(turl.indexOf('http://') < 0 ){
+		var url = turl;
+	}else{
+		tturl = turl.replace('http://',''); 
+		var ttturl =encodeURI(tturl);
+		var url = 'http://'+ttturl;
+		var arrqry = url.split("?");
+		url= arrqry[0] + "?" + arrqry[1].replace(/\+/g,"%2B").replace(/\//g,"%2F");
+	}
+	var wl = (window.screen.width/2) - ((1000/2) + 10);
+	var wt = (window.screen.height/2) - ((590/2) + 50);
+	if(w == 0 || w == null) w = 1000;
+	if(h == 0 || h == null) h = 800;
+	var popupOptions = "left="+wl+",top="+wt+",width="+w+",height="+h+",menubar=no,toolbar=no,location=no,status=no,scrollbars=yes";
+	authwin=window.open(url,"study",popupOptions);
+	authwin.focus();
+}
+
+function getPopUpFlag(win) {
+	try{ win.focus(); return win; }
+	catch(e) {
+		alert('\n팝업(PopUp)이 차단되어 있습니다.\n\n팝업차단을 풀어주셔야 요청하신 기능을 수행할 수 있습니다.');
+	}
+}
+//-->
+</script>
+</head>
+
+<body>
+
+<div class="lms-wrapper">
+  <!-- 상단 강의실 헤더 -->
+  <header class="lms-header">
+    <div class="subject-info">
+      <span class="badge-term">지역사회복지론</span>
+      <h1>지역사회복지론</h1>
+      <p class="user-greeting"><strong>관리자</strong> 님, 안녕하세요. 학습 현황을 확인해 주세요.</p>
+    </div>
+
+    <!-- 탭 메뉴 -->
+    <nav class="lms-nav">
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecreport.php?uid=95">과제</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95" class="active">토론방</a>
+      <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lecsurvey.php?uid=95">강의평가</a>
+    </nav>
+  </header>
+
+  <!-- 메인 토론방 카드 -->
+  <main class="lms-card">
+    <div class="section-header">
+      <h2 class="section-title">[평가] 토론</h2>
+      <div class="section-meta">
+        <span>토론수 : <strong>1회</strong></span>
+        <span>취득점수 : <strong>-</strong></span>
+        <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.mine.php?uid=95" class="btn-my-opinion">내 의견보기</a>
+      </div>
+    </div>
+
+    <div class="table-wrap">
+      <table class="modern-table">
+        <thead>
+          <tr>
+            <th width="90">차시</th>
+            <th style="text-align: left; padding-left: 16px;">토론 주제 및 안내</th>
+            <th width="40">내참여수</th>
+            <th width="120">토론참여</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>39차시</td>
+            <td class="talk-content-cell" style="padding-left: 16px;">
+              <div class="talk-topic">지역사회복지의 주체인 주민과 지역사회복지실천가(사회복지사) 중 누가 더 큰 역할을 해야하는지 자신의 입장과 그 이유를 쓰시오.</div>
+              
+              <div class="talk-guide-box">
+                <div class="talk-guide-title">▶ 기본 점수 획득 최소 요건 (100점 만점 중 50점)</div>
+                <ul class="talk-guide-list">
+                  <li>• 토론 참여 기간은 개강일부터 종강일까지 참여 가능합니다. (왼쪽의 차시는 무시하셔도 되며, 본 과목은 토론이 1개입니다.)</li>
+                  <li>• 본인 의견 띄어쓰기 포함 200자 이상 1회 (본글 '작성란'에 작성)</li>
+                  <li>• 댓글 띄어쓰기 포함 30자 이상 5회 (타인의 글을 클릭하면 나타나는 '댓글입력란'에 작성) 시 기본 점수</li>
+                </ul>
+              </div>
+            </td>
+            <td>0 회</td>
+            <td>
+              <a href="https://edulife.sungkyul.ac.kr/lec/home/cyberlec/mylecture_lectalk.php?uid=95&amp;talk_uid=3&amp;talk_chasi=39&amp;mode=view" class="btn-talk-action">토론참여</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- 기존 시스템 백그라운드 프레임 및 스크립트 유지 -->
+<iframe name="_action_frame_" style="width:0; height:0; border:none" title="스크랩처리" src="./example-cyberlec_files/saved_resource.html"></iframe>
+<iframe name="check_frame_" style="width:0; height:0; border:none" title="브라우저체크" src="./example-cyberlec_files/saved_resource(1).html"></iframe>
+
+<div style="display:none;">
+  <img id="ps_id_checktime" src="./example-cyberlec_files/member_chktime.php" style="width:1px;height:1px;" alt="">
+</div>
+
+<script>
+var oChkTime = document.getElementById('ps_id_checktime');
+window.setInterval(function(){
+	var oDate = new Date();
+	oChkTime.src="/lec/home/cyberlec/member_chktime.php?t="+oDate.getTime();
+},60000);
+
+function getHttprequest(URL) { 
+	var xmlhttp = null; 
+	var responseText;
+	if(window.XMLHttpRequest) { 
+		xmlhttp = new XMLHttpRequest(); 
+	} else { 
+		xmlhttp = new ActiveXObject("Microsoft.XMLHTTP"); 
+	} 
+	xmlhttp.open('GET', URL , false); 
+	xmlhttp.onreadystatechange = function() { 
+		if(xmlhttp.readyState==4 && xmlhttp.status == 200 && xmlhttp.statusText=='OK') { 
+			responseText = xmlhttp.responseText; 
+		}
+	} 
+	xmlhttp.send(); 
+	xmlhttp = "";
+	return responseText.replace(/\n/g , '<br>');
+} 
+
+var myagent = navigator.appName.indexOf('Explorer') != -1 ? 'ie' : 'ns';
+function getMyCheck() {
+	var i;
+	if(myagent == 'ie') {
+		var checkvalue = getHttprequest("./mypage.php?a=mycheck");
+	} else {
+		var checkvalue = frames.check_frame_.document.body.innerHTML;
+	}
+	checkvalue = checkvalue.replace(/<BR\/>/g,'<br>');
+	var checkarray = checkvalue.split('<br>');
+	var checksize = checkarray.length;
+	var arr;
+
+	for (i = 0; i < checksize; i++) {
+		if (checkarray[i] != "") {
+			arr = checkarray[i].split('|');
+			if (arr[0] == 'chat') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv1' , 'storyQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'paper') {
+				getMemberWin(arr[1]+'&a=rcv_paper');
+			}
+			if (arr[0] == 'visit') {
+				getPopUpFlag(window.open('../../_system/module/chat/chat.php?xsite=cyberlec&room='+arr[1]+'&who='+arr[2]+'&que=rcv/rcv3' , 'visitQwin', 'left=0,top=0,width=435,height=250,scrollbars=no,status=yes'));
+			}
+			if (arr[0] == 'friend') {
+				getMemberWin(arr[1]+'&q=r_friend');
+			}
+		}
+	}
+	if(myagent == 'ie') {
+		setTimeout("getMyCheck()",6000000);
+	}
+}
+
+if(myagent == 'ie') {
+	getMyCheck();
+} else {
+	frames.check_frame_.location.href = "./mypage.php?a=mycheck";
+	setTimeout("getMyCheck()",6000000);
+}
+
+var nowsec = 0;
+var logoutsec = parseInt("100") * 60;
+function timecheck() {
+	nowsec++;
+	if (nowsec > logoutsec) {
+		location.href = './login.php?a=logout';
+	}
+	setTimeout("timecheck()",6000000);
+}
+timecheck();
+</script>
+
+</body>
+</html>
